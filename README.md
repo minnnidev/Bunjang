@@ -5,4 +5,9 @@
 
 > #### 🍎 8.20 토
 
-ㄴㅁㄴㅇ
+<details>
+    <summary>🍎 8.20 토</summary>
+
+    ㄴ
+  
+</details>
