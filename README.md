@@ -1,10 +1,7 @@
-# bunjang_ios_dana
-
-
 ## 개발일지
 
 <details>
-    <summary>🍎 8.20 토</summary>
+    <summary> ### 🍎 8.20 토</summary>
     
 https://user-images.githubusercontent.com/108191001/185752099-8c16169c-60e7-4b61-9308-387ad5f228b4.mov
 
