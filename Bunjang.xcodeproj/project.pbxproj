@@ -7,25 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A684C024BEA8BD7B2FB27E4 /* Pods_Bunjang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE161FE9BDC81E7C980CD2E4 /* Pods_Bunjang.framework */; };
+		AB3A4B1F28B0D6120071F9FF /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A4B1D28B0D6120071F9FF /* BannerCollectionViewCell.swift */; };
+		AB3A4B2028B0D6120071F9FF /* BannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3A4B1E28B0D6120071F9FF /* BannerCollectionViewCell.xib */; };
+		AB3A4B2328B0DDDA0071F9FF /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A4B2128B0DDDA0071F9FF /* CategoryCollectionViewCell.swift */; };
+		AB3A4B2428B0DDDA0071F9FF /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3A4B2228B0DDDA0071F9FF /* CategoryCollectionViewCell.xib */; };
 		AB578D6128B0A3EB00A00161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB578D6028B0A3EB00A00161 /* AppDelegate.swift */; };
 		AB578D6328B0A3EB00A00161 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB578D6228B0A3EB00A00161 /* SceneDelegate.swift */; };
-		AB578D6528B0A3EB00A00161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB578D6428B0A3EB00A00161 /* ViewController.swift */; };
 		AB578D6828B0A3EB00A00161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB578D6628B0A3EB00A00161 /* Main.storyboard */; };
 		AB578D6B28B0A3EC00A00161 /* Bunjang.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AB578D6928B0A3EB00A00161 /* Bunjang.xcdatamodeld */; };
 		AB578D6D28B0A3EE00A00161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB578D6C28B0A3EE00A00161 /* Assets.xcassets */; };
 		AB578D7028B0A3EE00A00161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB578D6E28B0A3EE00A00161 /* LaunchScreen.storyboard */; };
+		AB578D7C28B0A89400A00161 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB578D7B28B0A89400A00161 /* HomeViewController.swift */; };
+		AB70FB4728B0C2D300023D90 /* TabHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB70FB4628B0C2D300023D90 /* TabHomeViewController.swift */; };
+		AB70FB4928B0C2EA00023D90 /* TabFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB70FB4828B0C2EA00023D90 /* TabFirstViewController.swift */; };
+		AB70FB4B28B0C2F600023D90 /* TabSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB70FB4A28B0C2F600023D90 /* TabSecondViewController.swift */; };
+		AB70FB4F28B0CA4300023D90 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB70FB4D28B0CA4300023D90 /* ProductCollectionViewCell.swift */; };
+		AB70FB5028B0CA4300023D90 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB70FB4E28B0CA4300023D90 /* ProductCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ACF7A8F5B79609CA6F7B8E1 /* Pods-Bunjang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bunjang.release.xcconfig"; path = "Target Support Files/Pods-Bunjang/Pods-Bunjang.release.xcconfig"; sourceTree = "<group>"; };
+		948260AFFE075CAB8FE22A5C /* Pods-Bunjang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bunjang.debug.xcconfig"; path = "Target Support Files/Pods-Bunjang/Pods-Bunjang.debug.xcconfig"; sourceTree = "<group>"; };
+		AB3A4B1D28B0D6120071F9FF /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB3A4B1E28B0D6120071F9FF /* BannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB3A4B2128B0DDDA0071F9FF /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB3A4B2228B0DDDA0071F9FF /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB578D5D28B0A3EB00A00161 /* Bunjang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bunjang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB578D6028B0A3EB00A00161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB578D6228B0A3EB00A00161 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB578D6428B0A3EB00A00161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB578D6728B0A3EB00A00161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB578D6A28B0A3EB00A00161 /* Bunjang.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bunjang.xcdatamodel; sourceTree = "<group>"; };
 		AB578D6C28B0A3EE00A00161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB578D6F28B0A3EE00A00161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB578D7128B0A3EE00A00161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB578D7B28B0A89400A00161 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AB70FB4628B0C2D300023D90 /* TabHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabHomeViewController.swift; sourceTree = "<group>"; };
+		AB70FB4828B0C2EA00023D90 /* TabFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFirstViewController.swift; sourceTree = "<group>"; };
+		AB70FB4A28B0C2F600023D90 /* TabSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSecondViewController.swift; sourceTree = "<group>"; };
+		AB70FB4D28B0CA4300023D90 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB70FB4E28B0CA4300023D90 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		CE161FE9BDC81E7C980CD2E4 /* Pods_Bunjang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bunjang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A684C024BEA8BD7B2FB27E4 /* Pods_Bunjang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1616BA35ECE7DC9FDC7A61DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE161FE9BDC81E7C980CD2E4 /* Pods_Bunjang.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C3A96736DAAEB9C2E7B5AD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				948260AFFE075CAB8FE22A5C /* Pods-Bunjang.debug.xcconfig */,
+				0ACF7A8F5B79609CA6F7B8E1 /* Pods-Bunjang.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AB578D5428B0A3EB00A00161 = {
 			isa = PBXGroup;
 			children = (
 				AB578D5F28B0A3EB00A00161 /* Bunjang */,
 				AB578D5E28B0A3EB00A00161 /* Products */,
+				5C3A96736DAAEB9C2E7B5AD1 /* Pods */,
+				1616BA35ECE7DC9FDC7A61DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +100,73 @@
 		AB578D5F28B0A3EB00A00161 /* Bunjang */ = {
 			isa = PBXGroup;
 			children = (
+				AB578D7728B0A82A00A00161 /* Configuration */,
+				AB578D7828B0A83000A00161 /* Util */,
+				AB578D7928B0A83400A00161 /* Source */,
 				AB578D6028B0A3EB00A00161 /* AppDelegate.swift */,
 				AB578D6228B0A3EB00A00161 /* SceneDelegate.swift */,
-				AB578D6428B0A3EB00A00161 /* ViewController.swift */,
-				AB578D6628B0A3EB00A00161 /* Main.storyboard */,
 				AB578D6C28B0A3EE00A00161 /* Assets.xcassets */,
 				AB578D6E28B0A3EE00A00161 /* LaunchScreen.storyboard */,
 				AB578D7128B0A3EE00A00161 /* Info.plist */,
 				AB578D6928B0A3EB00A00161 /* Bunjang.xcdatamodeld */,
 			);
 			path = Bunjang;
+			sourceTree = "<group>";
+		};
+		AB578D7728B0A82A00A00161 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		AB578D7828B0A83000A00161 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		AB578D7928B0A83400A00161 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AB578D6628B0A3EB00A00161 /* Main.storyboard */,
+				AB578D7A28B0A87100A00161 /* Home */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		AB578D7A28B0A87100A00161 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AB578D7B28B0A89400A00161 /* HomeViewController.swift */,
+				AB70FB4628B0C2D300023D90 /* TabHomeViewController.swift */,
+				AB70FB4828B0C2EA00023D90 /* TabFirstViewController.swift */,
+				AB70FB4A28B0C2F600023D90 /* TabSecondViewController.swift */,
+				AB70FB4C28B0C9F800023D90 /* Cell */,
+				AB578D8228B0AC8E00A00161 /* Entity */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AB578D8228B0AC8E00A00161 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AB70FB4C28B0C9F800023D90 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AB70FB4D28B0CA4300023D90 /* ProductCollectionViewCell.swift */,
+				AB70FB4E28B0CA4300023D90 /* ProductCollectionViewCell.xib */,
+				AB3A4B1D28B0D6120071F9FF /* BannerCollectionViewCell.swift */,
+				AB3A4B1E28B0D6120071F9FF /* BannerCollectionViewCell.xib */,
+				AB3A4B2128B0DDDA0071F9FF /* CategoryCollectionViewCell.swift */,
+				AB3A4B2228B0DDDA0071F9FF /* CategoryCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB578D7428B0A3EE00A00161 /* Build configuration list for PBXNativeTarget "Bunjang" */;
 			buildPhases = (
+				729D0A0B91C400CCC62533EF /* [CP] Check Pods Manifest.lock */,
 				AB578D5928B0A3EB00A00161 /* Sources */,
 				AB578D5A28B0A3EB00A00161 /* Frameworks */,
 				AB578D5B28B0A3EB00A00161 /* Resources */,
+				2E5B45F3CE1B7D9795AE9156 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,23 +229,74 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB3A4B2428B0DDDA0071F9FF /* CategoryCollectionViewCell.xib in Resources */,
 				AB578D7028B0A3EE00A00161 /* LaunchScreen.storyboard in Resources */,
 				AB578D6D28B0A3EE00A00161 /* Assets.xcassets in Resources */,
+				AB70FB5028B0CA4300023D90 /* ProductCollectionViewCell.xib in Resources */,
 				AB578D6828B0A3EB00A00161 /* Main.storyboard in Resources */,
+				AB3A4B2028B0D6120071F9FF /* BannerCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2E5B45F3CE1B7D9795AE9156 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bunjang/Pods-Bunjang-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bunjang/Pods-Bunjang-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bunjang/Pods-Bunjang-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		729D0A0B91C400CCC62533EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bunjang-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB578D5928B0A3EB00A00161 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB578D6528B0A3EB00A00161 /* ViewController.swift in Sources */,
+				AB3A4B1F28B0D6120071F9FF /* BannerCollectionViewCell.swift in Sources */,
+				AB70FB4B28B0C2F600023D90 /* TabSecondViewController.swift in Sources */,
+				AB70FB4728B0C2D300023D90 /* TabHomeViewController.swift in Sources */,
+				AB70FB4F28B0CA4300023D90 /* ProductCollectionViewCell.swift in Sources */,
 				AB578D6B28B0A3EC00A00161 /* Bunjang.xcdatamodeld in Sources */,
 				AB578D6128B0A3EB00A00161 /* AppDelegate.swift in Sources */,
+				AB3A4B2328B0DDDA0071F9FF /* CategoryCollectionViewCell.swift in Sources */,
 				AB578D6328B0A3EB00A00161 /* SceneDelegate.swift in Sources */,
+				AB578D7C28B0A89400A00161 /* HomeViewController.swift in Sources */,
+				AB70FB4928B0C2EA00023D90 /* TabFirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +440,7 @@
 		};
 		AB578D7528B0A3EE00A00161 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 948260AFFE075CAB8FE22A5C /* Pods-Bunjang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -316,6 +469,7 @@
 		};
 		AB578D7628B0A3EE00A00161 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ACF7A8F5B79609CA6F7B8E1 /* Pods-Bunjang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
