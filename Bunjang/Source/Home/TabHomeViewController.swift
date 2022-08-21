@@ -24,9 +24,10 @@ class TabHomeViewController: TabmanViewController {
         //배열에 추가
         viewControllers.append(firstVC)
         viewControllers.append(secondVC)
-
         
+    
         self.dataSource = self
+        self.isScrollEnabled = false
         
         // Create bar
         let bar = TMBar.ButtonBar()

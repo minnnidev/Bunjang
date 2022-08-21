@@ -53,11 +53,15 @@
                 <constraint firstItem="5U1-UB-I0J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mNc-Mc-rl4"/>
             </constraints>
             <size key="customSize" width="79" height="77"/>
+            <connections>
+                <outlet property="categoryNameLabel" destination="lrp-Wz-aGp" id="EzW-mj-ycJ"/>
+                <outlet property="imgView" destination="yvP-hc-A7d" id="UXh-i2-VWD"/>
+            </connections>
             <point key="canvasLocation" x="158.69565217391306" y="105.46875"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Category1" width="90" height="90"/>
+        <image name="Category1" width="52" height="52"/>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

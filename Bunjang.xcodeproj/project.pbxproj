@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4A684C024BEA8BD7B2FB27E4 /* Pods_Bunjang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE161FE9BDC81E7C980CD2E4 /* Pods_Bunjang.framework */; };
+		AB0039C328B21B06009932D8 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0039C228B21B06009932D8 /* UIButton.swift */; };
+		AB0039C828B22DB6009932D8 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0039C728B22DB6009932D8 /* TabBarViewController.swift */; };
+		AB0039CE28B24AC1009932D8 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0039CD28B24AC1009932D8 /* UITextField.swift */; };
+		AB0039D028B2589E009932D8 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0039CF28B2589E009932D8 /* AddViewController.swift */; };
+		AB0039D228B2714D009932D8 /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0039D128B2714D009932D8 /* OptionViewController.swift */; };
+		AB16402328B1359D0085CEC5 /* BrandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB16402128B1359D0085CEC5 /* BrandTableViewCell.swift */; };
+		AB16402428B1359D0085CEC5 /* BrandTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB16402228B1359D0085CEC5 /* BrandTableViewCell.xib */; };
+		AB16402728B138230085CEC5 /* SimpleProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB16402528B138230085CEC5 /* SimpleProductCollectionViewCell.swift */; };
+		AB16402828B138230085CEC5 /* SimpleProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB16402628B138230085CEC5 /* SimpleProductCollectionViewCell.xib */; };
+		AB1A3A4A28B11F78001E47C7 /* CategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1A3A4928B11F78001E47C7 /* CategoryData.swift */; };
+		AB27EE4328B1C71400278C4D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB27EE4228B1C71400278C4D /* SearchViewController.swift */; };
 		AB3A4B1F28B0D6120071F9FF /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A4B1D28B0D6120071F9FF /* BannerCollectionViewCell.swift */; };
 		AB3A4B2028B0D6120071F9FF /* BannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3A4B1E28B0D6120071F9FF /* BannerCollectionViewCell.xib */; };
 		AB3A4B2328B0DDDA0071F9FF /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A4B2128B0DDDA0071F9FF /* CategoryCollectionViewCell.swift */; };
@@ -24,11 +35,23 @@
 		AB70FB4B28B0C2F600023D90 /* TabSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB70FB4A28B0C2F600023D90 /* TabSecondViewController.swift */; };
 		AB70FB4F28B0CA4300023D90 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB70FB4D28B0CA4300023D90 /* ProductCollectionViewCell.swift */; };
 		AB70FB5028B0CA4300023D90 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB70FB4E28B0CA4300023D90 /* ProductCollectionViewCell.xib */; };
+		ABB0338F28B1F66500813620 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0ACF7A8F5B79609CA6F7B8E1 /* Pods-Bunjang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bunjang.release.xcconfig"; path = "Target Support Files/Pods-Bunjang/Pods-Bunjang.release.xcconfig"; sourceTree = "<group>"; };
 		948260AFFE075CAB8FE22A5C /* Pods-Bunjang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bunjang.debug.xcconfig"; path = "Target Support Files/Pods-Bunjang/Pods-Bunjang.debug.xcconfig"; sourceTree = "<group>"; };
+		AB0039C228B21B06009932D8 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		AB0039C728B22DB6009932D8 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		AB0039CD28B24AC1009932D8 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		AB0039CF28B2589E009932D8 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		AB0039D128B2714D009932D8 /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
+		AB16402128B1359D0085CEC5 /* BrandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandTableViewCell.swift; sourceTree = "<group>"; };
+		AB16402228B1359D0085CEC5 /* BrandTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BrandTableViewCell.xib; sourceTree = "<group>"; };
+		AB16402528B138230085CEC5 /* SimpleProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB16402628B138230085CEC5 /* SimpleProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB1A3A4928B11F78001E47C7 /* CategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryData.swift; sourceTree = "<group>"; };
+		AB27EE4228B1C71400278C4D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AB3A4B1D28B0D6120071F9FF /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB3A4B1E28B0D6120071F9FF /* BannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB3A4B2128B0DDDA0071F9FF /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -47,6 +70,7 @@
 		AB70FB4A28B0C2F600023D90 /* TabSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSecondViewController.swift; sourceTree = "<group>"; };
 		AB70FB4D28B0CA4300023D90 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB70FB4E28B0CA4300023D90 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		CE161FE9BDC81E7C980CD2E4 /* Pods_Bunjang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bunjang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -77,6 +101,32 @@
 				0ACF7A8F5B79609CA6F7B8E1 /* Pods-Bunjang.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB0039C128B21AFB009932D8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AB0039C228B21B06009932D8 /* UIButton.swift */,
+				AB0039CD28B24AC1009932D8 /* UITextField.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AB0039C428B22AB8009932D8 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				AB0039CF28B2589E009932D8 /* AddViewController.swift */,
+				AB0039D128B2714D009932D8 /* OptionViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		AB16402928B1C68E0085CEC5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AB27EE4228B1C71400278C4D /* SearchViewController.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		AB578D5428B0A3EB00A00161 = {
@@ -123,6 +173,7 @@
 		AB578D7828B0A83000A00161 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				AB0039C128B21AFB009932D8 /* Extension */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -130,8 +181,11 @@
 		AB578D7928B0A83400A00161 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				AB0039C728B22DB6009932D8 /* TabBarViewController.swift */,
 				AB578D6628B0A3EB00A00161 /* Main.storyboard */,
 				AB578D7A28B0A87100A00161 /* Home */,
+				AB16402928B1C68E0085CEC5 /* Search */,
+				AB0039C428B22AB8009932D8 /* Add */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -143,6 +197,7 @@
 				AB70FB4628B0C2D300023D90 /* TabHomeViewController.swift */,
 				AB70FB4828B0C2EA00023D90 /* TabFirstViewController.swift */,
 				AB70FB4A28B0C2F600023D90 /* TabSecondViewController.swift */,
+				ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */,
 				AB70FB4C28B0C9F800023D90 /* Cell */,
 				AB578D8228B0AC8E00A00161 /* Entity */,
 			);
@@ -152,6 +207,7 @@
 		AB578D8228B0AC8E00A00161 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				AB1A3A4928B11F78001E47C7 /* CategoryData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -165,6 +221,10 @@
 				AB3A4B1E28B0D6120071F9FF /* BannerCollectionViewCell.xib */,
 				AB3A4B2128B0DDDA0071F9FF /* CategoryCollectionViewCell.swift */,
 				AB3A4B2228B0DDDA0071F9FF /* CategoryCollectionViewCell.xib */,
+				AB16402128B1359D0085CEC5 /* BrandTableViewCell.swift */,
+				AB16402228B1359D0085CEC5 /* BrandTableViewCell.xib */,
+				AB16402528B138230085CEC5 /* SimpleProductCollectionViewCell.swift */,
+				AB16402628B138230085CEC5 /* SimpleProductCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -233,7 +293,9 @@
 				AB578D7028B0A3EE00A00161 /* LaunchScreen.storyboard in Resources */,
 				AB578D6D28B0A3EE00A00161 /* Assets.xcassets in Resources */,
 				AB70FB5028B0CA4300023D90 /* ProductCollectionViewCell.xib in Resources */,
+				AB16402428B1359D0085CEC5 /* BrandTableViewCell.xib in Resources */,
 				AB578D6828B0A3EB00A00161 /* Main.storyboard in Resources */,
+				AB16402828B138230085CEC5 /* SimpleProductCollectionViewCell.xib in Resources */,
 				AB3A4B2028B0D6120071F9FF /* BannerCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,13 +350,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3A4B1F28B0D6120071F9FF /* BannerCollectionViewCell.swift in Sources */,
+				AB0039D228B2714D009932D8 /* OptionViewController.swift in Sources */,
+				AB16402328B1359D0085CEC5 /* BrandTableViewCell.swift in Sources */,
+				ABB0338F28B1F66500813620 /* ProductDetailViewController.swift in Sources */,
+				AB0039C828B22DB6009932D8 /* TabBarViewController.swift in Sources */,
+				AB0039C328B21B06009932D8 /* UIButton.swift in Sources */,
 				AB70FB4B28B0C2F600023D90 /* TabSecondViewController.swift in Sources */,
 				AB70FB4728B0C2D300023D90 /* TabHomeViewController.swift in Sources */,
 				AB70FB4F28B0CA4300023D90 /* ProductCollectionViewCell.swift in Sources */,
 				AB578D6B28B0A3EC00A00161 /* Bunjang.xcdatamodeld in Sources */,
+				AB0039D028B2589E009932D8 /* AddViewController.swift in Sources */,
+				AB0039CE28B24AC1009932D8 /* UITextField.swift in Sources */,
 				AB578D6128B0A3EB00A00161 /* AppDelegate.swift in Sources */,
+				AB16402728B138230085CEC5 /* SimpleProductCollectionViewCell.swift in Sources */,
+				AB27EE4328B1C71400278C4D /* SearchViewController.swift in Sources */,
 				AB3A4B2328B0DDDA0071F9FF /* CategoryCollectionViewCell.swift in Sources */,
 				AB578D6328B0A3EB00A00161 /* SceneDelegate.swift in Sources */,
+				AB1A3A4A28B11F78001E47C7 /* CategoryData.swift in Sources */,
 				AB578D7C28B0A89400A00161 /* HomeViewController.swift in Sources */,
 				AB70FB4928B0C2EA00023D90 /* TabFirstViewController.swift in Sources */,
 			);

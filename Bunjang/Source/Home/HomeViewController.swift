@@ -7,13 +7,23 @@
 
 import UIKit
 
+
+
 class HomeViewController: UIViewController {
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
-
+    @IBOutlet weak var indicatorBackground: UIView!
+    @IBOutlet weak var indicatorView: UIView!
+    @IBOutlet weak var backgroundScrollView: UIScrollView!
+    
+    let categoryData = CategoryData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         
+        navigationController?.navigationBar.shadowImage = UIImage()
+        backgroundScrollView.contentInsetAdjustmentBehavior = .never
+
         
         self.setCollectionView()
     }
@@ -68,9 +78,18 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         if collectionView == categoryCollectionView {
             guard let cell = self.categoryCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
+            
+            cell.imgView.image = UIImage(named: categoryData.homeCategory[indexPath.row].imageName)
+            cell.categoryNameLabel.text = categoryData.homeCategory[indexPath.row].categoryName
             return cell
             
         }
         return UICollectionViewCell()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == self.backgroundScrollView {
+            print("끝")
+        }
     }
 }
