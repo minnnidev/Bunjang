@@ -43,6 +43,7 @@ https://user-images.githubusercontent.com/108191001/185796249-6cd5d69f-b211-468f
     ❌ 미해결
       - 등록 화면 디테일 부족 ➡️ 완료
       - tab bar에서 등록 버튼 누를 시 modal 형식으로 나오는데 이를 구현하는 방법
+   
 </details>
 
 <details>
@@ -60,10 +61,13 @@ https://user-images.githubusercontent.com/108191001/185796249-6cd5d69f-b211-468f
       - collectionView 밑 horizontal indicator 부분 구현
       - 검색 화면은 push 되어 나오는 것처럼, 등록 화면은 modal 처럼 나옴 -> 구현 방법?
       - 옵션 선택 화면 디테일
+   
 </details>
 
 <details>
    <summary> 🍏 피드백 질문 </summary>
+
+https://user-images.githubusercontent.com/108191001/185930775-6359950e-c531-4d45-a70d-c270443a37ca.MP4
 
    1. tab bar의 검색 탭할 시 push 뷰컨으로 보임
    2. tab bar의 등록 버튼 탭할 시 modal present 형식으로 보임
