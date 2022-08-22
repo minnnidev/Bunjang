@@ -7,13 +7,13 @@ https://user-images.githubusercontent.com/108191001/185752099-8c16169c-60e7-4b61
 
     최종 목표: 홈 화면 구현 끝내기
     
-    ☑️ 완료한 부분
+    ☑️ 완료 
         - 카테고리 컬렉션 뷰 구현 완료
         - 배너 부분 구현 완료
         - tabman 이용하여 추천상품 탭, 추천상품 안에 컬렉션 뷰 구현 완료
         - tabman 이용하여 브랜드 탭 구현 완료
     
-    ❌ 문제점
+    ❌ 미해결
         - 배너 부분 자체는 구현 완료하였으나 navigation bar 부분과 어떻게 연결해야 할지 모르겠음 ➡️ 완료
         - 이때 스크롤 시 navigation bar custom 필요
         - 카테고리 컬렉션 뷰 밑 indicator 고민
@@ -34,13 +34,39 @@ https://user-images.githubusercontent.com/108191001/185796249-6cd5d69f-b211-468f
 
     최종 목표: 상품 상세 화면, 등록 화면, 검색 화면 UI구현 완료하기
     
-    ☑️ 완료한 부분
+    ☑️ 완료
       - 상품 선택 시 나오는 디테일 화면
       - 검색 화면 
       - 등록 화면 (디테일 부족)
         
     
-    ❌ 문제점
-      - 등록 화면 디테일 부족
+    ❌ 미해결
+      - 등록 화면 디테일 부족 ➡️ 완료
       - tab bar에서 등록 버튼 누를 시 modal 형식으로 나오는데 이를 구현하는 방법
+</details>
+
+<details>
+   <summary> 🍎 8.22 월 </summary>
+
+    최종 목표: 등록 화면 디테일, 홈 화면 배너
+    
+    ☑️ 완료
+      - 등록 화면 디테일 부분(태그 부분 제외)
+      - 배너 화면
+      - 스크롤 시 내비게이션 화면 커스텀
+        
+    
+    ❌ 미해결
+      - collectionView 밑 horizontal indicator 부분 구현
+      - 검색 화면은 push 되어 나오는 것처럼, 등록 화면은 modal 처럼 나옴 -> 구현 방법?
+      - 옵션 선택 화면 디테일
+</details>
+
+<details>
+   <summary> 🍏 피드백 질문 </summary>
+
+   1. tab bar의 검색 탭할 시 push 뷰컨으로 보임
+   2. tab bar의 등록 버튼 탭할 시 modal present 형식으로 보임
+   3. collectionView 밑의 indicator
+   
 </details>
