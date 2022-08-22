@@ -15,4 +15,13 @@ extension UIButton {
         attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: title.count))
         setAttributedTitle(attributedString, for: .normal)
     }
+    
+    func setButtonState(selectImage: UIImage, selectColor: UIColor, deselectImage: UIImage) {
+        if isSelected {
+            self.setImage(selectImage, for: .normal)
+            self.tintColor = selectColor
+        } else {
+            self.setImage(deselectImage, for: .normal)
+        }
+    }
 }

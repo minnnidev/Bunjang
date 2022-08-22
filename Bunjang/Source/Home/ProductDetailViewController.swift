@@ -16,12 +16,15 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var viewAllProductButton: UIButton!
     @IBOutlet weak var viewInquiryButton: UIButton!
+    @IBOutlet weak var isOldButtonView: UIButton!
+    @IBOutlet weak var quantityButtonView: UIButton!
+    @IBOutlet weak var shippingFeeButtonView: UIButton!
+    @IBOutlet weak var exchangeButtonView: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
         self.setCollectionView()
-        
     }
     
     private func configureView() {
@@ -39,6 +42,12 @@ class ProductDetailViewController: UIViewController {
         self.viewAllProductButton.layer.cornerRadius = 5
         
         self.viewInquiryButton.setUnderline() //밑줄
+        
+        //중고 - 수량 - 배송비 - 교환
+        self.isOldButtonView.layer.cornerRadius = 3
+        self.quantityButtonView.layer.cornerRadius = 3
+        self.shippingFeeButtonView.layer.cornerRadius = 3
+        self.exchangeButtonView.layer.cornerRadius = 3
     }
     
     private func setCollectionView() {

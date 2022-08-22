@@ -9,11 +9,12 @@ import UIKit
 
 class TabFirstViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
+    let itemDataManager = ItemDataManager()
+    var data: Result?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setCollectionView()
-        
     }
     
     private func setCollectionView() {
@@ -35,7 +36,7 @@ class TabFirstViewController: UIViewController {
 extension TabFirstViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

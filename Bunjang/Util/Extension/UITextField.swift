@@ -10,7 +10,7 @@ import UIKit
 extension UITextField {
     func setRegisterTextField(text: String) {
         self.borderStyle = .none
-        self.font = .systemFont(ofSize: 17, weight: .bold)
+        self.font = .systemFont(ofSize: 15, weight: .bold)
         self.attributedPlaceholder = NSAttributedString(string: text, attributes: [
             NSAttributedString.Key.foregroundColor : UIColor.lightGray])
         self.tintColor = .black

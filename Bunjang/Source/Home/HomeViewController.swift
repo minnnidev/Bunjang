@@ -6,48 +6,58 @@
 //
 
 import UIKit
-
+import ImageSlideshow
 
 
 class HomeViewController: UIViewController {
-    @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var indicatorBackground: UIView!
     @IBOutlet weak var indicatorView: UIView!
     @IBOutlet weak var backgroundScrollView: UIScrollView!
+    @IBOutlet weak var bannerImageView: ImageSlideshow!
+    @IBOutlet weak var barbellButton: UIBarButtonItem!
+    @IBOutlet weak var barMagnifyButton: UIBarButtonItem!
+    @IBOutlet weak var barMenuButton: UIBarButtonItem!
+    @IBOutlet weak var bannerPageView: UIView!
+    @IBOutlet weak var pageNumberLabel: UILabel!
+    
+    var bannerImages = [ImageSource(image: UIImage(named: "Banner1")!), ImageSource(image: UIImage(named: "Banner2")!), ImageSource(image: UIImage(named: "Banner3")!), ImageSource(image: UIImage(named: "Banner4")!)]
     
     let categoryData = CategoryData()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         
-        navigationController?.navigationBar.shadowImage = UIImage()
-        backgroundScrollView.contentInsetAdjustmentBehavior = .never
-
         
         self.setCollectionView()
+        self.configureView()
     }
     
+    
+    private func configureView() {
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.barTintColor = .white
+        backgroundScrollView.contentInsetAdjustmentBehavior = .never
+        
+        self.bannerImageView.pageIndicator = nil
+        self.bannerImageView.setImageInputs(bannerImages)
+        self.bannerImageView.contentScaleMode = .scaleAspectFill
+        self.bannerImageView.slideshowInterval = 2
+        self.bannerImageView.delegate = self
+        
+        self.backgroundScrollView.delegate = self
+        
+        self.bannerPageView.layer.cornerRadius = 5
+    }
+    
+    
     private func setCollectionView() {
-        
-        self.bannerCollectionView.delegate = self
-        self.bannerCollectionView.dataSource = self
-        
         self.categoryCollectionView.delegate = self
         self.categoryCollectionView.dataSource = self
         
         self.categoryCollectionView.contentInset = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
-      
-        self.bannerCollectionView.register(UINib(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "BannerCollectionViewCell")
-        
+    
         self.categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell") 
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: self.bannerCollectionView.frame.height)
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
-        bannerCollectionView.collectionViewLayout = flowLayout
         
         let secondFlowLayout = UICollectionViewFlowLayout()
         secondFlowLayout.scrollDirection = .horizontal
@@ -62,9 +72,6 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == bannerCollectionView {
-            return 10
-        }
         if collectionView == categoryCollectionView {
             return 14
         }
@@ -72,10 +79,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == bannerCollectionView {
-            guard let cell = self.bannerCollectionView.dequeueReusableCell(withReuseIdentifier: "BannerCollectionViewCell", for: indexPath) as? BannerCollectionViewCell else {return UICollectionViewCell()}
-            return cell
-        }
         if collectionView == categoryCollectionView {
             guard let cell = self.categoryCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
             
@@ -86,10 +89,34 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         return UICollectionViewCell()
     }
-    
+}
+
+extension HomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == self.backgroundScrollView {
-            print("끝")
+        if scrollView == backgroundScrollView {
+            
+            //스크롤에 따라 navigation bar 아이템 색상 변경
+            if scrollView.contentOffset.y <= 0 {
+                self.barMenuButton.tintColor = .white
+                self.barMagnifyButton.tintColor = .white
+                self.barbellButton.tintColor = .white
+            }
+            else if scrollView.contentOffset.y > 0 {
+                self.barMenuButton.tintColor = .black
+                self.barMagnifyButton.tintColor = .black
+                self.barbellButton.tintColor = .black
+            }
         }
+        
+        if scrollView == categoryCollectionView {
+     
+        }
+    }
+}
+
+extension HomeViewController: ImageSlideshowDelegate {
+    func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
+        //이미지가 변경될 때마다 배너 page label 변경
+        self.pageNumberLabel.text = "\(page+1)"
     }
 }
