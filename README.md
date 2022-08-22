@@ -48,6 +48,8 @@ https://user-images.githubusercontent.com/108191001/185796249-6cd5d69f-b211-468f
 
 <details>
    <summary> 🍎 8.22 월 </summary>
+   
+https://user-images.githubusercontent.com/108191001/185931317-7506625c-7a28-4382-b2c5-c1b5f8180f00.mov
 
     최종 목표: 등록 화면 디테일, 홈 화면 배너
     
