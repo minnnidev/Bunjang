@@ -80,3 +80,23 @@ https://user-images.githubusercontent.com/108191001/185930775-6359950e-c531-4d45
    7. 등록 화면 - 옵션 선택 화면 segmented control -> 버튼으로
    
 </details>
+
+<details>
+   <summary> 🍎 8.22 월 </summary>
+
+https://user-images.githubusercontent.com/108191001/186191373-64e58d23-0253-4c5f-a34c-274a4286a6fb.mov
+
+    최종 목표: 등록 화면 디테일, 피드백 부분 해결
+    
+    ☑️ 완료
+    - tab bar에서 등록 탭할 시 modal 형식으로 보여주기
+    - My tab: UI 구현
+    - 등록 tab: 옵션 선택 버튼 탭할 시 나오는 modal 창 디테일 변경
+    - 상품 조회 API 연동
+      
+       
+    ❌ 미해결
+    - tab bar에서 검색 화면 탭할 시 navigation push 형식으로 보여주기
+ 
+</details>
+
