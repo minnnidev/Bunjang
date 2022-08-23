@@ -7,19 +7,21 @@
 
 import UIKit
 
-struct ItemResponse: Decodable {
+// MARK: - ViewItemResponse
+struct ViewItemResponse: Decodable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: Result
+    let result: [Result]
 }
 
+// MARK: - Result
 struct Result: Decodable {
-    let price, name, location, time: String
-    let hit, stock, wish, chat: Int
+    let idx, price, name, location: String
+    let time, hit, stock, wish: String
+    let chat: String
     let delivery, exchange: Bool
-    let content, category: String
-    let brand, seller: Int
+    let content, category, brand, seller: String
     let status: String
     let tags: [String]
     let images: [String]

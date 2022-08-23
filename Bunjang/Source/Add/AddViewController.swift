@@ -18,7 +18,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var bungaePayDetailButton: UIButton!
     @IBOutlet weak var bungaePayButtonView: UIView!
-    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var stockLabel: UILabel!
     @IBOutlet weak var isOldLabel: UILabel!
     @IBOutlet weak var isExchangePossibleLabel: UILabel!
     @IBOutlet weak var checkmark: UIImageView!
@@ -73,7 +73,7 @@ class AddViewController: UIViewController {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
         vc.delegate = self
         self.isCategoryWritten = true
-        //self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func configureView() {
@@ -91,6 +91,11 @@ class AddViewController: UIViewController {
         self.registerButton.layer.cornerRadius = 8
         
         self.bungaePayDetailButton.setUnderline()
+    }
+    
+    
+    @IBAction func tapBackButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -115,12 +120,9 @@ class AddViewController: UIViewController {
     }
 }
 
-extension AddViewController: SendOption, SendCategoryDelegate {
+extension AddViewController: SendCategoryDelegate, OptionViewDelegate {
     func sendData(_ option: Option) {
-        self.option = option
-        
-        guard let option = self.option else {return}
-        self.quantityLabel.text = option.quantity
+        self.stockLabel.text = option.stock
         self.isOldLabel.text = option.isOldText
         self.isExchangePossibleLabel.text = option.isExchangePossibleText
     }
@@ -130,7 +132,6 @@ extension AddViewController: SendOption, SendCategoryDelegate {
         
         guard let category = self.category else {return}
         self.categoryNameLabel.text = category
-        
     }
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 struct Option {
-    var quantity: String
+    var stock: String
     var isOldText: String
     var isExchangePossibleText: String
 }

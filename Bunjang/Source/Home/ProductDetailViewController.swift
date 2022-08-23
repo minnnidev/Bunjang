@@ -17,9 +17,21 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var viewAllProductButton: UIButton!
     @IBOutlet weak var viewInquiryButton: UIButton!
     @IBOutlet weak var isOldButtonView: UIButton!
-    @IBOutlet weak var quantityButtonView: UIButton!
+    @IBOutlet weak var stockButtonView: UIButton!
     @IBOutlet weak var shippingFeeButtonView: UIButton!
     @IBOutlet weak var exchangeButtonView: UIButton!
+    
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var itemNameLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var hitLabel: UILabel!
+    @IBOutlet weak var wishLabel: UILabel!
+    @IBOutlet weak var chatLabel: UILabel!
+    @IBOutlet weak var contentView: UITextView!
+    
+    var result: Result?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +57,40 @@ class ProductDetailViewController: UIViewController {
         
         //중고 - 수량 - 배송비 - 교환
         self.isOldButtonView.layer.cornerRadius = 3
-        self.quantityButtonView.layer.cornerRadius = 3
+        self.stockButtonView.layer.cornerRadius = 3
         self.shippingFeeButtonView.layer.cornerRadius = 3
         self.exchangeButtonView.layer.cornerRadius = 3
+        
+        
+        //데이터 받아오기
+        guard let result = self.result else {return}
+        
+        self.priceLabel.text = result.price
+        self.itemNameLabel.text = result.name
+        self.locationLabel.text = result.location
+        self.dateLabel.text = result.time
+        self.hitLabel.text = result.hit
+        self.wishLabel.text = result.wish
+        self.chatLabel.text = result.chat
+        self.contentView.text = result.content
+        
+        let stock = result.stock
+        self.stockButtonView.setTitle("총 \(stock)개", for: .normal)
+        
+        //중고 or new
+        if result.new {
+            isOldButtonView.setTitle("새상품", for: .normal)
+        }
+        
+        //배송비포함 or 배송비 별도
+        if result.delivery {
+            shippingFeeButtonView.setTitle("배송비포함", for: .normal)
+        }
+        
+        //교환가능 or 교환 불가
+        if result.exchange {
+            exchangeButtonView.setTitle("교환가능", for: .normal)
+        }
     }
     
     private func setCollectionView() {

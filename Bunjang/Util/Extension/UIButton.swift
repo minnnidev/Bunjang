@@ -24,4 +24,18 @@ extension UIButton {
             self.setImage(deselectImage, for: .normal)
         }
     }
+    
+    func optionSelected() {
+        self.backgroundColor = UIColor(red: 255/255, green: 238/255, blue: 240/255, alpha: 1.0)
+        self.setTitleColor(.red, for: .normal)
+        self.layer.borderWidth = 0
+        self.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func optionDeselected() {
+        self.backgroundColor = .white
+        self.setTitleColor(.lightGray, for: .normal)
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(red: 228/255, green: 227/255, blue: 228/255, alpha: 1.0).cgColor
+    }
 }

@@ -10,11 +10,14 @@ import UIKit
 class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var heartView: UIView!
+    
     
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var wishNumberLabel: UILabel!
+    @IBOutlet weak var itemNameLabel: UILabel!
     
     var isHeart = false
     
