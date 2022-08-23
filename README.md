@@ -74,11 +74,11 @@ https://user-images.githubusercontent.com/108191001/185931317-7506625c-7a28-4382
 https://user-images.githubusercontent.com/108191001/185930775-6359950e-c531-4d45-a70d-c270443a37ca.MP4
 
    1. tab bar의 검색 탭할 시 push 뷰컨으로 보임
-   2. tab bar의 등록 버튼 탭할 시 modal present 형식으로 보임
-   3. collectionView 밑의 indicator 구현 방식
+   2. tab bar의 등록 버튼 탭할 시 modal present 형식으로 보임 -> 해결❗️
+   3. collectionView 밑의 indicator 구현 방식 -> 후순위❗️
    4. tab man 이용할 때, conainer view 사용 시 각 탭의 크기는 항상 같은가용?? (홈 화면의 추천상품 - 브랜드)
    5. tableView나 collectionView 크기에 따라 scrollView가 변하게 하고 싶다면...? (My 화면 판매중 - 예약중 - 판매 완료 부분) - 4번 관련
-   6. navigation bar uiview로 커스텀 storyboard
-   7. 등록 화면 - 옵션 선택 화면 segmented control
+   6. navigation bar uiview로 커스텀 storyboard -> ❌
+   7. 등록 화면 - 옵션 선택 화면 segmented control -> 버튼으로
    
 </details>
