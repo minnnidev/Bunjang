@@ -77,5 +77,6 @@ https://user-images.githubusercontent.com/108191001/185930775-6359950e-c531-4d45
    4. tab man 이용할 때, conainer view 사용 시 각 탭의 크기는 항상 같은가용?? (홈 화면의 추천상품 - 브랜드)
    5. tableView나 collectionView 크기에 따라 scrollView가 변하게 하고 싶다면...? (My 화면 판매중 - 예약중 - 판매 완료 부분) - 4번 관련
    6. navigation bar uiview로 커스텀 storyboard
+   7. 등록 화면 - 옵션 선택 화면 segmented control
    
 </details>
