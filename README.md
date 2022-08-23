@@ -1,11 +1,11 @@
 ## 개발일지
 
+<img width="338" alt="스크린샷 2022-08-23 오후 6 11 32" src="https://user-images.githubusercontent.com/108191001/186120102-bf6085a5-32c7-4235-b730-f089ad089096.png">
+
 <details>
    <summary> 🍎 8.20 토</summary>
     
 https://user-images.githubusercontent.com/108191001/185752099-8c16169c-60e7-4b61-9308-387ad5f228b4.mov
-
-<img width="338" alt="스크린샷 2022-08-23 오후 6 11 32" src="https://user-images.githubusercontent.com/108191001/186120102-bf6085a5-32c7-4235-b730-f089ad089096.png">
 
     최종 목표: 홈 화면 구현 끝내기
     
