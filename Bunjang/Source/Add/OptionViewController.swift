@@ -60,23 +60,12 @@ class OptionViewController: UIViewController {
     @IBAction func tapOldButton(_ sender: UIButton) {
         self.isOldText = "중고상품"
         
-        self.oldButton.backgroundColor = UIColor(red: 255/255, green: 238/255, blue: 240/255, alpha: 1.0)
-        self.oldButton.setTitleColor(.red, for: .normal)
-        
-        self.newButton.backgroundColor = .white
-        self.newButton.setTitleColor(.lightGray, for: .normal)
+        self.oldButton.optionSelected()
+        self.newButton.optionDeselected()
     }
     
     @IBAction func tapNewButton(_ sender: UIButton) {
         self.isOldText = "새상품"
-        
-        /*
-        self.newButton.backgroundColor = UIColor(red: 255/255, green: 238/255, blue: 240/255, alpha: 1.0)
-        self.newButton.setTitleColor(.red, for: .normal)
-        
-        self.oldButton.backgroundColor = .white
-        self.oldButton.setTitleColor(.lightGray, for: .normal)
-         */
         
         self.newButton.optionSelected()
         self.oldButton.optionDeselected()
@@ -86,24 +75,16 @@ class OptionViewController: UIViewController {
     @IBAction func tapNoExchangeButton(_ sender: UIButton) {
         self.isExchangePossibleText = "교환불가"
         
-        /*
-        self.exchangeNoButton.backgroundColor = UIColor(red: 255/255, green: 238/255, blue: 240/255, alpha: 1.0)
-        self.exchangeNoButton.setTitleColor(.red, for: .normal)
-        
-        self.exchangeYesButton.backgroundColor = .white
-        self.exchangeYesButton.setTitleColor(.lightGray, for: .normal)
-         */
+        self.exchangeNoButton.optionSelected()
+        self.exchangeYesButton.optionDeselected()
     }
     
     
     @IBAction func tapYesExchangeButton(_ sender: UIButton) {
         self.isExchangePossibleText = "교환가능"
         
-        self.exchangeYesButton.backgroundColor = UIColor(red: 255/255, green: 238/255, blue: 240/255, alpha: 1.0)
-        self.exchangeYesButton.setTitleColor(.red, for: .normal)
-        
-        self.exchangeNoButton.backgroundColor = .white
-        self.exchangeNoButton.setTitleColor(.lightGray, for: .normal)
+        self.exchangeYesButton.optionSelected()
+        self.exchangeNoButton.optionDeselected()
     }
     
     

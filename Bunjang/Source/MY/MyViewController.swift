@@ -22,23 +22,28 @@ class MyViewController: UIViewController {
     let tapMyDataManager = TapMyDataManager()
     var tapMyResponse: TapMyResponse?
     
+//MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.configureView()
-        //self.dataFetch()
+        self.dataFetch()
         
         let tapProfileGesture = UITapGestureRecognizer(target: self, action: #selector(tapProfileView))
         self.profileView.addGestureRecognizer(tapProfileGesture)
 
     }
     
+//MARK: - selector function
     @objc func tapProfileView() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "StateChangeViewController") as! StateChangeViewController
         self.presentPanModal(vc)
     }
     
+    
+//MARK: - private function
     private func dataFetch() {
+        
         //로그인 시 userIdx 받아옴
         tapMyDataManager.sendData(userIdx: 1) { [weak self] response in
             self?.tapMyResponse = response
@@ -68,7 +73,4 @@ class MyViewController: UIViewController {
         self.storeInquiryButton.layer.borderWidth = 1
         self.storeInquiryButton.layer.cornerRadius = 10
     }
-    
-
-
 }

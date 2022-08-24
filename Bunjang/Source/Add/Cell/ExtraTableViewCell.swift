@@ -2,7 +2,7 @@
 //  ExtraTableViewCell.swift
 //  Bunjang
 //
-//  Created by 김민 on 2022/08/22.
+//  Created by 김민 on 2022/08/23.
 //
 
 import UIKit

@@ -38,4 +38,13 @@ extension UIButton {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(red: 228/255, green: 227/255, blue: 228/255, alpha: 1.0).cgColor
     }
+    
+    func filterSelected() {
+        let color = UIColor(red: 215/255, green: 12/255, blue: 24/255, alpha: 1.0)
+        self.setTitleColor(color, for: .normal)
+    }
+    
+    func filterDeselected() {
+        self.setTitleColor(.lightGray, for: .normal)
+    }
 }

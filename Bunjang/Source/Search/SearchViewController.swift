@@ -19,6 +19,7 @@ class SearchViewController: UIViewController {
         
         self.bannerImage.layer.cornerRadius = 8
         self.configureSearchBar()
+        self.searchBar.delegate = self
         
         let singleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapMethod))
         singleTapGestureRecognizer.numberOfTapsRequired = 1
@@ -45,3 +46,11 @@ class SearchViewController: UIViewController {
     }
 }
 
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.view.endEditing(true)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "SearchResultViewController") as! SearchResultViewController
+        vc.searchWord = self.searchBar.text
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}

@@ -9,6 +9,13 @@ import UIKit
 
 class SimpleProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
+    @IBOutlet weak var bungaePayImage: UIImageView!
+    @IBOutlet weak var ADImageView: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
