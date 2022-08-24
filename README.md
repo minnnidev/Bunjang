@@ -99,3 +99,22 @@ https://user-images.githubusercontent.com/108191001/186191373-64e58d23-0253-4c5f
     - tab bar에서 검색 화면 탭할 시 navigation push 형식으로 보여주기
  
 </details>
+
+<details>
+   <summary> 🍎 8.24 화 </summary>
+
+
+    최종 목표: 상품 검색 API, 상품 디테일뷰 UI, 로그인 API 연동하기
+    
+    ☑️ 완료
+      - <상품 디테일뷰> tag 구현, 이미지 page indicator
+      - <검색 탭> 상품 검색 UI 완료  / 상품 검색 API 연동 완료
+      - <결제> 결제 탭 UI 구현 중
+      
+       
+    ❌ 미해결
+      - 로그인 API -> 지금 해도 되는 건지 아닌지 너무 애매... 함 ㅠ
+      - sticky header
+      - 검색 시 필터 버튼(정확도순/최신순 ... ~)  누를 시 나오는 보기 옵션에서 3열/2열/1열 옵션은 아직 구현하지 않음
+ 
+</details>
