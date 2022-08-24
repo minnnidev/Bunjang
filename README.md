@@ -82,7 +82,7 @@ https://user-images.githubusercontent.com/108191001/185930775-6359950e-c531-4d45
 </details>
 
 <details>
-   <summary> 🍎 8.22 월 </summary>
+   <summary> 🍎 8.23 월 </summary>
 
 https://user-images.githubusercontent.com/108191001/186191373-64e58d23-0253-4c5f-a34c-274a4286a6fb.mov
 
@@ -99,4 +99,3 @@ https://user-images.githubusercontent.com/108191001/186191373-64e58d23-0253-4c5f
     - tab bar에서 검색 화면 탭할 시 navigation push 형식으로 보여주기
  
 </details>
-
