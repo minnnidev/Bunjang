@@ -12,12 +12,19 @@ class SellingProductTableViewCell: UITableViewCell {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var itemPriceLabel: UILabel!
+    @IBOutlet weak var itemDateLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.sellFastButton.layer.borderWidth = 1
         self.sellFastButton.layer.borderColor = UIColor.black.cgColor
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

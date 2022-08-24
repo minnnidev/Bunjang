@@ -39,10 +39,10 @@ class OptionViewController: UIViewController {
         exchangeNoButton.layer.cornerRadius = 5
         exchangeYesButton.layer.cornerRadius = 5
         
-        newButton.layer.borderColor = UIColor(red: 228/255, green: 227/255, blue: 228/255, alpha: 1.0).cgColor
+        newButton.layer.borderColor = UIColor.borderGrayColor.cgColor
         newButton.layer.borderWidth = 1
         
-        exchangeYesButton.layer.borderColor = UIColor(red: 228/255, green: 227/255, blue: 228/255, alpha: 1.0).cgColor
+        exchangeYesButton.layer.borderColor = UIColor.borderGrayColor.cgColor
         exchangeYesButton.layer.borderWidth = 1
     }
     

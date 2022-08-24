@@ -80,9 +80,9 @@ class OptionFilterViewController: UIViewController {
         self.optionTwoButton.layer.cornerRadius = 5
         self.optionThreeButton.layer.cornerRadius = 5
         
-        self.optionTwoButton.layer.borderColor = UIColor(red: 228/255, green: 227/255, blue: 228/255, alpha: 1.0).cgColor
+        self.optionTwoButton.layer.borderColor = UIColor.borderGrayColor.cgColor
         self.optionTwoButton.layer.borderWidth = 1
-        self.optionOneButton.layer.borderColor = UIColor(red: 228/255, green: 227/255, blue: 228/255, alpha: 1.0).cgColor
+        self.optionOneButton.layer.borderColor = UIColor.borderGrayColor.cgColor
         self.optionOneButton.layer.borderWidth = 1
         
         self.completeButton.layer.cornerRadius = 8

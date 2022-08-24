@@ -11,28 +11,28 @@ class SellingViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var countLabel: UILabel!
     
-    let tapMyDataManager = TapMyDataManager()
-    var itemResponseList: [ItemsResponse] = []
-    
+    let dataManager = ViewSaleListDataManager()
+    var result: [ViewSaleResponse] = []
  
 //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.setTableView()
-        //self.fetchData()
+        self.fetchData()
     }
  
     
 //MARK: - Private function
     private func fetchData() {
         //로그인 시 userIdx 받아옴 - 지금은 예시!
-        tapMyDataManager.sendData(userIdx: 1) { response in
-            self.itemResponseList = response.itemsResponses
+        dataManager.getData(userIdx: 1, condition: "Y") { response in
+            self.result = response
             
             DispatchQueue.main.async {
-                self.countLabel.text = String(self.itemResponseList.count)
                 self.tableView.reloadData()
+                
+                self.countLabel.text = String(self.result.count)
             }
         }
     }
@@ -49,21 +49,27 @@ class SellingViewController: UIViewController {
 //MARK: - Extension
 extension SellingViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return self.itemResponseList.count
-        return 2
+        if self.result.count == 0 {
+            self.tableView.alpha = 0
+        } else {
+            self.tableView.alpha = 1
+        }
+        return self.result.count
+       
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "SellingProductTableViewCell", for: indexPath) as? SellingProductTableViewCell else {return UITableViewCell()}
         
-        //cell에 데이터 넣기
-        cell.itemNameLabel.text = self.itemResponseList[indexPath.row].itemName
-        cell.itemPriceLabel.text = self.itemResponseList[indexPath.row].price
+        //데이터 받아오기
+        cell.itemNameLabel.text = self.result[indexPath.row].itemName
+        cell.itemPriceLabel.text = self.result[indexPath.row].price
+        cell.itemDateLabel.text = self.result[indexPath.row].time
         
+        //이미지
         cell.itemImageView.kf.indicatorType = .activity
-        let url = URL(string: self.itemResponseList[indexPath.row].image)
-        cell.itemImageView.kf.setImage(with: url)
-
+        let data = URL(string: self.result[indexPath.row].image)
+        cell.itemImageView.kf.setImage(with: data)
         
         return cell
     }

@@ -67,7 +67,7 @@ class SearchResultViewController: UIViewController {
     
     private func datafetch() {
         guard let searchWord = self.searchWord else {return}
-        searchItemDataManager.getData(name: searchWord, sort: "C", count: 5) { response in
+        searchItemDataManager.getData(name: searchWord, sort: "R", count: 5) { response in
             self.resultList = response
             
             DispatchQueue.main.async {
@@ -88,23 +88,23 @@ class SearchResultViewController: UIViewController {
     private func configureView() {
         self.brandButton.layer.cornerRadius = 5
         self.brandButton.layer.borderWidth = 1
-        self.brandButton.layer.borderColor = UIColor(red: 229/255, green: 228/255, blue: 229/255, alpha: 1.0).cgColor
+        self.brandButton.layer.borderColor = UIColor.borderGrayColor.cgColor
         
         self.categoryButton.layer.cornerRadius = 5
         self.categoryButton.layer.borderWidth = 1
-        self.categoryButton.layer.borderColor = UIColor(red: 229/255, green: 228/255, blue: 229/255, alpha: 1.0).cgColor
+        self.categoryButton.layer.borderColor = UIColor.borderGrayColor.cgColor
         
         self.townButton.layer.cornerRadius = 5
         self.townButton.layer.borderWidth = 1
-        self.townButton.layer.borderColor = UIColor(red: 229/255, green: 228/255, blue: 229/255, alpha: 1.0).cgColor
+        self.townButton.layer.borderColor = UIColor.borderGrayColor.cgColor
         
         self.priceButton.layer.cornerRadius = 5
         self.priceButton.layer.borderWidth = 1
-        self.priceButton.layer.borderColor = UIColor(red: 229/255, green: 228/255, blue: 229/255, alpha: 1.0).cgColor
+        self.priceButton.layer.borderColor = UIColor.borderGrayColor.cgColor
         
         self.sellCompleteButton.layer.cornerRadius = 5
         self.sellCompleteButton.layer.borderWidth = 1
-        self.sellCompleteButton.layer.borderColor = UIColor(red: 229/255, green: 228/255, blue: 229/255, alpha: 1.0).cgColor
+        self.sellCompleteButton.layer.borderColor = UIColor.borderGrayColor.cgColor
     }
     
     private func setCollectionView() {

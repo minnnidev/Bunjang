@@ -10,7 +10,7 @@ import Alamofire
 
 class SearchDataManager {
     func getData(name: String, sort: String, count: Int, OnCompletion: @escaping ([SearchItemResult])->Void) {
-        let url = "https://makaroni.shop/item?name=\(name)&sort=\(sort)&count=\(count)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let url = "https://makaroni.shop/items?name=\(name)&sort=\(sort)&count=\(count)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         AF.request(url, method: .get).validate().responseDecodable(of: SearchItemResponse.self) { response in
                 switch response.result {
                     case .success(let data):

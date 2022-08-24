@@ -19,5 +19,6 @@ struct SearchItemResult: Decodable {
     let itemIdx, price, name: String
     let safePay: Bool
     let image: String
+    let status: String
     let ad: Bool
 }

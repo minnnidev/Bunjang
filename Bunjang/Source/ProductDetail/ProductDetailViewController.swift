@@ -8,6 +8,7 @@
 import UIKit
 import ImageSlideshow
 import Kingfisher
+import PanModal
 
 class ProductDetailViewController: UIViewController {
     @IBOutlet weak var cashBackBanner: UIView!
@@ -44,7 +45,8 @@ class ProductDetailViewController: UIViewController {
     var tagList: [String] = []
     var imageSlide: [ImageSource] = []
     
-     
+ 
+//MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
@@ -52,8 +54,9 @@ class ProductDetailViewController: UIViewController {
         self.fetchData()
     }
     
+//MARK: - Private function
     private func configureView() {
-        self.cashBackBanner.layer.borderColor = UIColor(red: 211/255, green: 211/255, blue: 211/255, alpha: 1.0).cgColor
+        self.cashBackBanner.layer.borderColor = UIColor.borderGrayColor.cgColor
         self.cashBackBanner.layer.borderWidth = 1
         self.cashBackBanner.layer.cornerRadius = 8
         
@@ -147,8 +150,15 @@ class ProductDetailViewController: UIViewController {
         
         self.tagCollectionView.register(UINib(nibName: "TagCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TagCollectionViewCell")
     }
+    
+//MARK: - Action
+    @IBAction func safePayButton(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TransactionOptionViewController") as! TransactionOptionViewController
+        self.presentPanModal(vc)
+    }
 }
 
+//MARK: - Extension: UICollectionView Delegate & DataSource
 extension ProductDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == storeProductCollectionView {
@@ -177,6 +187,7 @@ extension ProductDetailViewController: UICollectionViewDelegate, UICollectionVie
     }
 }
 
+//MARK: - Extension: UICollectionViewDelegateFlowLayout
 extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -198,6 +209,7 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - Extension: ImageSlideshowDelegate
 extension ProductDetailViewController: ImageSlideshowDelegate {
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
         //이미지가 변경될 때마다 배너 page label 변경
