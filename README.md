@@ -134,7 +134,7 @@ https://user-images.githubusercontent.com/108191001/186444372-29c94fa1-11e5-44a1
 </details>
 
 <details>
-   <summary> 🍎 8.23 월 </summary>
+   <summary> 🍎 8.25 목 </summary>
 
     최종 목표: 상품 디테일 뷰, my 탭
     아 중간에 레이아웃 깨지는 오류 나와서 상품 디테일 뷰 처음부터 다시 만들었다... 진짜 심장 배밖으로 나올 뻔
@@ -143,7 +143,9 @@ https://user-images.githubusercontent.com/108191001/186444372-29c94fa1-11e5-44a1
     <My 탭>
       - 사용자 판매중&예약중&판매 완료 UI
       - 사용자 판매 목록 조회 api 엮기
-      - state에 따라 이미지 변경
+      - state에 따라 이미지 변경 
+    <상품>
+       - 상점 화면 조회 api 엮기
 
     ❌ 미해결
     - 상점에서 상품을 조회하면 현재 클릭된 상품도 같이 나옴 -> 어떻게 할지 서버분이랑 이야기 나눠야 함
