@@ -70,9 +70,38 @@
                                     <constraint firstAttribute="width" constant="25" id="c6a-Ip-4sQ"/>
                                 </constraints>
                             </imageView>
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIm-aJ-FxX">
+                                <rect key="frame" x="0.0" y="0.0" width="208" height="231"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pl1-1K-1z7">
+                                        <rect key="frame" x="74" y="85.5" width="60" height="60"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="판매 완료" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVf-6R-nyG">
+                                                <rect key="frame" x="19" y="14.5" width="22.5" height="31.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="fVf-6R-nyG" firstAttribute="centerX" secondItem="Pl1-1K-1z7" secondAttribute="centerX" id="9RK-5W-dVq"/>
+                                            <constraint firstItem="fVf-6R-nyG" firstAttribute="centerY" secondItem="Pl1-1K-1z7" secondAttribute="centerY" id="ZdK-hM-S2B"/>
+                                            <constraint firstAttribute="width" constant="60" id="ePQ-AW-cPg"/>
+                                            <constraint firstAttribute="height" constant="60" id="fje-ZU-qmC"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Pl1-1K-1z7" firstAttribute="centerX" secondItem="aIm-aJ-FxX" secondAttribute="centerX" id="3yr-AN-XGs"/>
+                                    <constraint firstItem="Pl1-1K-1z7" firstAttribute="centerY" secondItem="aIm-aJ-FxX" secondAttribute="centerY" id="yDS-X4-DOI"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="aIm-aJ-FxX" firstAttribute="height" secondItem="nwN-0A-hbV" secondAttribute="height" id="05t-t7-Dig"/>
                             <constraint firstItem="xX0-SL-XtX" firstAttribute="leading" secondItem="Rjx-yv-jiF" secondAttribute="trailing" constant="1" id="4An-AJ-dzh"/>
                             <constraint firstItem="wZT-ow-E8n" firstAttribute="top" secondItem="nwN-0A-hbV" secondAttribute="bottom" constant="10" id="5Ro-Qq-yJT"/>
                             <constraint firstAttribute="trailing" secondItem="Dam-2u-6zc" secondAttribute="trailing" constant="5" id="C8Y-Dk-pIW"/>
@@ -84,10 +113,13 @@
                             <constraint firstItem="nwN-0A-hbV" firstAttribute="top" secondItem="PTc-2V-FX9" secondAttribute="top" id="ZUJ-oW-RAQ"/>
                             <constraint firstItem="qPc-W9-4MT" firstAttribute="leading" secondItem="wZT-ow-E8n" secondAttribute="trailing" id="Zrp-Zc-f3T"/>
                             <constraint firstItem="Dam-2u-6zc" firstAttribute="top" secondItem="PTc-2V-FX9" secondAttribute="top" constant="5" id="bsF-B0-ulU"/>
+                            <constraint firstItem="aIm-aJ-FxX" firstAttribute="width" secondItem="nwN-0A-hbV" secondAttribute="width" id="cZf-C4-Q8E"/>
                             <constraint firstItem="ZIf-QI-vbn" firstAttribute="leading" secondItem="PTc-2V-FX9" secondAttribute="leading" id="dAH-bs-TM7"/>
+                            <constraint firstItem="aIm-aJ-FxX" firstAttribute="centerX" secondItem="nwN-0A-hbV" secondAttribute="centerX" id="dAV-Df-VrS"/>
                             <constraint firstItem="qPc-W9-4MT" firstAttribute="centerY" secondItem="wZT-ow-E8n" secondAttribute="centerY" id="faS-3S-9aE"/>
                             <constraint firstAttribute="trailing" secondItem="nwN-0A-hbV" secondAttribute="trailing" id="kXX-pm-nbD"/>
                             <constraint firstAttribute="trailing" secondItem="ZIf-QI-vbn" secondAttribute="trailing" id="lAH-Kr-CAQ"/>
+                            <constraint firstItem="aIm-aJ-FxX" firstAttribute="centerY" secondItem="nwN-0A-hbV" secondAttribute="centerY" id="q8g-DR-NJQ"/>
                             <constraint firstItem="wZT-ow-E8n" firstAttribute="leading" secondItem="PTc-2V-FX9" secondAttribute="leading" id="wwL-dG-Y91"/>
                         </constraints>
                     </view>
@@ -107,6 +139,9 @@
                 <outlet property="imgView" destination="nwN-0A-hbV" id="jzC-HA-8Oz"/>
                 <outlet property="nameLabel" destination="ZIf-QI-vbn" id="TM8-VY-t8I"/>
                 <outlet property="priceLabel" destination="wZT-ow-E8n" id="QHO-1I-2JG"/>
+                <outlet property="stateCircleView" destination="Pl1-1K-1z7" id="XKu-Y4-NG8"/>
+                <outlet property="stateLabel" destination="fVf-6R-nyG" id="jA5-OW-bfI"/>
+                <outlet property="stateView" destination="aIm-aJ-FxX" id="Jab-9R-9id"/>
             </connections>
             <point key="canvasLocation" x="246.37681159420291" y="181.47321428571428"/>
         </collectionViewCell>

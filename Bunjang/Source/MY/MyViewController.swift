@@ -21,8 +21,20 @@ class MyViewController: UIViewController {
     
     let tapMyDataManager = TapMyDataManager()
     var tapMyResponse: TapMyResponse?
+    var modifyOption = false
     
 //MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if modifyOption {
+            //modifyOption = false
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ModifyViewController") as! ModifyViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+         
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,12 +43,12 @@ class MyViewController: UIViewController {
         
         let tapProfileGesture = UITapGestureRecognizer(target: self, action: #selector(tapProfileView))
         self.profileView.addGestureRecognizer(tapProfileGesture)
-
     }
     
 //MARK: - selector function
     @objc func tapProfileView() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "StateChangeViewController") as! StateChangeViewController
+        vc.delegate = self
         self.presentPanModal(vc)
     }
     
@@ -72,5 +84,11 @@ class MyViewController: UIViewController {
         self.storeInquiryButton.layer.borderColor = UIColor(red: 235/255, green: 233/255, blue: 242/255, alpha: 1.0).cgColor
         self.storeInquiryButton.layer.borderWidth = 1
         self.storeInquiryButton.layer.cornerRadius = 10
+    }
+}
+
+extension MyViewController: StateChangeViewDelegate {
+    func sendComplete(_ modifyOption: Bool) {
+        self.modifyOption = modifyOption
     }
 }

@@ -54,7 +54,7 @@ extension TabFirstViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell else {return UICollectionViewCell()}
         
-        
+    
         let data = self.result[indexPath.row]
         let url = URL(string: data.images[0])
         
@@ -79,7 +79,9 @@ extension TabFirstViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProductDetailViewController") as? ProductDetailViewController else {return}
         
-        vc.result = self.result[indexPath.row]
+        //vc.result = self.result[indexPath.row]
+        vc.itemIdx = self.result[indexPath.row].idx
+        vc.userIdx = self.result[indexPath.row].seller
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

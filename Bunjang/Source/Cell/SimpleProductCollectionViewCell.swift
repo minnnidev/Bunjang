@@ -12,16 +12,25 @@ class SimpleProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     
-    
     @IBOutlet weak var bungaePayImage: UIImageView!
     @IBOutlet weak var ADImageView: UIImageView!
+    
+    @IBOutlet weak var stateCircleView: UIView!
+    @IBOutlet weak var stateView: UIView!
+    @IBOutlet weak var stateLabel: UILabel!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
+        //default
         self.imgView.layer.cornerRadius = 7
+        
+        //state
+        self.stateCircleView.layer.borderColor = UIColor.white.cgColor
+        self.stateCircleView.layer.borderWidth = 2
+        self.stateCircleView.layer.cornerRadius = self.stateCircleView.frame.width/2
+        self.stateView.layer.cornerRadius = 7
     }
 
 }

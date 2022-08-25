@@ -67,7 +67,7 @@ class SearchResultViewController: UIViewController {
     
     private func datafetch() {
         guard let searchWord = self.searchWord else {return}
-        searchItemDataManager.getData(name: searchWord, sort: "R", count: 5) { response in
+        searchItemDataManager.getData(name: searchWord, sort: "C", count: 5) { response in
             self.resultList = response
             
             DispatchQueue.main.async {
@@ -155,6 +155,14 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         cell.imgView.kf.indicatorType = .activity
         cell.imgView.kf.setImage(with: url)
         
+        //예약 중이라면
+        if self.resultList[indexPath.row].status == "R" {
+            cell.stateView.isHidden = false
+            cell.stateLabel.text = "예약중"
+        } else if self.resultList[indexPath.row].status == "S" {
+            cell.stateView.isHidden = false
+        }
+        
         //safePay&AD
         if self.resultList[indexPath.row].safePay {
             cell.bungaePayImage.isHidden = false
@@ -165,6 +173,9 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
 }
 
