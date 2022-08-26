@@ -151,3 +151,25 @@ https://user-images.githubusercontent.com/108191001/186444372-29c94fa1-11e5-44a1
     - 상점에서 상품을 조회하면 현재 클릭된 상품도 같이 나옴 -> 어떻게 할지 서버분이랑 이야기 나눠야 함
  
 </details>
+
+<details>
+   <summary> 🍎 8.26 금 </summary>
+
+https://user-images.githubusercontent.com/108191001/186913816-d4d8f5b5-f470-4c55-9c67-c5fed8b6c27d.mov
+
+
+
+    
+    ☑️ 완료
+      - my 탭 - 프로필 탭 - 상태변경 UI 구현
+      - 상점 화면 출력 API 엮기
+      - 최근 본 상품 UI + 최근 본 상품 API 엮기
+      - 브랜드 보러가기 탭 이후 UI 구현 
+      - 브랜드 관련 API 엮기
+      - 브랜드 - 팔로우 API 엮기
+  
+    ❌ 미해결
+       - 회원 정보 수정을 해야 하는데 Patch 하는 게 너무 헷갈린다...! 
+       - 각종 navigation bar들 디테일과 정리 부족
+ 
+</details>
