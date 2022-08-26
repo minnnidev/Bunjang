@@ -170,14 +170,9 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         if self.resultList[indexPath.row].ad {
             cell.ADImageView.isHidden = false
         }
-        
-        
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    }
-}
+} 
 
 extension SearchResultViewController: OptionFilterViewDelegate {
     func sendData(_ order: Order) {

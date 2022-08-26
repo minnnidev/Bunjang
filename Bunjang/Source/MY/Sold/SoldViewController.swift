@@ -78,9 +78,7 @@ extension SoldViewController: UITableViewDelegate, UITableViewDataSource {
         //판매완료
         cell.statusView.isHidden = false
         cell.statusLabel.text = "판매완료"
-        cell.statusLabel.isHidden = false
         cell.statusImage.image = UIImage(systemName: "checkmark.circle")
-        cell.statusImage.isHidden = false
         
         return cell
     }

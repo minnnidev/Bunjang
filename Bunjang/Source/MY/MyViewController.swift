@@ -22,18 +22,21 @@ class MyViewController: UIViewController {
     let tapMyDataManager = TapMyDataManager()
     var tapMyResponse: TapMyResponse?
     var modifyOption = false
+    var userIdx = 1 // *** 현재 1이라고 가정!
     
 //MARK: - Lifecycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if modifyOption {
-            //modifyOption = false
+            modifyOption = false
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "ModifyViewController") as! ModifyViewController
             vc.modalPresentationStyle = .fullScreen
+            vc.userIdx = self.userIdx
             self.present(vc, animated: true, completion: nil)
         }
-         
     }
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +60,7 @@ class MyViewController: UIViewController {
     private func dataFetch() {
         
         //로그인 시 userIdx 받아옴
-        tapMyDataManager.sendData(userIdx: 1) { [weak self] response in
+        tapMyDataManager.sendData(userIdx: userIdx) { [weak self] response in
             self?.tapMyResponse = response
             guard let url = self?.tapMyResponse?.storeImage else {return}
             

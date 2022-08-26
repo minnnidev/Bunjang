@@ -10,7 +10,8 @@ import Alamofire
 
 class ViewItemDataManager {
     func sendData(onCompletion: @escaping ([Result]) -> Void) {
-        AF.request("https://makaroni.shop/items/all", method: .get).validate().responseDecodable(of: ViewItemResponse.self) { response in
+        let url = Constant.Base_URL+"/items/all"
+        AF.request(url, method: .get).validate().responseDecodable(of: ViewItemResponse.self) { response in
             switch response.result {
                 case .success(let data):
                     onCompletion(data.result)

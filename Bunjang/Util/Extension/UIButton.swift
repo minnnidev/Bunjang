@@ -48,5 +48,19 @@ extension UIButton {
         self.setTitleColor(.lightGray, for: .normal)
     }
     
+    func notFollow() {
+        self.setTitle("팔로우", for: .normal)
+        self.setTitleColor(.mainRedColor, for: .normal)
+        self.backgroundColor = UIColor(red: 254/255, green: 238/255, blue: 239/255, alpha: 1.0)
+        self.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func followed() {
+        self.setTitle("팔로잉", for: .normal)
+        self.setTitleColor(.darkGray, for: .normal)
+        self.backgroundColor = .white
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.borderGrayColor.cgColor
+    }
   
 }

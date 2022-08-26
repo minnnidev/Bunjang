@@ -89,6 +89,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "WishRecentViewController") as! WishRecentViewController
+            vc.index = 1
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension HomeViewController: UIScrollViewDelegate {
@@ -108,6 +116,7 @@ extension HomeViewController: UIScrollViewDelegate {
             }
         }
         
+        //collectionView 밑 indicator
         if scrollView == categoryCollectionView {
      
         }

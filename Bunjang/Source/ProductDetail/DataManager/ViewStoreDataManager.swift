@@ -10,7 +10,8 @@ import Alamofire
 
 class ViewStoreDataManager {
     func getData(userIdx: String, onCompletion: @escaping (ViewStoreResponse)->Void) {
-        AF.request("https://makaroni.shop/users/stores/\(userIdx)", method: .get)
+        let url = Constant.Base_URL+"/users/stores/\(userIdx)"
+        AF.request(url, method: .get)
             .validate().responseDecodable(of: ViewStoreResponse.self) { response in
                 switch response.result {
                     case .success(let data):

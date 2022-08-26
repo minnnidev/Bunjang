@@ -74,9 +74,7 @@ extension ReservedViewController: UITableViewDelegate, UITableViewDataSource {
         
         //예약중 이미지 보여주기
         cell.statusView.isHidden = false
-        cell.statusLabel.isHidden = false
-        cell.statusImage.isHidden = false
-        
+      
         return cell
     }
     

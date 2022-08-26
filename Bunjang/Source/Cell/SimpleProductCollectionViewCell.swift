@@ -32,5 +32,9 @@ class SimpleProductCollectionViewCell: UICollectionViewCell {
         self.stateCircleView.layer.cornerRadius = self.stateCircleView.frame.width/2
         self.stateView.layer.cornerRadius = 7
     }
+    
+    override func prepareForReuse() {
+        self.stateView.isHidden = true
+    }
 
 }

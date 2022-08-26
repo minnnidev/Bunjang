@@ -33,4 +33,8 @@ class SellingProductTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
+    override func prepareForReuse() {
+        self.statusView.isHidden = true
+    }
+    
 }
