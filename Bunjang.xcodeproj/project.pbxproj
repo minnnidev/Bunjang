@@ -38,6 +38,8 @@
 		AB3A4B2028B0D6120071F9FF /* BannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3A4B1E28B0D6120071F9FF /* BannerCollectionViewCell.xib */; };
 		AB3A4B2328B0DDDA0071F9FF /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A4B2128B0DDDA0071F9FF /* CategoryCollectionViewCell.swift */; };
 		AB3A4B2428B0DDDA0071F9FF /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3A4B2228B0DDDA0071F9FF /* CategoryCollectionViewCell.xib */; };
+		AB3EC69028B915DE00417D44 /* ModifyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EC68F28B915DE00417D44 /* ModifyInfoResponse.swift */; };
+		AB3EC69228B9162800417D44 /* ModifyInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EC69128B9162800417D44 /* ModifyInfoDataManager.swift */; };
 		AB425CAF28B4B0C100A37FEF /* ViewItemDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB425CAE28B4B0C100A37FEF /* ViewItemDataManager.swift */; };
 		AB425CB128B4CCA500A37FEF /* StateChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB425CB028B4CCA500A37FEF /* StateChangeViewController.swift */; };
 		AB425CB328B4EC0300A37FEF /* AddNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB425CB228B4EC0300A37FEF /* AddNavigationViewController.swift */; };
@@ -140,6 +142,8 @@
 		AB3A4B1E28B0D6120071F9FF /* BannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB3A4B2128B0DDDA0071F9FF /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB3A4B2228B0DDDA0071F9FF /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB3EC68F28B915DE00417D44 /* ModifyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyInfoResponse.swift; sourceTree = "<group>"; };
+		AB3EC69128B9162800417D44 /* ModifyInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyInfoDataManager.swift; sourceTree = "<group>"; };
 		AB425CAE28B4B0C100A37FEF /* ViewItemDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewItemDataManager.swift; sourceTree = "<group>"; };
 		AB425CB028B4CCA500A37FEF /* StateChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateChangeViewController.swift; sourceTree = "<group>"; };
 		AB425CB228B4EC0300A37FEF /* AddNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNavigationViewController.swift; sourceTree = "<group>"; };
@@ -491,6 +495,7 @@
 			children = (
 				AB70BA1B28B4A18F00DF09B0 /* TapMyDataManager.swift */,
 				AB0C294D28B698740054CCA2 /* ViewSaleListDataManager.swift */,
+				AB3EC69128B9162800417D44 /* ModifyInfoDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 			children = (
 				AB70BA1928B4A0F800DF09B0 /* TapMyResponse.swift */,
 				AB0C294B28B6977F0054CCA2 /* ViewSaleListResponse.swift */,
+				AB3EC68F28B915DE00417D44 /* ModifyInfoResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -830,6 +836,7 @@
 				AB0C294E28B698740054CCA2 /* ViewSaleListDataManager.swift in Sources */,
 				ABFDA7FE28B7E1C9002D876B /* RecentViewController.swift in Sources */,
 				ABBA72AA28B60A0500C92991 /* SearchItemDataManager.swift in Sources */,
+				AB3EC69228B9162800417D44 /* ModifyInfoDataManager.swift in Sources */,
 				AB3A4B1F28B0D6120071F9FF /* BannerCollectionViewCell.swift in Sources */,
 				AB0039D228B2714D009932D8 /* OptionViewController.swift in Sources */,
 				AB8A3B3628B7DA9E003D4573 /* Constant.swift in Sources */,
@@ -870,6 +877,7 @@
 				ABFDA7FA28B7E104002D876B /* WishRecentViewController.swift in Sources */,
 				AB70FB4F28B0CA4300023D90 /* ProductCollectionViewCell.swift in Sources */,
 				AB578D6B28B0A3EC00A00161 /* Bunjang.xcdatamodeld in Sources */,
+				AB3EC69028B915DE00417D44 /* ModifyInfoResponse.swift in Sources */,
 				AB31E6EA28B5472A00A54D82 /* SignInDataManager.swift in Sources */,
 				ABBA72B428B65B5800C92991 /* LoginViewController.swift in Sources */,
 				AB8A3B2828B76A4C003D4573 /* ReviewCollectionViewCell.swift in Sources */,

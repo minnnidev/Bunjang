@@ -25,18 +25,10 @@ class MyViewController: UIViewController {
     var userIdx = 1 // *** 현재 1이라고 가정!
     
 //MARK: - Lifecycle
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if modifyOption {
-            modifyOption = false
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ModifyViewController") as! ModifyViewController
-            vc.modalPresentationStyle = .fullScreen
-            vc.userIdx = self.userIdx
-            self.present(vc, animated: true, completion: nil)
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.dataFetch()
     }
-     
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +40,18 @@ class MyViewController: UIViewController {
         self.profileView.addGestureRecognizer(tapProfileGesture)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if modifyOption {
+            modifyOption = false
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ModifyViewController") as! ModifyViewController
+            vc.modalPresentationStyle = .fullScreen
+            vc.userIdx = self.userIdx
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+    
+    
 //MARK: - selector function
     @objc func tapProfileView() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "StateChangeViewController") as! StateChangeViewController
@@ -58,7 +62,6 @@ class MyViewController: UIViewController {
     
 //MARK: - private function
     private func dataFetch() {
-        
         //로그인 시 userIdx 받아옴
         tapMyDataManager.sendData(userIdx: userIdx) { [weak self] response in
             self?.tapMyResponse = response

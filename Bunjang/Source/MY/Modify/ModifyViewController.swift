@@ -20,12 +20,13 @@ class ModifyViewController: UIViewController {
     @IBOutlet weak var viewDetailButton: UIButton!
     @IBOutlet weak var storeNameTextField: UITextField!
     @IBOutlet weak var storeAddressTextField: UITextField!
-    
-    
+    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var backgroundScrollView: UIScrollView!
     
     var userIdx: Int?
     let viewStoreDataManager = ViewStoreDataManager()
     var viewStoreResponse: ViewStoreResponse?
+    let modifyInfoDataManager = ModifyInfoDataManager()
     
     
 //MARK: - Lifecycle
@@ -49,7 +50,6 @@ class ModifyViewController: UIViewController {
     }
     
 //MARK: - private function
-    
     private func setGesture() {
         let firstGesture = UITapGestureRecognizer(target: self, action: #selector(tapFirst))
         self.descriptionView.addGestureRecognizer(firstGesture)
@@ -64,6 +64,8 @@ class ModifyViewController: UIViewController {
     private func configureView() {
         self.storeImageView.layer.cornerRadius = self.storeImageView.frame.width/2
         self.viewDetailButton.setUnderline()
+        
+        self.backgroundScrollView.delegate = self
     }
     
 //MARK: - objc function
@@ -95,8 +97,25 @@ class ModifyViewController: UIViewController {
     
     
     @IBAction func tapCompleteButton(_ sender: UIButton) {
-        //저장 - Patch
-    }
+        //저장 - Patch - String들
+        guard let userIdx = self.userIdx else {return}
+        guard let storeName = self.storeNameTextField.text else {return}
+        guard let description = self.descriptionLabel.text else {return}
+        guard let policy = self.policyLabel.text else {return}
+        guard let precaution = self.precautionLabel.text else {return}
+    
+        let parameters = [
+            "storeName": storeName,
+            "description": description,
+            "policy": policy,
+            "precaution": precaution
+        ]
+        
+        modifyInfoDataManager.patchInfoString(userIdx: 1, parameters: parameters) { response in
+            print("수정한 부분 patch")
+            self.dismiss(animated: true, completion: nil)
+        }
+    } 
     
 }
 
@@ -116,5 +135,11 @@ extension ModifyViewController: DescriptionViewDelegate, PolicyViewDelegate, Pre
     func sendPrecaution(precaution: String) {
         self.precautionLabel.text = precaution
         self.precautionLabel.textColor = .darkGray
+    }
+}
+
+extension ModifyViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
     }
 }
