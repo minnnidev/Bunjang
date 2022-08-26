@@ -161,10 +161,8 @@ https://user-images.githubusercontent.com/108191001/186915154-b0c10867-49bd-43f5
 
 https://user-images.githubusercontent.com/108191001/186915269-e15b43fa-8345-4fab-926c-601e4f03ff42.mov
 
+https://user-images.githubusercontent.com/108191001/186915711-3fd258b7-8abd-40e5-93a2-c859e8c94678.mov
 
-
-
-    
     ☑️ 완료
       - my 탭 - 프로필 탭 - 상태변경 UI 구현
       - 상점 화면 출력 API 엮기
