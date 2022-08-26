@@ -155,7 +155,12 @@ https://user-images.githubusercontent.com/108191001/186444372-29c94fa1-11e5-44a1
 <details>
    <summary> 🍎 8.26 금 </summary>
 
-https://user-images.githubusercontent.com/108191001/186913816-d4d8f5b5-f470-4c55-9c67-c5fed8b6c27d.mov
+https://user-images.githubusercontent.com/108191001/186914546-1f639940-0df2-4c77-aed4-fc24c8d61e87.mov
+
+https://user-images.githubusercontent.com/108191001/186915154-b0c10867-49bd-43f5-9204-b8d22e58952c.mov
+
+https://user-images.githubusercontent.com/108191001/186915269-e15b43fa-8345-4fab-926c-601e4f03ff42.mov
+
 
 
 
