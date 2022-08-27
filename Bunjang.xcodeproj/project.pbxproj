@@ -47,6 +47,12 @@
 		AB425CBA28B51E5200A37FEF /* ExtraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB425CB828B51E5200A37FEF /* ExtraTableViewCell.swift */; };
 		AB425CBB28B51E5200A37FEF /* ExtraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB425CB928B51E5200A37FEF /* ExtraTableViewCell.xib */; };
 		AB425CBE28B5230700A37FEF /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB425CBD28B5230700A37FEF /* FirstLoginViewController.swift */; };
+		AB47772328B9C39200B18B96 /* AddCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47772228B9C39200B18B96 /* AddCategory.swift */; };
+		AB47772528B9CAC700B18B96 /* SecondCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47772428B9CAC700B18B96 /* SecondCategoryViewController.swift */; };
+		AB47772728B9DA7400B18B96 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47772628B9DA7400B18B96 /* TagViewController.swift */; };
+		AB47772928B9ED4500B18B96 /* AddResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47772828B9ED4500B18B96 /* AddResponse.swift */; };
+		AB47772D28B9ED9500B18B96 /* AddDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47772C28B9ED9500B18B96 /* AddDataManager.swift */; };
+		AB47772F28B9EE1C00B18B96 /* AddRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB47772E28B9EE1C00B18B96 /* AddRequest.swift */; };
 		AB478E8528B663CA002BE1CA /* TransactionOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB478E8428B663CA002BE1CA /* TransactionOptionViewController.swift */; };
 		AB4F161628B5CD0F0081386F /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F161428B5CD0F0081386F /* TagCollectionViewCell.swift */; };
 		AB4F161728B5CD0F0081386F /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4F161528B5CD0F0081386F /* TagCollectionViewCell.xib */; };
@@ -93,6 +99,7 @@
 		AB916B3028B35DFB00FFC68F /* LabelPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB916B2F28B35DFB00FFC68F /* LabelPageIndicator.swift */; };
 		AB916B3628B38DA800FFC68F /* ViewItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB916B3528B38DA800FFC68F /* ViewItemResponse.swift */; };
 		ABB0338F28B1F66500813620 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */; };
+		ABB041D528BA092700E38CA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABB041D428BA092700E38CA3 /* GoogleService-Info.plist */; };
 		ABBA72A428B5DFDD00C92991 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A328B5DFDD00C92991 /* SearchResultViewController.swift */; };
 		ABBA72A728B608B100C92991 /* SearchItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A628B608B100C92991 /* SearchItemResponse.swift */; };
 		ABBA72AA28B60A0500C92991 /* SearchItemDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A928B60A0500C92991 /* SearchItemDataManager.swift */; };
@@ -151,6 +158,12 @@
 		AB425CB828B51E5200A37FEF /* ExtraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraTableViewCell.swift; sourceTree = "<group>"; };
 		AB425CB928B51E5200A37FEF /* ExtraTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExtraTableViewCell.xib; sourceTree = "<group>"; };
 		AB425CBD28B5230700A37FEF /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
+		AB47772228B9C39200B18B96 /* AddCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategory.swift; sourceTree = "<group>"; };
+		AB47772428B9CAC700B18B96 /* SecondCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCategoryViewController.swift; sourceTree = "<group>"; };
+		AB47772628B9DA7400B18B96 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		AB47772828B9ED4500B18B96 /* AddResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResponse.swift; sourceTree = "<group>"; };
+		AB47772C28B9ED9500B18B96 /* AddDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataManager.swift; sourceTree = "<group>"; };
+		AB47772E28B9EE1C00B18B96 /* AddRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRequest.swift; sourceTree = "<group>"; };
 		AB478E8428B663CA002BE1CA /* TransactionOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionOptionViewController.swift; sourceTree = "<group>"; };
 		AB4F161428B5CD0F0081386F /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB4F161528B5CD0F0081386F /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -199,6 +212,7 @@
 		AB916B2F28B35DFB00FFC68F /* LabelPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPageIndicator.swift; sourceTree = "<group>"; };
 		AB916B3528B38DA800FFC68F /* ViewItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewItemResponse.swift; sourceTree = "<group>"; };
 		ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		ABB041D428BA092700E38CA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABBA72A328B5DFDD00C92991 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		ABBA72A628B608B100C92991 /* SearchItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemResponse.swift; sourceTree = "<group>"; };
 		ABBA72A928B60A0500C92991 /* SearchItemDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemDataManager.swift; sourceTree = "<group>"; };
@@ -262,9 +276,12 @@
 			children = (
 				AB0039CF28B2589E009932D8 /* AddViewController.swift */,
 				AB0039D128B2714D009932D8 /* OptionViewController.swift */,
-				AB0039D828B2889B009932D8 /* Cell */,
-				AB0039D328B281C1009932D8 /* Entity */,
 				AB0039D628B2872A009932D8 /* CategoryViewController.swift */,
+				AB47772428B9CAC700B18B96 /* SecondCategoryViewController.swift */,
+				AB0039D828B2889B009932D8 /* Cell */,
+				AB941D6728B9382C00F276C3 /* DataManager */,
+				AB0039D328B281C1009932D8 /* Entity */,
+				AB47772628B9DA7400B18B96 /* TagViewController.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -273,6 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				AB0039D428B281DA009932D8 /* Option.swift */,
+				AB47772228B9C39200B18B96 /* AddCategory.swift */,
+				AB47772828B9ED4500B18B96 /* AddResponse.swift */,
+				AB47772E28B9EE1C00B18B96 /* AddRequest.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -377,6 +397,7 @@
 				AB578D6C28B0A3EE00A00161 /* Assets.xcassets */,
 				AB578D6E28B0A3EE00A00161 /* LaunchScreen.storyboard */,
 				AB578D7128B0A3EE00A00161 /* Info.plist */,
+				ABB041D428BA092700E38CA3 /* GoogleService-Info.plist */,
 				AB578D6928B0A3EB00A00161 /* Bunjang.xcdatamodeld */,
 			);
 			path = Bunjang;
@@ -618,6 +639,14 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		AB941D6728B9382C00F276C3 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				AB47772C28B9ED9500B18B96 /* AddDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		ABBA72A528B607DA00C92991 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,6 +805,7 @@
 				AB16402428B1359D0085CEC5 /* BrandTableViewCell.xib in Resources */,
 				AB8A3B2928B76A4C003D4573 /* ReviewCollectionViewCell.xib in Resources */,
 				AB53A11628B89CB9001BCDB7 /* SimpleBrandTableViewCell.xib in Resources */,
+				ABB041D528BA092700E38CA3 /* GoogleService-Info.plist in Resources */,
 				AB70BA1628B4979C00DF09B0 /* SellingProductTableViewCell.xib in Resources */,
 				AB578D6828B0A3EB00A00161 /* Main.storyboard in Resources */,
 				AB4F161728B5CD0F0081386F /* TagCollectionViewCell.xib in Resources */,
@@ -851,6 +881,7 @@
 				AB53A11528B89CB9001BCDB7 /* SimpleBrandTableViewCell.swift in Sources */,
 				AB0C294C28B6977F0054CCA2 /* ViewSaleListResponse.swift in Sources */,
 				AB16402328B1359D0085CEC5 /* BrandTableViewCell.swift in Sources */,
+				AB47772328B9C39200B18B96 /* AddCategory.swift in Sources */,
 				AB8A3B3228B7C656003D4573 /* PolicyViewController.swift in Sources */,
 				AB425CB328B4EC0300A37FEF /* AddNavigationViewController.swift in Sources */,
 				ABBA72A728B608B100C92991 /* SearchItemResponse.swift in Sources */,
@@ -868,6 +899,7 @@
 				AB70BA1C28B4A18F00DF09B0 /* TapMyDataManager.swift in Sources */,
 				AB8FA5FC28B8ACE800675ADB /* FollowingBrandResponse.swift in Sources */,
 				AB194FBF28B72ACE00FA5A07 /* EachItemDataManager.swift in Sources */,
+				AB47772928B9ED4500B18B96 /* AddResponse.swift in Sources */,
 				AB31E6E728B5450800A54D82 /* SignInRequest.swift in Sources */,
 				ABBA72AC28B60BEB00C92991 /* String.swift in Sources */,
 				AB70FB4728B0C2D300023D90 /* TabHomeViewController.swift in Sources */,
@@ -890,8 +922,11 @@
 				AB194FBD28B7298800FA5A07 /* EachItemResponse.swift in Sources */,
 				AB16402728B138230085CEC5 /* SimpleProductCollectionViewCell.swift in Sources */,
 				AB425CBA28B51E5200A37FEF /* ExtraTableViewCell.swift in Sources */,
+				AB47772D28B9ED9500B18B96 /* AddDataManager.swift in Sources */,
 				AB8FA60228B8CEFC00675ADB /* BrandSearchViewController.swift in Sources */,
 				AB70BA0B28B48D5D00DF09B0 /* MyHomeViewController.swift in Sources */,
+				AB47772728B9DA7400B18B96 /* TagViewController.swift in Sources */,
+				AB47772F28B9EE1C00B18B96 /* AddRequest.swift in Sources */,
 				AB27EE4328B1C71400278C4D /* SearchViewController.swift in Sources */,
 				ABFDA80228B7E54D002D876B /* RecentCollectionViewCell.swift in Sources */,
 				AB425CB728B4ECED00A37FEF /* SearchNavigationViewController.swift in Sources */,
@@ -903,6 +938,7 @@
 				ABBA72B028B61E9E00C92991 /* OptionFilterViewController.swift in Sources */,
 				AB72B7FE28B7E87F00C23DE3 /* RecentItemDataManager.swift in Sources */,
 				AB72B7FC28B7E85200C23DE3 /* RecentItemResponse.swift in Sources */,
+				AB47772528B9CAC700B18B96 /* SecondCategoryViewController.swift in Sources */,
 				ABBA72B228B6441B00C92991 /* BrandListViewController.swift in Sources */,
 				AB425CB128B4CCA500A37FEF /* StateChangeViewController.swift in Sources */,
 				AB8FA5F828B8A22A00675ADB /* BrandListResponse.swift in Sources */,

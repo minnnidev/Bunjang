@@ -7,14 +7,15 @@
 
 import UIKit
 import PanModal
+import Alamofire
+import FirebaseStorage
 
 class AddViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var selectCategoryView: UIView!
     @IBOutlet weak var selectTagView: UIView!
-    @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var selectOptionButton: UIButton!
-    @IBOutlet weak var contentTextField: UITextView!
+    @IBOutlet weak var contentTextView: UITextView!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var bungaePayDetailButton: UIButton!
     @IBOutlet weak var bungaePayButtonView: UIView!
@@ -26,30 +27,67 @@ class AddViewController: UIViewController {
     @IBOutlet weak var categoryNameLabel: UILabel!
     @IBOutlet weak var goToAlbumButton: UIView!
     @IBOutlet weak var getImageView: UIImageView!
+    @IBOutlet weak var tagLabel: UILabel!
+   
+    @IBOutlet weak var backgroundScrollView: UIScrollView!
     
+    @IBOutlet weak var priceField: UITextField!
+    
+
     var option: Option?
     var category: String?
     var isBungaePayOK = true
     var isNotIncludeShippingFee = true
     var isCategoryWritten = false
     let imagePicker = UIImagePickerController()
+    var arrayOfImages: [String] = []
+    var categoryCode: String?
+    var tags: [String] = []
+    
+    let addManager = AddManager()
+    let storage = Storage.storage()
+    
+    var imageCount = 1
+    var delivery =  0
+    var stock: Int?
+    var isNew = 0
+    var exchange = 0
+    var safePay = 1
+    var isAd = 0
+    var inspection = 1
+    
+    
+//MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        self.setGesture()
+        self.setImagePicker()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapCategoryView))
-        self.selectCategoryView.addGestureRecognizer(tapGesture)
+        self.imageCount = UserDefaults.standard.integer(forKey: "imageCount")
+        print("imageCount: ", imageCount)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        let payTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapPayView))
-        self.bungaePayButtonView.addGestureRecognizer(payTapGesture)
-        
-        let albumTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAlbumView))
-        self.goToAlbumButton.addGestureRecognizer(albumTapGesture)
-        
-        self.imagePicker.delegate = self
-        self.imagePicker.allowsEditing = true
-        self.imagePicker.sourceType = .photoLibrary
+        NotificationCenter.default.addObserver(self, selector: #selector(categoryNotification(_:)), name: NSNotification.Name("test"), object: nil)
+    }
+    
+    
+//MARK: - objc function
+    @objc func categoryNotification(_ notification: Notification) {
+        //수정된 diary 객체를 전달받아 뷰를 업데이트
+        guard let categoryCode = notification.object as? CategoryCode else {return}
+        self.categoryNameLabel.text = categoryCode.categoryName
+        self.categoryCode = categoryCode.categoryCode
+        self.categoryNameLabel.textColor = .black
+    
     }
     
     @objc func tapAlbumView() {
@@ -71,14 +109,21 @@ class AddViewController: UIViewController {
     
     @objc func tapCategoryView() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
-        vc.delegate = self
         self.isCategoryWritten = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc func tapTagView() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TagViewController") as! TagViewController
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+//MARK: - private function
     private func configureView() {
         self.nameTextField.setRegisterTextField(text: "상품명")
-        self.priceTextField.setRegisterTextField(text: "가격")
+        //self.priceTextField.setRegisterTextField(text: "가격")
         
         self.selectOptionButton.layer.borderColor = UIColor(red: 211/255, green: 211/255, blue: 211/255, alpha: 1.0).cgColor
         self.selectOptionButton.layer.borderWidth = 1
@@ -91,8 +136,62 @@ class AddViewController: UIViewController {
         self.registerButton.layer.cornerRadius = 8
         
         self.bungaePayDetailButton.setUnderline()
+        
+        self.backgroundScrollView.delegate = self
     }
     
+    private func setGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapCategoryView))
+        self.selectCategoryView.addGestureRecognizer(tapGesture)
+        
+        let payTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapPayView))
+        self.bungaePayButtonView.addGestureRecognizer(payTapGesture)
+        
+        let albumTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAlbumView))
+        self.goToAlbumButton.addGestureRecognizer(albumTapGesture)
+        
+        let tagTapGesture = UITapGestureRecognizer(target: self, action: #selector(tapTagView))
+        self.selectTagView.addGestureRecognizer(tagTapGesture)
+    }
+    
+    private func setImagePicker() {
+        self.imagePicker.delegate = self
+        self.imagePicker.allowsEditing = true
+        self.imagePicker.sourceType = .photoLibrary
+    }
+    
+    private func uploadImage(img: UIImage) {
+        var data = Data()
+        data = img.jpegData(compressionQuality: 0.8)!
+        let filePath = "path/img/\(imageCount)"
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/png"
+        
+        storage.reference().child(filePath).putData(data, metadata: metaData) {
+            (metaData, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            } else {
+                print("이미지 업로드 완료")
+            }
+        }
+    }
+    
+    private func downloadURL()  {
+        storage.reference(forURL: "gs://bunjang-ab1f7.appspot.com/path/img/\(imageCount)").downloadURL { url, error in
+            guard let imageURL = url else {return}
+            let urlString = imageURL.absoluteString
+            
+            DispatchQueue.main.async {
+                self.arrayOfImages.append(urlString)
+                print("array에 넣기 완료")
+                print("array: ", self.arrayOfImages)
+            }
+        }
+    }
+    
+//MARK: - Action
     
     @IBAction func tapBackButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -118,32 +217,112 @@ class AddViewController: UIViewController {
             self.shippingFeeButton.tintColor = .lightGray
         }
     }
+    
+    //등록버튼
+    @IBAction func tapRegisterButton(_ sender: UIButton) {
+        guard let name = self.nameTextField.text else {return}
+        guard let categoryCode = self.categoryCode else {return}
+        
+        //tag
+        guard let priceString = self.priceField.text else {return}
+        let priceInt = Int(priceString)
+        guard let price = priceInt else {return}
+    
+
+        if isNotIncludeShippingFee {
+            self.delivery = 0
+        } else {
+            self.delivery = 1
+        }
+        
+        guard let stockString = self.stockLabel.text else {return}
+        let stockInt = Int(stockString)
+        guard let stock = stockInt else {return}
+        
+        
+        if isOldLabel.text == "중고상품" {
+            self.isNew = 0
+        } else {
+            self.isNew = 1
+        }
+        
+        if isExchangePossibleLabel.text == "교환불가" {
+            self.exchange = 0
+        } else {
+            self.exchange = 1
+        }
+        
+        guard let content = self.contentTextView.text else {return}
+        
+        if isBungaePayOK {
+            self.safePay = 1
+        } else {
+            self.safePay = 0
+        }
+        
+        self.isAd = 0
+        self.inspection = 1
+
+        self.imageCount = self.imageCount+1
+        UserDefaults.standard.set(self.imageCount, forKey: "imageCount")
+        
+        
+        let parameters = AddRequest(images: self.arrayOfImages, name: name, category: categoryCode, tags: self.tags, price: price, delivery: self.delivery, stock: stock, isNew: isNew, exchange: exchange, content: content, safePay: self.safePay, sellerIdx: 1, location: "서울시 중구", isAd: 0, inspection: 1)
+        
+        print(parameters)
+        
+        addManager.postAddItem(parameters: parameters) { response in
+            print(response)
+            
+        }
+    
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
-extension AddViewController: SendCategoryDelegate, OptionViewDelegate {
+//MARK: - extension: Option, Tag
+extension AddViewController: OptionViewDelegate, TagViewDelegate {
     func sendData(_ option: Option) {
         self.stockLabel.text = option.stock
         self.isOldLabel.text = option.isOldText
         self.isExchangePossibleLabel.text = option.isExchangePossibleText
     }
     
-    func sendCategory(_ category: String) {
-        self.category = category
-        
-        guard let category = self.category else {return}
-        self.categoryNameLabel.text = category
+    func sendTags(_ tags: [String]) {
+        self.tags = tags
+        var tagList = ""
+        for i in 0..<tags.count {
+            if i == tags.count - 1 {
+                tagList = tagList + "\(tags[i])"
+            } else {
+                tagList = tagList + "\(tags[i]) | "
+            }
+        }
+        self.tagLabel.text = tagList
+        self.tagLabel.textColor = .black
     }
 }
 
+//MARK: - extension: image Picker
 extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
         let newImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         self.getImageView.image = newImage
-        self.imagePicker.dismiss(animated: true, completion: nil)
+        self.uploadImage(img: newImage!)
+        self.downloadURL()
+        
+    
+        self.imagePicker.dismiss(animated: true)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         //이미지가 선택되지 않았습니다! 알림창 뜨도록
     }
 }
+
+extension AddViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.view.endEditing(true)
+    }
+}
+

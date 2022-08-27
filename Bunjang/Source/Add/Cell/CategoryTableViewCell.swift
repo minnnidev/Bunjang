@@ -9,6 +9,8 @@ import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var chevronImage: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,4 +23,7 @@ class CategoryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        self.chevronImage.isHidden = false
+    }
 }

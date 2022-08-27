@@ -18,7 +18,6 @@ struct RecentItemResponse: Decodable {
 struct RecentItemResult: Decodable {
     let itemIdx, price, name: String
     let safePay: Bool
-    let createdAt: String
     let image: String
     let ad: Bool
 }

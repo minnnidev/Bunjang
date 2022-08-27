@@ -24,8 +24,7 @@ class HomeViewController: UIViewController {
     var bannerImages = [ImageSource(image: UIImage(named: "Banner1")!), ImageSource(image: UIImage(named: "Banner2")!), ImageSource(image: UIImage(named: "Banner3")!), ImageSource(image: UIImage(named: "Banner4")!)]
     
     let categoryData = CategoryData()
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -41,6 +41,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="categoryNameLabel" destination="rEO-U0-GRA" id="pTm-Zt-YKh"/>
+                <outlet property="chevronImage" destination="XaW-5F-7mt" id="v8P-iJ-JvU"/>
             </connections>
             <point key="canvasLocation" x="225.36231884057972" y="96.763392857142847"/>
         </tableViewCell>

@@ -13,11 +13,20 @@ class TabFirstViewController: UIViewController {
     let viewItemDataManager = ViewItemDataManager()
     var result: [Result] = []
 
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setCollectionView()
         
+        self.fetchData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.fetchData()
+    }
+    
+    private func fetchData() {
         viewItemDataManager.sendData { response in
             self.result = response
             
