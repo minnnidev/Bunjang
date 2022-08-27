@@ -100,6 +100,7 @@
 		AB916B3628B38DA800FFC68F /* ViewItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB916B3528B38DA800FFC68F /* ViewItemResponse.swift */; };
 		ABB0338F28B1F66500813620 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */; };
 		ABB041D528BA092700E38CA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABB041D428BA092700E38CA3 /* GoogleService-Info.plist */; };
+		ABB041D728BA783100E38CA3 /* ViewStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB041D628BA783100E38CA3 /* ViewStoreController.swift */; };
 		ABBA72A428B5DFDD00C92991 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A328B5DFDD00C92991 /* SearchResultViewController.swift */; };
 		ABBA72A728B608B100C92991 /* SearchItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A628B608B100C92991 /* SearchItemResponse.swift */; };
 		ABBA72AA28B60A0500C92991 /* SearchItemDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A928B60A0500C92991 /* SearchItemDataManager.swift */; };
@@ -213,6 +214,7 @@
 		AB916B3528B38DA800FFC68F /* ViewItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewItemResponse.swift; sourceTree = "<group>"; };
 		ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		ABB041D428BA092700E38CA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABB041D628BA783100E38CA3 /* ViewStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStoreController.swift; sourceTree = "<group>"; };
 		ABBA72A328B5DFDD00C92991 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		ABBA72A628B608B100C92991 /* SearchItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemResponse.swift; sourceTree = "<group>"; };
 		ABBA72A928B60A0500C92991 /* SearchItemDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemDataManager.swift; sourceTree = "<group>"; };
@@ -343,6 +345,7 @@
 				ABE1C93A28B6937C009E5EB1 /* DataManager */,
 				ABE1C93928B69377009E5EB1 /* Entity */,
 				ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */,
+				ABB041D628BA783100E38CA3 /* ViewStoreController.swift */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -949,6 +952,7 @@
 				AB578D7C28B0A89400A00161 /* HomeViewController.swift in Sources */,
 				ABE1C93628B67266009E5EB1 /* UIColor.swift in Sources */,
 				AB0039D728B2872A009932D8 /* CategoryViewController.swift in Sources */,
+				ABB041D728BA783100E38CA3 /* ViewStoreController.swift in Sources */,
 				AB70FB4928B0C2EA00023D90 /* TabFirstViewController.swift in Sources */,
 				AB8A3B3028B7C64B003D4573 /* DescriptionViewController.swift in Sources */,
 				AB425CAF28B4B0C100A37FEF /* ViewItemDataManager.swift in Sources */,

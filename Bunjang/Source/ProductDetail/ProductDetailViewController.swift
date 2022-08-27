@@ -50,6 +50,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var followersLabel: UILabel!
     @IBOutlet weak var storeCountLabel: UILabel!
     @IBOutlet weak var reviewCountLabel: UILabel!
+    @IBOutlet weak var storeView: UIView!
     
     
     var tagList: [String] = []
@@ -189,6 +190,9 @@ class ProductDetailViewController: UIViewController {
         
         //page indicator custom
         self.imagePageView.layer.cornerRadius = 5
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapStoreView))
+        self.storeView.addGestureRecognizer(gesture)
     }
     
     private func setCollectionView() {
@@ -220,6 +224,11 @@ class ProductDetailViewController: UIViewController {
         self.reviewCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.reviewCollectionView.collectionViewLayout = reviewFlowLayout
        
+    }
+    
+    @objc func tapStoreView() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewStoreController") as! ViewStoreController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
