@@ -26,6 +26,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var stockButtonView: UIButton!
     @IBOutlet weak var shippingFeeButtonView: UIButton!
     @IBOutlet weak var exchangeButtonView: UIButton!
+    @IBOutlet weak var followButton: UIButton!
     
     //item
     @IBOutlet weak var priceLabel: UILabel!
@@ -65,7 +66,14 @@ class ProductDetailViewController: UIViewController {
     
     var itemIdx: String?
     var userIdx: String?
+    var seller: String?
 
+
+//MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +83,8 @@ class ProductDetailViewController: UIViewController {
         self.fetchStoreData()
 
     }
-    
+
+//MARK: - private function
     private func fetchStoreData() {
         guard let userIdx = self.userIdx else {return}
         viewStoreDataManager.getData(userIdx: userIdx) { response in
@@ -120,6 +129,7 @@ class ProductDetailViewController: UIViewController {
             self.chatLabel.text = response.result.chat
             self.contentView.text = response.result.content
             
+            self.seller = response.result.seller
             
             //수량
             let stock = response.result.stock
@@ -172,6 +182,8 @@ class ProductDetailViewController: UIViewController {
         self.bannerView.layer.borderColor = UIColor.borderGrayColor.cgColor
         self.bannerView.layer.borderWidth = 1
         self.bannerView.layer.cornerRadius = 5
+        
+        self.followButton.layer.cornerRadius = 5
         
         self.bungaeTalkButton.layer.cornerRadius = 8
         self.safePayButton.layer.cornerRadius = 8
@@ -226,13 +238,16 @@ class ProductDetailViewController: UIViewController {
        
     }
     
+//MARK: - objc function
     @objc func tapStoreView() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewStoreController") as! ViewStoreController
+        vc.seller = self.seller
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
 
+//MARK: - Extension - CollectionView
 extension ProductDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
@@ -305,6 +320,7 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: - Extension - ImageSlideShowDelegate
 extension ProductDetailViewController: ImageSlideshowDelegate {
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
         //이미지가 변경될 때마다 배너 page label 변경

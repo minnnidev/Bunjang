@@ -40,6 +40,12 @@
 		AB3A4B2428B0DDDA0071F9FF /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3A4B2228B0DDDA0071F9FF /* CategoryCollectionViewCell.xib */; };
 		AB3EC69028B915DE00417D44 /* ModifyInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EC68F28B915DE00417D44 /* ModifyInfoResponse.swift */; };
 		AB3EC69228B9162800417D44 /* ModifyInfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EC69128B9162800417D44 /* ModifyInfoDataManager.swift */; };
+		AB40A06D28BB41370070585B /* StoreItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40A06B28BB41370070585B /* StoreItemCollectionViewCell.swift */; };
+		AB40A06E28BB41370070585B /* StoreItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB40A06C28BB41370070585B /* StoreItemCollectionViewCell.xib */; };
+		AB40A07128BB46FE0070585B /* StoreReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40A06F28BB46FE0070585B /* StoreReviewTableViewCell.swift */; };
+		AB40A07228BB46FE0070585B /* StoreReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB40A07028BB46FE0070585B /* StoreReviewTableViewCell.xib */; };
+		AB40A07528BB4FD60070585B /* StoreInquiryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40A07328BB4FD60070585B /* StoreInquiryTableViewCell.swift */; };
+		AB40A07628BB4FD60070585B /* StoreInquiryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB40A07428BB4FD60070585B /* StoreInquiryTableViewCell.xib */; };
 		AB425CAF28B4B0C100A37FEF /* ViewItemDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB425CAE28B4B0C100A37FEF /* ViewItemDataManager.swift */; };
 		AB425CB128B4CCA500A37FEF /* StateChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB425CB028B4CCA500A37FEF /* StateChangeViewController.swift */; };
 		AB425CB328B4EC0300A37FEF /* AddNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB425CB228B4EC0300A37FEF /* AddNavigationViewController.swift */; };
@@ -152,6 +158,12 @@
 		AB3A4B2228B0DDDA0071F9FF /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB3EC68F28B915DE00417D44 /* ModifyInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyInfoResponse.swift; sourceTree = "<group>"; };
 		AB3EC69128B9162800417D44 /* ModifyInfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyInfoDataManager.swift; sourceTree = "<group>"; };
+		AB40A06B28BB41370070585B /* StoreItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		AB40A06C28BB41370070585B /* StoreItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		AB40A06F28BB46FE0070585B /* StoreReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReviewTableViewCell.swift; sourceTree = "<group>"; };
+		AB40A07028BB46FE0070585B /* StoreReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreReviewTableViewCell.xib; sourceTree = "<group>"; };
+		AB40A07328BB4FD60070585B /* StoreInquiryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInquiryTableViewCell.swift; sourceTree = "<group>"; };
+		AB40A07428BB4FD60070585B /* StoreInquiryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreInquiryTableViewCell.xib; sourceTree = "<group>"; };
 		AB425CAE28B4B0C100A37FEF /* ViewItemDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewItemDataManager.swift; sourceTree = "<group>"; };
 		AB425CB028B4CCA500A37FEF /* StateChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateChangeViewController.swift; sourceTree = "<group>"; };
 		AB425CB228B4EC0300A37FEF /* AddNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNavigationViewController.swift; sourceTree = "<group>"; };
@@ -342,12 +354,26 @@
 		AB31E6ED28B5C23100A54D82 /* ProductDetail */ = {
 			isa = PBXGroup;
 			children = (
+				AB40A06628BB3AE80070585B /* Cell */,
 				ABE1C93A28B6937C009E5EB1 /* DataManager */,
 				ABE1C93928B69377009E5EB1 /* Entity */,
 				ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */,
 				ABB041D628BA783100E38CA3 /* ViewStoreController.swift */,
 			);
 			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		AB40A06628BB3AE80070585B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AB40A06B28BB41370070585B /* StoreItemCollectionViewCell.swift */,
+				AB40A06C28BB41370070585B /* StoreItemCollectionViewCell.xib */,
+				AB40A06F28BB46FE0070585B /* StoreReviewTableViewCell.swift */,
+				AB40A07028BB46FE0070585B /* StoreReviewTableViewCell.xib */,
+				AB40A07328BB4FD60070585B /* StoreInquiryTableViewCell.swift */,
+				AB40A07428BB4FD60070585B /* StoreInquiryTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AB425CBC28B522C000A37FEF /* Login */ = {
@@ -799,6 +825,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB3A4B2428B0DDDA0071F9FF /* CategoryCollectionViewCell.xib in Resources */,
+				AB40A07228BB46FE0070585B /* StoreReviewTableViewCell.xib in Resources */,
 				ABFDA80328B7E54D002D876B /* RecentCollectionViewCell.xib in Resources */,
 				AB578D7028B0A3EE00A00161 /* LaunchScreen.storyboard in Resources */,
 				AB425CBB28B51E5200A37FEF /* ExtraTableViewCell.xib in Resources */,
@@ -811,8 +838,10 @@
 				ABB041D528BA092700E38CA3 /* GoogleService-Info.plist in Resources */,
 				AB70BA1628B4979C00DF09B0 /* SellingProductTableViewCell.xib in Resources */,
 				AB578D6828B0A3EB00A00161 /* Main.storyboard in Resources */,
+				AB40A07628BB4FD60070585B /* StoreInquiryTableViewCell.xib in Resources */,
 				AB4F161728B5CD0F0081386F /* TagCollectionViewCell.xib in Resources */,
 				AB16402828B138230085CEC5 /* SimpleProductCollectionViewCell.xib in Resources */,
+				AB40A06E28BB41370070585B /* StoreItemCollectionViewCell.xib in Resources */,
 				AB3A4B2028B0D6120071F9FF /* BannerCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -896,6 +925,7 @@
 				ABFDA7FC28B7E1C1002D876B /* WishViewController.swift in Sources */,
 				AB0039C828B22DB6009932D8 /* TabBarViewController.swift in Sources */,
 				AB0039C328B21B06009932D8 /* UIButton.swift in Sources */,
+				AB40A07128BB46FE0070585B /* StoreReviewTableViewCell.swift in Sources */,
 				AB4F161628B5CD0F0081386F /* TagCollectionViewCell.swift in Sources */,
 				AB478E8528B663CA002BE1CA /* TransactionOptionViewController.swift in Sources */,
 				AB70FB4B28B0C2F600023D90 /* TabSecondViewController.swift in Sources */,
@@ -906,6 +936,7 @@
 				AB31E6E728B5450800A54D82 /* SignInRequest.swift in Sources */,
 				ABBA72AC28B60BEB00C92991 /* String.swift in Sources */,
 				AB70FB4728B0C2D300023D90 /* TabHomeViewController.swift in Sources */,
+				AB40A07528BB4FD60070585B /* StoreInquiryTableViewCell.swift in Sources */,
 				AB70BA0628B3BF0700DF09B0 /* MyViewController.swift in Sources */,
 				AB194FC128B743D100FA5A07 /* ViewStoreDataManager.swift in Sources */,
 				AB8FA60028B8C24700675ADB /* BrandFilterViewController.swift in Sources */,
@@ -915,6 +946,7 @@
 				AB3EC69028B915DE00417D44 /* ModifyInfoResponse.swift in Sources */,
 				AB31E6EA28B5472A00A54D82 /* SignInDataManager.swift in Sources */,
 				ABBA72B428B65B5800C92991 /* LoginViewController.swift in Sources */,
+				AB40A06D28BB41370070585B /* StoreItemCollectionViewCell.swift in Sources */,
 				AB8A3B2828B76A4C003D4573 /* ReviewCollectionViewCell.swift in Sources */,
 				AB0039D028B2589E009932D8 /* AddViewController.swift in Sources */,
 				AB70BA1A28B4A0F800DF09B0 /* TapMyResponse.swift in Sources */,

@@ -11,6 +11,7 @@ import PanModal
 
 class FirstLoginViewController: UIViewController {
     @IBOutlet weak var loginBannerSlideShow: ImageSlideshow!
+    @IBOutlet weak var kakaoLoginImage: UIImageView!
     
     var isTapLogin = false
     var bannerImages = [ImageSource(image: UIImage(named: "LoginBanner1")!),
@@ -18,6 +19,7 @@ class FirstLoginViewController: UIViewController {
                         ImageSource(image: UIImage(named: "LoginBanner3")!),
                         ImageSource(image: UIImage(named: "LoginBanner4")!)]
     
+//MARK: - Lifecycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if isTapLogin {
@@ -30,8 +32,11 @@ class FirstLoginViewController: UIViewController {
         super.viewDidLoad()
         
         self.setBannerImage()
+        self.configureView()
+        self.setGesture()
     }
     
+//MARK: - private function
     private func setBannerImage() {
         //create page indicator
         let pageIndicator = UIPageControl()
@@ -44,14 +49,33 @@ class FirstLoginViewController: UIViewController {
         self.loginBannerSlideShow.setImageInputs(bannerImages)
     }
     
+    private func configureView() {
+        self.kakaoLoginImage.layer.cornerRadius = 20
+    }
     
+    private func setGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tapKakaoLogin))
+        self.kakaoLoginImage.addGestureRecognizer(gesture)
+    }
+    
+//MARK: objc funtion
+    @objc func tapKakaoLogin() {
+        
+    }
+    
+    
+//MARK: - Action
     @IBAction func tapAnotherLogin(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginOptionViewController") as! LoginOptionViewController
         vc.delegate = self
         self.presentPanModal(vc)
     }
+    
+    
+    
 }
 
+//MARK: - Extension: LoginOptionDelegate
 extension FirstLoginViewController: LoginOptionDelegate {
     func sendComplete(_ loginComplete: Bool) {
         self.isTapLogin = loginComplete
