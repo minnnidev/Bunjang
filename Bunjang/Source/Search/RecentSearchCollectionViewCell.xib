@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecentSearchCollectionViewCell" id="gTV-IL-0wX" customClass="RecentSearchCollectionViewCell" customModule="Bunjang" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="86"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="140" height="86"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7O0-rU-Pqr">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="86"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색어" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Md1-uC-yZM">
+                                <rect key="frame" x="10" y="34.5" width="36.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vei-VF-M5r">
+                                <rect key="frame" x="120" y="38" width="10" height="10"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="DMO-G2-Tg8"/>
+                                    <constraint firstAttribute="height" constant="10" id="xuB-cd-L3v"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="small"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Md1-uC-yZM" firstAttribute="centerY" secondItem="7O0-rU-Pqr" secondAttribute="centerY" id="1Ia-S1-PuL"/>
+                            <constraint firstItem="Md1-uC-yZM" firstAttribute="leading" secondItem="7O0-rU-Pqr" secondAttribute="leading" constant="10" id="j9F-cR-xtp"/>
+                            <constraint firstItem="Vei-VF-M5r" firstAttribute="centerY" secondItem="7O0-rU-Pqr" secondAttribute="centerY" id="tC9-l1-CeU"/>
+                            <constraint firstAttribute="trailing" secondItem="Vei-VF-M5r" secondAttribute="trailing" constant="10" id="tRV-fl-8QD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="7O0-rU-Pqr" secondAttribute="trailing" id="dEm-MU-vuy"/>
+                <constraint firstAttribute="bottom" secondItem="7O0-rU-Pqr" secondAttribute="bottom" id="viL-Lh-GR1"/>
+                <constraint firstItem="7O0-rU-Pqr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vpJ-gl-VSE"/>
+                <constraint firstItem="7O0-rU-Pqr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="w5y-4e-n5o"/>
+            </constraints>
+            <size key="customSize" width="140" height="86"/>
+            <connections>
+                <outlet property="searchLabel" destination="Md1-uC-yZM" id="2rD-NS-VAi"/>
+            </connections>
+            <point key="canvasLocation" x="197.10144927536234" y="77.678571428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>

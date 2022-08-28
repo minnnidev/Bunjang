@@ -19,6 +19,8 @@ class FirstLoginViewController: UIViewController {
                         ImageSource(image: UIImage(named: "LoginBanner3")!),
                         ImageSource(image: UIImage(named: "LoginBanner4")!)]
     
+    let kakaoLoginDataManager = KakaoLoginDataManager()
+    
 //MARK: - Lifecycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

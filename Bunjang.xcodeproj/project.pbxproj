@@ -116,6 +116,15 @@
 		ABBA72B428B65B5800C92991 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72B328B65B5800C92991 /* LoginViewController.swift */; };
 		ABE1C93628B67266009E5EB1 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1C93528B67266009E5EB1 /* UIColor.swift */; };
 		ABE1C93C28B69393009E5EB1 /* ViewStoreResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1C93B28B69393009E5EB1 /* ViewStoreResponse.swift */; };
+		ABF1E19728BB814200B61326 /* KakaoLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1E19628BB814200B61326 /* KakaoLoginResponse.swift */; };
+		ABF1E19928BB817000B61326 /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1E19828BB817000B61326 /* KakaoLoginDataManager.swift */; };
+		ABF1E19C28BB9C8B00B61326 /* RecentSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1E19A28BB9C8A00B61326 /* RecentSearchCollectionViewCell.swift */; };
+		ABF1E19D28BB9C8B00B61326 /* RecentSearchCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF1E19B28BB9C8A00B61326 /* RecentSearchCollectionViewCell.xib */; };
+		ABF1E19F28BBAB5300B61326 /* TabSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1E19E28BBAB5300B61326 /* TabSearchViewController.swift */; };
+		ABF1E1A128BBABC200B61326 /* TabItemSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1E1A028BBABC200B61326 /* TabItemSearchViewController.swift */; };
+		ABF1E1A328BBABCC00B61326 /* TabStoreSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1E1A228BBABCC00B61326 /* TabStoreSearchViewController.swift */; };
+		ABF1E1A728BBAE3500B61326 /* SearchStoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1E1A528BBAE3500B61326 /* SearchStoreTableViewCell.swift */; };
+		ABF1E1A828BBAE3500B61326 /* SearchStoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF1E1A628BBAE3500B61326 /* SearchStoreTableViewCell.xib */; };
 		ABFDA7FA28B7E104002D876B /* WishRecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDA7F928B7E104002D876B /* WishRecentViewController.swift */; };
 		ABFDA7FC28B7E1C1002D876B /* WishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDA7FB28B7E1C1002D876B /* WishViewController.swift */; };
 		ABFDA7FE28B7E1C9002D876B /* RecentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFDA7FD28B7E1C9002D876B /* RecentViewController.swift */; };
@@ -236,6 +245,15 @@
 		ABBA72B328B65B5800C92991 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ABE1C93528B67266009E5EB1 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		ABE1C93B28B69393009E5EB1 /* ViewStoreResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStoreResponse.swift; sourceTree = "<group>"; };
+		ABF1E19628BB814200B61326 /* KakaoLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginResponse.swift; sourceTree = "<group>"; };
+		ABF1E19828BB817000B61326 /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
+		ABF1E19A28BB9C8A00B61326 /* RecentSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABF1E19B28BB9C8A00B61326 /* RecentSearchCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentSearchCollectionViewCell.xib; sourceTree = "<group>"; };
+		ABF1E19E28BBAB5300B61326 /* TabSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSearchViewController.swift; sourceTree = "<group>"; };
+		ABF1E1A028BBABC200B61326 /* TabItemSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemSearchViewController.swift; sourceTree = "<group>"; };
+		ABF1E1A228BBABCC00B61326 /* TabStoreSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabStoreSearchViewController.swift; sourceTree = "<group>"; };
+		ABF1E1A528BBAE3500B61326 /* SearchStoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStoreTableViewCell.swift; sourceTree = "<group>"; };
+		ABF1E1A628BBAE3500B61326 /* SearchStoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchStoreTableViewCell.xib; sourceTree = "<group>"; };
 		ABFDA7F928B7E104002D876B /* WishRecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishRecentViewController.swift; sourceTree = "<group>"; };
 		ABFDA7FB28B7E1C1002D876B /* WishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishViewController.swift; sourceTree = "<group>"; };
 		ABFDA7FD28B7E1C9002D876B /* RecentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentViewController.swift; sourceTree = "<group>"; };
@@ -325,11 +343,17 @@
 		AB16402928B1C68E0085CEC5 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				ABF1E1A428BBAE1D00B61326 /* Cell */,
 				AB27EE4228B1C71400278C4D /* SearchViewController.swift */,
 				ABBA72A328B5DFDD00C92991 /* SearchResultViewController.swift */,
 				ABBA72AF28B61E9E00C92991 /* OptionFilterViewController.swift */,
 				ABBA72A828B609EF00C92991 /* DataManager */,
 				ABBA72A528B607DA00C92991 /* Entity */,
+				ABF1E19A28BB9C8A00B61326 /* RecentSearchCollectionViewCell.swift */,
+				ABF1E19B28BB9C8A00B61326 /* RecentSearchCollectionViewCell.xib */,
+				ABF1E19E28BBAB5300B61326 /* TabSearchViewController.swift */,
+				ABF1E1A028BBABC200B61326 /* TabItemSearchViewController.swift */,
+				ABF1E1A228BBABCC00B61326 /* TabStoreSearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -339,6 +363,7 @@
 			children = (
 				AB31E6E628B5450800A54D82 /* SignInRequest.swift */,
 				AB31E6EB28B549DC00A54D82 /* SignInResponse.swift */,
+				ABF1E19628BB814200B61326 /* KakaoLoginResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -347,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				AB31E6E928B5472A00A54D82 /* SignInDataManager.swift */,
+				ABF1E19828BB817000B61326 /* KakaoLoginDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -710,6 +736,15 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		ABF1E1A428BBAE1D00B61326 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				ABF1E1A528BBAE3500B61326 /* SearchStoreTableViewCell.swift */,
+				ABF1E1A628BBAE3500B61326 /* SearchStoreTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		ABFDA7F828B7E0DD002D876B /* Wish+Recent */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,9 +873,11 @@
 				ABB041D528BA092700E38CA3 /* GoogleService-Info.plist in Resources */,
 				AB70BA1628B4979C00DF09B0 /* SellingProductTableViewCell.xib in Resources */,
 				AB578D6828B0A3EB00A00161 /* Main.storyboard in Resources */,
+				ABF1E1A828BBAE3500B61326 /* SearchStoreTableViewCell.xib in Resources */,
 				AB40A07628BB4FD60070585B /* StoreInquiryTableViewCell.xib in Resources */,
 				AB4F161728B5CD0F0081386F /* TagCollectionViewCell.xib in Resources */,
 				AB16402828B138230085CEC5 /* SimpleProductCollectionViewCell.xib in Resources */,
+				ABF1E19D28BB9C8B00B61326 /* RecentSearchCollectionViewCell.xib in Resources */,
 				AB40A06E28BB41370070585B /* StoreItemCollectionViewCell.xib in Resources */,
 				AB3A4B2028B0D6120071F9FF /* BannerCollectionViewCell.xib in Resources */,
 			);
@@ -899,12 +936,15 @@
 				ABFDA7FE28B7E1C9002D876B /* RecentViewController.swift in Sources */,
 				ABBA72AA28B60A0500C92991 /* SearchItemDataManager.swift in Sources */,
 				AB3EC69228B9162800417D44 /* ModifyInfoDataManager.swift in Sources */,
+				ABF1E19F28BBAB5300B61326 /* TabSearchViewController.swift in Sources */,
 				AB3A4B1F28B0D6120071F9FF /* BannerCollectionViewCell.swift in Sources */,
 				AB0039D228B2714D009932D8 /* OptionViewController.swift in Sources */,
 				AB8A3B3628B7DA9E003D4573 /* Constant.swift in Sources */,
+				ABF1E19C28BB9C8B00B61326 /* RecentSearchCollectionViewCell.swift in Sources */,
 				AB31E6EC28B549DC00A54D82 /* SignInResponse.swift in Sources */,
 				AB916B3628B38DA800FFC68F /* ViewItemResponse.swift in Sources */,
 				AB70BA1528B4979C00DF09B0 /* SellingProductTableViewCell.swift in Sources */,
+				ABF1E19728BB814200B61326 /* KakaoLoginResponse.swift in Sources */,
 				AB8A3B2B28B7B760003D4573 /* ModifyViewController.swift in Sources */,
 				AB8A3B3428B7C66C003D4573 /* PrecautionViewController.swift in Sources */,
 				AB0039DB28B288C5009932D8 /* CategoryTableViewCell.swift in Sources */,
@@ -926,6 +966,7 @@
 				AB0039C828B22DB6009932D8 /* TabBarViewController.swift in Sources */,
 				AB0039C328B21B06009932D8 /* UIButton.swift in Sources */,
 				AB40A07128BB46FE0070585B /* StoreReviewTableViewCell.swift in Sources */,
+				ABF1E1A328BBABCC00B61326 /* TabStoreSearchViewController.swift in Sources */,
 				AB4F161628B5CD0F0081386F /* TagCollectionViewCell.swift in Sources */,
 				AB478E8528B663CA002BE1CA /* TransactionOptionViewController.swift in Sources */,
 				AB70FB4B28B0C2F600023D90 /* TabSecondViewController.swift in Sources */,
@@ -936,7 +977,9 @@
 				AB31E6E728B5450800A54D82 /* SignInRequest.swift in Sources */,
 				ABBA72AC28B60BEB00C92991 /* String.swift in Sources */,
 				AB70FB4728B0C2D300023D90 /* TabHomeViewController.swift in Sources */,
+				ABF1E1A128BBABC200B61326 /* TabItemSearchViewController.swift in Sources */,
 				AB40A07528BB4FD60070585B /* StoreInquiryTableViewCell.swift in Sources */,
+				ABF1E19928BB817000B61326 /* KakaoLoginDataManager.swift in Sources */,
 				AB70BA0628B3BF0700DF09B0 /* MyViewController.swift in Sources */,
 				AB194FC128B743D100FA5A07 /* ViewStoreDataManager.swift in Sources */,
 				AB8FA60028B8C24700675ADB /* BrandFilterViewController.swift in Sources */,
@@ -989,6 +1032,7 @@
 				AB8A3B3028B7C64B003D4573 /* DescriptionViewController.swift in Sources */,
 				AB425CAF28B4B0C100A37FEF /* ViewItemDataManager.swift in Sources */,
 				AB31E6DB28B52CA600A54D82 /* SecondLoginViewController.swift in Sources */,
+				ABF1E1A728BBAE3500B61326 /* SearchStoreTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
