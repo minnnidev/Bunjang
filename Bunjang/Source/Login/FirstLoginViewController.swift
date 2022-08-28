@@ -9,6 +9,7 @@ import UIKit
 import ImageSlideshow
 import PanModal
 
+
 class FirstLoginViewController: UIViewController {
     @IBOutlet weak var loginBannerSlideShow: ImageSlideshow!
     @IBOutlet weak var kakaoLoginImage: UIImageView!
@@ -19,7 +20,6 @@ class FirstLoginViewController: UIViewController {
                         ImageSource(image: UIImage(named: "LoginBanner3")!),
                         ImageSource(image: UIImage(named: "LoginBanner4")!)]
     
-    let kakaoLoginDataManager = KakaoLoginDataManager()
     
 //MARK: - Lifecycle
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +62,7 @@ class FirstLoginViewController: UIViewController {
     
 //MARK: objc funtion
     @objc func tapKakaoLogin() {
-        
+    
     }
     
     

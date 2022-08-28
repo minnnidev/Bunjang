@@ -23,6 +23,8 @@ class ViewStoreController: UIViewController {
     @IBOutlet weak var precautionTextView: UITextView!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var certificatedView: UIView!
+    @IBOutlet weak var inquiryTextField: UITextField!
+    
     
     //scrollView
     @IBOutlet weak var itemCollectionView: UICollectionView!
@@ -38,6 +40,8 @@ class ViewStoreController: UIViewController {
     var reviewResult: [ReviewsResponse] = []
     var inquiryResult: [InquiryResponse] = []
     
+    let inquiryAddDataManager = InquiryAddDataManager()
+    
 //MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,6 +54,7 @@ class ViewStoreController: UIViewController {
         self.fetchData()
         self.setCollectionView()
         self.setTableView()
+        
     }
     
     
@@ -133,6 +138,19 @@ class ViewStoreController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBAction func tapInquiryRegisterButton(_ sender: UIButton) {
+        guard let text = self.inquiryTextField.text else {return}
+        guard let seller = self.seller else {return}
+        
+        inquiryAddDataManager.postInquiry(userIdx: "1", storeIdx: seller, parameters: InquiryAddRequest(post: text)) { response in
+            DispatchQueue.main.async {
+                self.inquiryTableView.reloadData()
+            }
+        }
+    }
+    
+    
 }
 
 //MARK: - Extension
@@ -215,7 +233,7 @@ extension ViewStoreController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if tableView == inquiryTableView {
-            return 120
+            return 100
         }
         
         return 0

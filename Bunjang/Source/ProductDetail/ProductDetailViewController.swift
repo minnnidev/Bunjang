@@ -88,6 +88,8 @@ class ProductDetailViewController: UIViewController {
     private func fetchStoreData() {
         guard let userIdx = self.userIdx else {return}
         viewStoreDataManager.getData(userIdx: userIdx) { response in
+            print(response.storeId)
+            
             self.storeNameLabel.text = response.storeName
             self.starRatingLabel.text = response.rating
             self.followersLabel.text = response.followers
@@ -244,8 +246,18 @@ class ProductDetailViewController: UIViewController {
         vc.seller = self.seller
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
+//MARK: - Action
+    
+    @IBAction func tapViewAllReviewButton(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreReviewViewController") as! StoreReviewViewController
+        vc.seller = self.seller
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
+
+
 
 //MARK: - Extension - CollectionView
 extension ProductDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {

@@ -18,7 +18,7 @@ class TabStoreSearchViewController: UIViewController {
         self.storeTableView.dataSource = self
         
         self.storeTableView.register(UINib(nibName: "SearchStoreTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchStoreTableViewCell")
-    }
+    } 
 }
 
 extension TabStoreSearchViewController: UITableViewDelegate, UITableViewDataSource {

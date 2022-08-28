@@ -101,10 +101,6 @@ extension SearchViewController: UISearchBarDelegate {
         } else {
             self.searchContainerView.isHidden = false
             
-            var searchWord = searchText
-            
-            NotificationCenter.default.post(name: NSNotification.Name("SearchStore"), object: "안뇽")
-            
         }
     }
 }
