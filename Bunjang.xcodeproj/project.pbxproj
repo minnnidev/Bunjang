@@ -72,6 +72,7 @@
 		AB478E8528B663CA002BE1CA /* TransactionOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB478E8428B663CA002BE1CA /* TransactionOptionViewController.swift */; };
 		AB4A64CB28BBDE3B00345186 /* InquiryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A64CA28BBDE3B00345186 /* InquiryResponse.swift */; };
 		AB4A64CD28BBDE6100345186 /* InquiryAddDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A64CC28BBDE6100345186 /* InquiryAddDataManager.swift */; };
+		AB4A64CF28BBE73800345186 /* SearchMyItemDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A64CE28BBE73800345186 /* SearchMyItemDataManager.swift */; };
 		AB4F161628B5CD0F0081386F /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4F161428B5CD0F0081386F /* TagCollectionViewCell.swift */; };
 		AB4F161728B5CD0F0081386F /* TagCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB4F161528B5CD0F0081386F /* TagCollectionViewCell.xib */; };
 		AB53A11528B89CB9001BCDB7 /* SimpleBrandTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB53A11328B89CB9001BCDB7 /* SimpleBrandTableViewCell.swift */; };
@@ -211,6 +212,7 @@
 		AB478E8428B663CA002BE1CA /* TransactionOptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionOptionViewController.swift; sourceTree = "<group>"; };
 		AB4A64CA28BBDE3B00345186 /* InquiryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryResponse.swift; sourceTree = "<group>"; };
 		AB4A64CC28BBDE6100345186 /* InquiryAddDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InquiryAddDataManager.swift; sourceTree = "<group>"; };
+		AB4A64CE28BBE73800345186 /* SearchMyItemDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMyItemDataManager.swift; sourceTree = "<group>"; };
 		AB4F161428B5CD0F0081386F /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB4F161528B5CD0F0081386F /* TagCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagCollectionViewCell.xib; sourceTree = "<group>"; };
 		AB53A11328B89CB9001BCDB7 /* SimpleBrandTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleBrandTableViewCell.swift; sourceTree = "<group>"; };
@@ -490,6 +492,14 @@
 			path = Pay;
 			sourceTree = "<group>";
 		};
+		AB4A64D028BBEAE400345186 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				AB4A64CE28BBE73800345186 /* SearchMyItemDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		AB578D5428B0A3EB00A00161 = {
 			isa = PBXGroup;
 			children = (
@@ -604,6 +614,7 @@
 		AB70BA0728B48D0700DF09B0 /* Selling */ = {
 			isa = PBXGroup;
 			children = (
+				AB4A64D028BBEAE400345186 /* DataManager */,
 				AB70BA0C28B48E0000DF09B0 /* SellingViewController.swift */,
 			);
 			path = Selling;
@@ -1008,6 +1019,7 @@
 				ABBA72AA28B60A0500C92991 /* SearchItemDataManager.swift in Sources */,
 				AB3EC69228B9162800417D44 /* ModifyInfoDataManager.swift in Sources */,
 				ABF1E19F28BBAB5300B61326 /* TabSearchViewController.swift in Sources */,
+				AB4A64CF28BBE73800345186 /* SearchMyItemDataManager.swift in Sources */,
 				AB3A4B1F28B0D6120071F9FF /* BannerCollectionViewCell.swift in Sources */,
 				AB0039D228B2714D009932D8 /* OptionViewController.swift in Sources */,
 				AB8A3B3628B7DA9E003D4573 /* Constant.swift in Sources */,

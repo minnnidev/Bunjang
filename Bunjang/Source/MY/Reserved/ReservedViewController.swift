@@ -10,8 +10,11 @@ import UIKit
 class ReservedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var searchItemTextField: UITextField!
+    @IBOutlet weak var searchTextField: UITextField!
     
     let dataManager = ViewSaleListDataManager()
+    let searchMyItemDataManager = SearchMyItemDataManager()
     var result: [ViewSaleResponse] = []
     
     
@@ -43,7 +46,22 @@ class ReservedViewController: UIViewController {
             
             self.tableView.register(UINib(nibName: "SellingProductTableViewCell", bundle: nil), forCellReuseIdentifier: "SellingProductTableViewCell")
         }
+    
+//MARK: - Action
 
+    @IBAction func tapSearchButton(_ sender: UIButton) {
+        guard let text = self.searchTextField.text else {return}
+        
+        searchMyItemDataManager.getSearchMyItem(userIdx: 1, condition: "R", itemName: text) { [weak self ] response in
+            
+            self?.result = response
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+            
+        }
+    }
 }
 
 //MARK: - Extension

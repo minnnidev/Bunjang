@@ -10,8 +10,10 @@ import UIKit
 class SoldViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var searchTextField: UITextField!
     
     let dataManager = ViewSaleListDataManager()
+    let searchMyItemDataManager = SearchMyItemDataManager()
     var result: [ViewSaleResponse] = []
 
     //MARK: - LifeCycle
@@ -22,7 +24,7 @@ class SoldViewController: UIViewController {
         self.fetchData()
     }
     
-    //MARK: - Private function
+//MARK: - Private function
     private func fetchData() {
         //로그인 시 userIdx 받아옴 - 지금은 예시!
         dataManager.getData(userIdx: 1, condition: "S") { response in
@@ -42,7 +44,21 @@ class SoldViewController: UIViewController {
         
         self.tableView.register(UINib(nibName: "SellingProductTableViewCell", bundle: nil), forCellReuseIdentifier: "SellingProductTableViewCell")
     }
-
+    
+//MARK: - Action
+    @IBAction func tapSearchButton(_ sender: UIButton) {
+        guard let text = self.searchTextField.text else {return}
+        
+        searchMyItemDataManager.getSearchMyItem(userIdx: 1, condition: "S", itemName: text) { [weak self ] response in
+            
+            self?.result = response
+            
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+            
+        }
+    }
 }
 
 //MARK: - Extension
