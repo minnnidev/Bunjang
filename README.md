@@ -188,14 +188,15 @@ https://user-images.githubusercontent.com/108191001/186915711-3fd258b7-8abd-40e5
 <details>
    <summary> 🍏 피드백 질문 </summary>
    
-      -  카카오 로그인 -> https://docs.google.com/spreadsheets/d/1MB0Sbl8Hq7Tr7LwspUTx0OcmT3Zyw-8sed1CSANKfbw/edit#gid=482859957
+      -  카카오 로그인 
+      https://docs.google.com/spreadsheets/d/1MB0Sbl8Hq7Tr7LwspUTx0OcmT3Zyw-8sed1CSANKfbw/edit#gid=482859957
       (이해가 안 됨. . . . . . . ...... ㅜ)
+   
+      - 판매그 등록 시에 이미지를 firebase에 업로드하고 가져오는 방식을 했는데 상관없는지
    
       - collectionView 최근 검색어 순서
    https://user-images.githubusercontent.com/108191001/187187928-b3062254-e2b8-4a16-8a14-00bd57f46cf1.mov
 
-
-     
    
 </details>
 
