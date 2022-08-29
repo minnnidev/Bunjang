@@ -10,7 +10,7 @@ import Alamofire
 
 class EachItemDataManager {
     func getData(itemIdx: String, onCompletion: @escaping (EachItemResponse)->Void) {
-        AF.request("https://makaroni.shop/items/\(itemIdx)", method: .get)
+        AF.request("https://makaroni.shop/items/\(itemIdx)", method: .get, headers: ["X-ACCESS-TOKEN": Secret.jwt])
             .validate().responseDecodable(of: EachItemResponse.self) { response in
                 switch response.result {
                     case .success(let data):

@@ -72,7 +72,7 @@ class ProductDetailViewController: UIViewController {
 //MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = false
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -255,6 +255,9 @@ class ProductDetailViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func tapBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 

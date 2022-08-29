@@ -43,7 +43,7 @@ class RecentViewController: UIViewController {
     
     private func fetchData() {
         //임의로 1로 지정
-        recentItemDataManager.getData(userIdx: 1) { response in
+        recentItemDataManager.getData { response in
             self.recentList = response
             
             

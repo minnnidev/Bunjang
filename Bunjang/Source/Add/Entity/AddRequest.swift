@@ -20,7 +20,6 @@ struct AddRequest: Encodable {
     var exchange: Int
     var content: String
     var safePay: Int
-    var sellerIdx: Int
     var location: String
     var isAd: Int
     var inspection: Int

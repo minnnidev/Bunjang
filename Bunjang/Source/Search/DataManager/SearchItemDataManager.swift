@@ -10,9 +10,9 @@ import Alamofire
 
 class SearchDataManager {
     func getData(name: String, sort: String, count: Int, OnCompletion: @escaping ([SearchItemResult])->Void) {
-        let url = Constant.Base_URL+"/items?name=\(name)&sort=\(sort)&count=\(count)"
+        let url = Constant.Base_URL+"/items?name=\(name)&sort=\(sort)&page=\(count)"
         let safeURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        AF.request(safeURL, method: .get).validate().responseDecodable(of: SearchItemResponse.self) { response in
+        AF.request(safeURL, method: .get, headers: ["X-ACCESS-TOKEN": Secret.jwt]).validate().responseDecodable(of: SearchItemResponse.self) { response in
                 switch response.result {
                     case .success(let data):
                         OnCompletion(data.result)

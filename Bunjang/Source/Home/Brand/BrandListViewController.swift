@@ -39,7 +39,8 @@ class BrandListViewController: UIViewController {
     var myFollowing: MyFollowing = .allBrand
     var brandFilterValue = "K"
     var brandFilter: BrandFilter = .KoreanFilter
-    
+    var page = 1
+    var check = true
     
 //MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -76,8 +77,8 @@ class BrandListViewController: UIViewController {
     }
     
     private func fetchAllBrandData() {
-        brandListDataManager.getData(userIdx: 1, sort: self.brandFilterValue) { response in
-            self.brandList = response
+        brandListDataManager.getData(sort: self.brandFilterValue, page: self.page) { response in
+            self.brandList.append(contentsOf: response)
             
             DispatchQueue.main.async {
                 self.brandTableView.reloadData()
@@ -86,7 +87,7 @@ class BrandListViewController: UIViewController {
     }
     
     private func fetchFollowingBrandData() {
-        followingBrandDataManager.getData(userIdx: 1, sort: self.brandFilterValue) { response in
+        followingBrandDataManager.getData(sort: self.brandFilterValue) { response in
             self.followingBrandList = response
             
             DispatchQueue.main.async {
@@ -217,3 +218,4 @@ extension BrandListViewController: BrandFilterViewDelegate {
         self.fetchFollowingBrandData()
     }
 }
+

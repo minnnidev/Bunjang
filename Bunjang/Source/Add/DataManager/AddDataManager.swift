@@ -12,7 +12,7 @@ class AddManager {
     func postAddItem(parameters: AddRequest, onCompletion: @escaping (Bool) -> Void) {
         let url = Constant.Base_URL + "/items/sellers"
         
-        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["X-ACCESS-TOKEN": Secret.jwt])
             .validate().responseDecodable(of: AddResponse.self) { response in
                 switch response.result {
                 case .success(let data):

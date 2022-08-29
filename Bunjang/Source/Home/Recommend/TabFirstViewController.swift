@@ -13,8 +13,6 @@ class TabFirstViewController: UIViewController {
     let viewItemDataManager = ViewItemDataManager()
     var result: [Result] = []
 
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setCollectionView()
@@ -23,7 +21,7 @@ class TabFirstViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.fetchData()
+       // self.fetchData() -> 찜 기능 하려면 얘가 없어야 해?
     }
     
     private func fetchData() {
@@ -35,7 +33,6 @@ class TabFirstViewController: UIViewController {
             }
         }
     }
-    
     
     
     private func setCollectionView() {
@@ -63,6 +60,7 @@ extension TabFirstViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as? ProductCollectionViewCell else {return UICollectionViewCell()}
         
+        cell.itemIdx = self.result[indexPath.row].idx
     
         let data = self.result[indexPath.row]
         let url = URL(string: data.images[0])
@@ -79,6 +77,8 @@ extension TabFirstViewController: UICollectionViewDelegate, UICollectionViewData
         
         if data.wish == "0" {
             cell.heartView.isHidden = true
+        } else {
+            cell.heartView.isHidden = false
         }
         
         

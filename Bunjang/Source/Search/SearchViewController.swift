@@ -96,12 +96,14 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        /*
         if searchText == "" {
             self.searchContainerView.isHidden = true
         } else {
             self.searchContainerView.isHidden = false
             
         }
+         */
     }
 }
 

@@ -24,6 +24,9 @@ class ViewStoreController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var certificatedView: UIView!
     @IBOutlet weak var inquiryTextField: UITextField!
+    @IBOutlet weak var contactStartLabel: UILabel!
+    @IBOutlet weak var contactEndLabel: UILabel!
+    
     
     
     //scrollView
@@ -93,6 +96,9 @@ class ViewStoreController: UIViewController {
             
             self?.openDateLabel.text = response.openDate
             self?.hitLabel.text = response.hit
+            
+            self?.contactStartLabel.text = response.contactStart
+            self?.contactEndLabel.text = response.contactEnd
             
             DispatchQueue.main.async {
                 self?.itemCollectionView.reloadData()

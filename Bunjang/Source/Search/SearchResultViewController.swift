@@ -67,7 +67,7 @@ class SearchResultViewController: UIViewController {
     
     private func datafetch() {
         guard let searchWord = self.searchWord else {return}
-        searchItemDataManager.getData(name: searchWord, sort: "C", count: 5) { response in
+        searchItemDataManager.getData(name: searchWord, sort: "C", count: 1) { response in
             self.resultList = response
             
             DispatchQueue.main.async {
@@ -178,7 +178,7 @@ extension SearchResultViewController: OptionFilterViewDelegate {
     func sendData(_ order: Order) {
         guard let searchWord = self.searchWord else {return}
         self.orderValue = order
-        searchItemDataManager.getData(name: searchWord, sort: order.rawValue, count: 5) { response in
+        searchItemDataManager.getData(name: searchWord, sort: order.rawValue, count: 1) { response in
             self.resultList = response
             self.orderValue = order
             

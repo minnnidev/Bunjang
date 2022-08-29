@@ -15,7 +15,7 @@ struct Category {
 
 class CategoryData {
     var homeCategory = [
-        Category(imageName: "Category1", categoryName: "내 피드"),
+        Category(imageName: "Category1", categoryName: "찜"),
         Category(imageName: "Category2", categoryName: "폴로"),
         Category(imageName: "Category3", categoryName: "최근본상품"),
         Category(imageName: "Category4", categoryName: "스타굿즈"),

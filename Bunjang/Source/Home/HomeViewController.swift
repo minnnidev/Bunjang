@@ -24,6 +24,12 @@ class HomeViewController: UIViewController {
     var bannerImages = [ImageSource(image: UIImage(named: "Banner1")!), ImageSource(image: UIImage(named: "Banner2")!), ImageSource(image: UIImage(named: "Banner3")!), ImageSource(image: UIImage(named: "Banner4")!)]
     
     let categoryData = CategoryData()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,12 +90,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.imgView.image = UIImage(named: categoryData.homeCategory[indexPath.row].imageName)
             cell.categoryNameLabel.text = categoryData.homeCategory[indexPath.row].categoryName
             return cell
-            
         }
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "WishRecentViewController") as! WishRecentViewController
+            vc.index = 0
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         if indexPath.row == 2 {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "WishRecentViewController") as! WishRecentViewController
             vc.index = 1

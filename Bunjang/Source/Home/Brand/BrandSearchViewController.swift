@@ -73,7 +73,7 @@ extension BrandSearchViewController: UISearchBarDelegate {
         self.searchText = searchBar.text
         
         guard let searchText = self.searchText else {return}
-        brandSearchDataManager.getData(userIdx: 1, name: searchText) { response in
+        brandSearchDataManager.getData(name: searchText, page: 1) { response in
             self.brandSearchList = response
             
             DispatchQueue.main.async {

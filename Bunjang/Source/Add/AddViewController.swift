@@ -68,6 +68,7 @@ class AddViewController: UIViewController {
         self.configureView()
         self.setGesture()
         self.setImagePicker()
+        self.placeHolderSetting()
         
         self.imageCount = UserDefaults.standard.integer(forKey: "imageCount")
         print("imageCount: ", imageCount)
@@ -123,7 +124,7 @@ class AddViewController: UIViewController {
 //MARK: - private function
     private func configureView() {
         self.nameTextField.setRegisterTextField(text: "상품명")
-        //self.priceTextField.setRegisterTextField(text: "가격")
+        self.priceField.setRegisterTextField(text: "가격")
         
         self.selectOptionButton.layer.borderColor = UIColor(red: 211/255, green: 211/255, blue: 211/255, alpha: 1.0).cgColor
         self.selectOptionButton.layer.borderWidth = 1
@@ -189,6 +190,13 @@ class AddViewController: UIViewController {
                 print("array: ", self.arrayOfImages)
             }
         }
+    }
+    
+    private func placeHolderSetting() {
+        self.contentTextView.delegate = self
+        self.contentTextView.text = "여러 장의 상품 사진과 구입 연도, 브랜드, 사용감, 하자 유무 등 구매자에게 필요한 정보를 꼭 포함해 주세요. 문의를 줄이고 더 쉽게 판매할 수 있어요. (10장 이상)"
+        self.contentTextView.textColor = UIColor.lightGray
+
     }
     
 //MARK: - Action
@@ -266,8 +274,9 @@ class AddViewController: UIViewController {
         self.imageCount = self.imageCount+1
         UserDefaults.standard.set(self.imageCount, forKey: "imageCount")
         
+         
+        let parameters = AddRequest(images: self.arrayOfImages, name: name, category: categoryCode, tags: self.tags, price: price, delivery: self.delivery, stock: stock, isNew: isNew, exchange: exchange, content: content, safePay: self.safePay, location: "서울시 중구", isAd: 0, inspection: 1)
         
-        let parameters = AddRequest(images: self.arrayOfImages, name: name, category: categoryCode, tags: self.tags, price: price, delivery: self.delivery, stock: stock, isNew: isNew, exchange: exchange, content: content, safePay: self.safePay, sellerIdx: 1, location: "서울시 중구", isAd: 0, inspection: 1)
         
         print(parameters)
         
@@ -326,3 +335,12 @@ extension AddViewController: UIScrollViewDelegate {
     }
 }
 
+
+extension AddViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = .black
+        }
+    }
+}

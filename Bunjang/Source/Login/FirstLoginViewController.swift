@@ -9,11 +9,17 @@ import UIKit
 import ImageSlideshow
 import PanModal
 
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
+
 
 class FirstLoginViewController: UIViewController {
     @IBOutlet weak var loginBannerSlideShow: ImageSlideshow!
     @IBOutlet weak var kakaoLoginImage: UIImageView!
     
+    
+    let kakaoLoginDataManager = KakaoLoginDataManager()
     var isTapLogin = false
     var bannerImages = [ImageSource(image: UIImage(named: "LoginBanner1")!),
                         ImageSource(image: UIImage(named: "LoginBanner2")!),
@@ -62,7 +68,24 @@ class FirstLoginViewController: UIViewController {
     
 //MARK: objc funtion
     @objc func tapKakaoLogin() {
-    
+
+        /*
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+                    
+                    //do something
+                    _ = oauthToken
+                    print(oauthToken)
+               }
+            }
+         */
+
+         
+         
     }
     
     
@@ -72,8 +95,6 @@ class FirstLoginViewController: UIViewController {
         vc.delegate = self
         self.presentPanModal(vc)
     }
-    
-    
     
 }
 
