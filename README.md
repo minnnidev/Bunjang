@@ -176,3 +176,12 @@ https://user-images.githubusercontent.com/108191001/186915711-3fd258b7-8abd-40e5
        - 각종 navigation bar들 디테일과 정리 부족
  
 </details>
+
+<details>
+   <summary> 🍎 8.27 토 </summary>
+</details>
+
+<details>
+   <summary> 🍎 8.28 일 </summary>
+</details>
+
