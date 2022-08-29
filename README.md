@@ -179,10 +179,27 @@ https://user-images.githubusercontent.com/108191001/186915711-3fd258b7-8abd-40e5
 
 <details>
    <summary> 🍎 8.27 토 </summary>
+   
+   <img width="323" alt="스크린샷 2022-08-30 오전 2 26 36" src="https://user-images.githubusercontent.com/108191001/187261596-9da50dba-5a5c-4dec-979b-52bdc99355f7.png">
+   <img width="323" alt="스크린샷 2022-08-30 오전 2 27 10" src="https://user-images.githubusercontent.com/108191001/187261795-d5a8d950-4aa4-4432-838b-302d19e374ac.png">
+   
+      ☑️ 완료
+         - 상품 등록 api 엮기
+         - 카테고리 화면 구현
 </details>
 
 <details>
    <summary> 🍎 8.28 일 </summary>
+
+https://user-images.githubusercontent.com/108191001/187262071-aef3d76a-86eb-4d9b-b810-2dd34a4ae812.mov
+
+https://user-images.githubusercontent.com/108191001/187262138-f066b4f2-4ce9-4be5-84e4-db96984cdb21.mov
+
+      ☑️ 완료
+         - 상점 출력 화면 UI
+         - 상점 출력 api 엮기
+         - 최근 검색어 구현
+      
 </details>
        
 <details>
@@ -200,4 +217,22 @@ https://user-images.githubusercontent.com/108191001/186915711-3fd258b7-8abd-40e5
    
 </details>
 
+<details>
+   <summary> 🍎 8.29 월 </summary>
+   
+https://user-images.githubusercontent.com/108191001/187262797-4de86abb-49df-4051-a426-399fa214e6c3.mov
 
+https://user-images.githubusercontent.com/108191001/187262888-18b4ef94-a28f-46bc-93e1-c03fabf15bcf.mov
+
+
+
+
+      ☑️ 완료
+         - 상저 문의 등록 api 엮기
+         - 판매자 목록에서 검색 api 엮기 
+         - 찜 기능 api
+         - 상품 등록 디테일 수정
+         - 등록 화면 tag collection view 구현
+      
+</details>
+       
