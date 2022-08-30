@@ -67,11 +67,14 @@ class SearchResultViewController: UIViewController {
     
     private func datafetch() {
         guard let searchWord = self.searchWord else {return}
+        
+        self.showIndicator()
         searchItemDataManager.getData(name: searchWord, sort: "C", count: 1) { response in
             self.resultList = response
             
             DispatchQueue.main.async {
                 self.resultCollectionView.reloadData()
+                self.dismissIndicator()
             }
         }
     }
@@ -178,6 +181,8 @@ extension SearchResultViewController: OptionFilterViewDelegate {
     func sendData(_ order: Order) {
         guard let searchWord = self.searchWord else {return}
         self.orderValue = order
+        
+        self.showIndicator()
         searchItemDataManager.getData(name: searchWord, sort: order.rawValue, count: 1) { response in
             self.resultList = response
             self.orderValue = order
@@ -195,6 +200,8 @@ extension SearchResultViewController: OptionFilterViewDelegate {
                     case .highPrice:
                         self.orderLabel.text = "높은가격순"
                 }
+                
+                self.dismissIndicator()
             }
         }
     }
@@ -207,11 +214,14 @@ extension SearchResultViewController: UISearchBarDelegate {
         self.searchWord = searchBar.text
         
         guard let searchWord = self.searchWord else {return}
+        
+        self.showIndicator()
         searchItemDataManager.getData(name: searchWord, sort: self.orderValue.rawValue, count: 5) { response in
             self.resultList = response
             
             DispatchQueue.main.async {
                 self.resultCollectionView.reloadData()
+                self.dismissIndicator()
             }
         }
     }

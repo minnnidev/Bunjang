@@ -73,11 +73,13 @@ extension BrandSearchViewController: UISearchBarDelegate {
         self.searchText = searchBar.text
         
         guard let searchText = self.searchText else {return}
+        self.showIndicator()
         brandSearchDataManager.getData(name: searchText, page: 1) { response in
             self.brandSearchList = response
             
             DispatchQueue.main.async {
                 self.brandTableView.reloadData()
+                self.dismissIndicator()
             }
         }
     }

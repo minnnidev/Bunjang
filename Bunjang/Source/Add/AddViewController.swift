@@ -168,6 +168,7 @@ class AddViewController: UIViewController {
         let metaData = StorageMetadata()
         metaData.contentType = "image/png"
         
+        self.showIndicator()
         storage.reference().child(filePath).putData(data, metadata: metaData) {
             (metaData, error) in
             if let error = error {
@@ -175,11 +176,13 @@ class AddViewController: UIViewController {
                 return
             } else {
                 print("이미지 업로드 완료")
+                self.dismissIndicator()
             }
         }
     }
     
     private func downloadURL()  {
+        self.showIndicator()
         storage.reference(forURL: "gs://bunjang-ab1f7.appspot.com/path/img/\(imageCount)").downloadURL { url, error in
             guard let imageURL = url else {return}
             let urlString = imageURL.absoluteString
@@ -188,6 +191,7 @@ class AddViewController: UIViewController {
                 self.arrayOfImages.append(urlString)
                 print("array에 넣기 완료")
                 print("array: ", self.arrayOfImages)
+                self.dismissIndicator()
             }
         }
     }
@@ -228,6 +232,8 @@ class AddViewController: UIViewController {
     
     //등록버튼
     @IBAction func tapRegisterButton(_ sender: UIButton) {
+        self.showIndicator()
+        
         guard let name = self.nameTextField.text else {return}
         guard let categoryCode = self.categoryCode else {return}
         
@@ -282,6 +288,7 @@ class AddViewController: UIViewController {
         
         addManager.postAddItem(parameters: parameters) { response in
             print(response)
+            self.dismissIndicator()
             
         }
     

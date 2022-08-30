@@ -12,6 +12,11 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let addCategory = AddCategory()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +29,11 @@ class CategoryViewController: UIViewController {
         
         self.tableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
         self.tableView.register(UINib(nibName: "ExtraTableViewCell", bundle: nil), forCellReuseIdentifier: "ExtraTableViewCell")
+    }
+    
+    
+    @IBAction func tapBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -44,16 +54,6 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /*
-        if indexPath.row == 19 {
-            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "ExtraTableViewCell", for: indexPath) as? ExtraTableViewCell else {return UITableViewCell()}
-            return cell
-        } else {
-            guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell else {return UITableViewCell()}
-            cell.categoryNameLabel.text = self.categoryName[indexPath.row]
-            return cell
-        }
-         */
         guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "CategoryTableViewCell", for: indexPath) as? CategoryTableViewCell else {return UITableViewCell()}
         cell.categoryNameLabel.text = self.addCategory.firstCategory[indexPath.row]
         return cell

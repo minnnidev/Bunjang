@@ -14,6 +14,12 @@ class WishViewController: UIViewController {
     let wishListDataManager = WishListDataManager()
     var result: [WishListResult] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setCollectionView()
@@ -32,16 +38,18 @@ class WishViewController: UIViewController {
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumLineSpacing = 15
         let width = (UIScreen.main.bounds.width-30)/2
-        flowLayout.itemSize = CGSize(width: width, height: 280)
+        flowLayout.itemSize = CGSize(width: width, height: 280) 
         self.wishListCollectionView.collectionViewLayout = flowLayout
     }
     
     private func fetchData() {
+        self.showIndicator()
         wishListDataManager.getData(page: 1) { response in
             self.result = response
             
             DispatchQueue.main.async {
                 self.wishListCollectionView.reloadData()
+                self.dismissIndicator()
             }
         }
     }

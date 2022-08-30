@@ -72,6 +72,7 @@ class ViewStoreController: UIViewController {
     private func fetchData() {
         guard let seller = self.seller else {return}
         
+        self.showIndicator()
         viewStoreDataManager.getData(userIdx: seller) { [weak self] response in
             self?.itemResult = response.itemsResponses
             self?.reviewResult = response.reviewsResponses
@@ -104,6 +105,7 @@ class ViewStoreController: UIViewController {
                 self?.itemCollectionView.reloadData()
                 self?.reviewTableView.reloadData()
                 self?.inquiryTableView.reloadData()
+                self?.dismissIndicator() 
             }
         }
     }

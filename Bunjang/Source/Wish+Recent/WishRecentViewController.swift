@@ -10,17 +10,12 @@ import Tabman
 import Pageboy
 
 class WishRecentViewController: TabmanViewController {
-    @IBOutlet weak var tabView: UIView!
+ @IBOutlet weak var tabView: UIView!
     
     var viewControllers: [UIViewController] = []
     var index: Int?
 
 //MARK: - Lifecycle
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.isHidden = true
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +52,11 @@ class WishRecentViewController: TabmanViewController {
     }
     
     
-    @IBAction func tapBackButton(_ sender: UIButton) {
+    @IBAction func tapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
+  
 
 }
 

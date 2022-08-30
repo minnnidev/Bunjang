@@ -77,21 +77,25 @@ class BrandListViewController: UIViewController {
     }
     
     private func fetchAllBrandData() {
+        self.showIndicator()
         brandListDataManager.getData(sort: self.brandFilterValue, page: self.page) { response in
-            self.brandList.append(contentsOf: response)
+            self.brandList = response
             
             DispatchQueue.main.async {
                 self.brandTableView.reloadData()
+                self.dismissIndicator()
             }
         }
     }
     
     private func fetchFollowingBrandData() {
+        self.showIndicator()
         followingBrandDataManager.getData(sort: self.brandFilterValue) { response in
             self.followingBrandList = response
             
             DispatchQueue.main.async {
                 self.brandTableView.reloadData()
+                self.dismissIndicator()
             }
         }
     }

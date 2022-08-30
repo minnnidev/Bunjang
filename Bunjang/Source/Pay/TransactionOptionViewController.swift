@@ -9,16 +9,25 @@ import UIKit
 import PanModal
 import DLRadioButton
 
+enum DeliveryOption {
+    case post //택배
+    case direct //직거래
+}
+
+protocol DeliveryViewDelegate: AnyObject {
+    func sendDelivery(_ delivery: DeliveryOption, _ isDeleverySelected: Bool)
+}
+
 class TransactionOptionViewController: UIViewController {
     @IBOutlet weak var postViewButton: UIView!
     @IBOutlet weak var directViewButton: UIView!
-    
     @IBOutlet weak var postButton: DLRadioButton!
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var directButton: DLRadioButton!
-    
     @IBOutlet weak var bungaePayDetailButton: UIButton!
     
+    weak var delegate: DeliveryViewDelegate?
+    var delivery: DeliveryOption = .post
     
 //MARK: - LifeCycle
     override func viewDidLoad() {
@@ -55,12 +64,16 @@ class TransactionOptionViewController: UIViewController {
         self.postButton.isSelected = true
         self.postViewButton.layer.borderColor = UIColor.mainRedColor.cgColor
         self.directViewButton.layer.borderColor = UIColor.borderGrayColor.cgColor
+        
+        self.delivery = .post
     }
     
     @objc func tapDirectViewButton() {
         self.directButton.isSelected = true
         self.directViewButton.layer.borderColor = UIColor.mainRedColor.cgColor
         self.postViewButton.layer.borderColor = UIColor.borderGrayColor.cgColor
+        
+        self.delivery = .direct
     }
     
 
@@ -69,6 +82,8 @@ class TransactionOptionViewController: UIViewController {
         self.postButton.isSelected = true
         self.postViewButton.layer.borderColor = UIColor.mainRedColor.cgColor
         self.directViewButton.layer.borderColor = UIColor.borderGrayColor.cgColor
+        
+        self.delivery = .post
     }
     
     
@@ -76,9 +91,15 @@ class TransactionOptionViewController: UIViewController {
         self.directButton.isSelected = true
         self.directViewButton.layer.borderColor = UIColor.mainRedColor.cgColor
         self.postViewButton.layer.borderColor = UIColor.borderGrayColor.cgColor
+        
+        self.delivery = .direct
     }
     
     
+    @IBAction func tapNextButton(_ sender: UIButton) {
+        self.delegate?.sendDelivery(self.delivery, true)
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 //MARK: - Extension: PanModalPresentable

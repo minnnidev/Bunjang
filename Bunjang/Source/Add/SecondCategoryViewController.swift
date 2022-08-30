@@ -14,6 +14,11 @@ class SecondCategoryViewController: UIViewController {
     var indexPath: Int?
     var categoryCode: CategoryCode?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     
 //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -28,6 +33,11 @@ class SecondCategoryViewController: UIViewController {
         
         self.secondCategoryTableView.register(UINib(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryTableViewCell")
     }
+    
+    @IBAction func tapBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 //MARK: - Extension

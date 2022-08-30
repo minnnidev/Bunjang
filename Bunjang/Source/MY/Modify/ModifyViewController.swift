@@ -97,6 +97,8 @@ class ModifyViewController: UIViewController {
     
     
     @IBAction func tapCompleteButton(_ sender: UIButton) {
+        self.showIndicator()
+        
         //저장 - Patch - String들
         guard let userIdx = self.userIdx else {return}
         guard let storeName = self.storeNameTextField.text else {return}
@@ -114,6 +116,7 @@ class ModifyViewController: UIViewController {
         modifyInfoDataManager.patchInfoString(userIdx: 1, parameters: parameters) { response in
             print("수정한 부분 patch")
             self.dismiss(animated: true, completion: nil)
+            self.dismissIndicator()
         }
     } 
     

@@ -67,6 +67,8 @@ class ProductDetailViewController: UIViewController {
     var itemIdx: String?
     var userIdx: String?
     var seller: String?
+    var delivery: DeliveryOption = .post
+    var isDeliverySelected = false
 
 
 //MARK: - Lifecycle
@@ -81,7 +83,22 @@ class ProductDetailViewController: UIViewController {
         self.setCollectionView()
         self.fetchItemData()
         self.fetchStoreData()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if self.isDeliverySelected {
+            if self.delivery == .post {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PayPostViewController") as! PayPostViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else if (self.delivery == .direct) {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "PayDirectViewController") as! PayDirectViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+            self.isDeliverySelected = false
+        }
     }
 
 //MARK: - private function
@@ -119,6 +136,7 @@ class ProductDetailViewController: UIViewController {
     private func fetchItemData() {
         guard let itemIdx = self.itemIdx else {return}
         
+        self.showIndicator()
         eachItemDataManager.getData(itemIdx: itemIdx) { response in
             self.itemResult = response.result
             
@@ -174,6 +192,7 @@ class ProductDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 self.storeProductCollectionView.reloadData()
                 self.tagCollectionView.reloadData()
+                self.dismissIndicator()
             }
        }
     }
@@ -258,6 +277,13 @@ class ProductDetailViewController: UIViewController {
     @IBAction func tapBackButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func tapSafePayButton(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "TransactionOptionViewController") as! TransactionOptionViewController
+        vc.delegate = self
+        self.presentPanModal(vc)
+    }
+    
 }
 
 
@@ -340,5 +366,14 @@ extension ProductDetailViewController: ImageSlideshowDelegate {
     func imageSlideshow(_ imageSlideshow: ImageSlideshow, didChangeCurrentPageTo page: Int) {
         //이미지가 변경될 때마다 배너 page label 변경
         self.currentPageLabel.text = "\(page+1)"
+    }
+}
+
+extension ProductDetailViewController: DeliveryViewDelegate {
+    func sendDelivery(_ delivery: DeliveryOption, _ isDeleverySelected: Bool) {
+        self.delivery = delivery
+        self.isDeliverySelected = isDeleverySelected
+        
+        print(self.isDeliverySelected)
     }
 }

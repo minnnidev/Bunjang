@@ -18,6 +18,7 @@ class TabFirstViewController: UIViewController {
         self.setCollectionView()
         
         self.fetchData()
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,11 +26,13 @@ class TabFirstViewController: UIViewController {
     }
     
     private func fetchData() {
+        self.showIndicator()
         viewItemDataManager.sendData { response in
             self.result = response
             
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                self.dismissIndicator()
             }
         }
     }

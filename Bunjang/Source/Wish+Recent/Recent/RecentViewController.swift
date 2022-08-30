@@ -16,11 +16,16 @@ class RecentViewController: UIViewController {
     
 //MARK: - Lifecycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setCollectionView()
         self.fetchData()
-        
     }
     
     
@@ -43,12 +48,14 @@ class RecentViewController: UIViewController {
     
     private func fetchData() {
         //임의로 1로 지정
+        self.showIndicator()
         recentItemDataManager.getData { response in
             self.recentList = response
             
             
             DispatchQueue.main.async {
                 self.recentCollectionView.reloadData()
+                self.dismissIndicator()
             }
         }
     }

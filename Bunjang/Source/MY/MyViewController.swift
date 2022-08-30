@@ -63,6 +63,8 @@ class MyViewController: UIViewController {
 //MARK: - private function
     private func dataFetch() {
         //로그인 시 userIdx 받아옴
+        self.showIndicator()
+        
         tapMyDataManager.sendData(userIdx: userIdx) { [weak self] response in
             self?.tapMyResponse = response
             guard let url = self?.tapMyResponse?.storeImage else {return}
@@ -76,6 +78,8 @@ class MyViewController: UIViewController {
                 self?.reviewLabel.text = self?.tapMyResponse?.reviews
                 self?.followerLabel.text = self?.tapMyResponse?.followers
                 self?.followingLabel.text = self?.tapMyResponse?.followers
+                
+                self?.dismissIndicator()
             }
         }
     }
