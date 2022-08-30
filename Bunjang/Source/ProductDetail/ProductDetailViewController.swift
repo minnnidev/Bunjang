@@ -91,6 +91,7 @@ class ProductDetailViewController: UIViewController {
         if self.isDeliverySelected {
             if self.delivery == .post {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "PayPostViewController") as! PayPostViewController
+                vc.itemIdx = self.itemIdx
                 self.navigationController?.pushViewController(vc, animated: true)
             } else if (self.delivery == .direct) {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "PayDirectViewController") as! PayDirectViewController

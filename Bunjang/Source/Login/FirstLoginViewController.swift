@@ -69,7 +69,7 @@ class FirstLoginViewController: UIViewController {
 //MARK: objc funtion
     @objc func tapKakaoLogin() {
 
-        /*
+        
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 if let error = error {
                     print(error)
@@ -82,7 +82,7 @@ class FirstLoginViewController: UIViewController {
                     print(oauthToken)
                }
             }
-         */
+        
 
          
          
