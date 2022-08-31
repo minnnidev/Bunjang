@@ -6,27 +6,49 @@
 //
 
 import UIKit
+import PanModal
 
 class SecondLoginViewController: UIViewController {
     @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var firstTextFieldView: UIView!
     
-    @IBOutlet weak var secondTextField: UITextField!
     @IBOutlet weak var secondTextFieldView: UIView!
     
     @IBOutlet weak var thirdTextField: UITextField!
+    @IBOutlet weak var carrierLabel: UILabel!
+    
+    @IBOutlet weak var completeButton: UIButton!
+    
     
     let signInDataManager = SignInDataManager()
     let nextButton = UIButton()
+    var isTermsAgree = false
 
 
 //MARK: - Lifecycle
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if isTermsAgree {
+            isTermsAgree = false
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "MessageCertificationViewController") as! MessageCertificationViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        self.setGesture()
         
-        self.secondTextField.delegate = self
+        //self.secondTextField.delegate = self
         self.thirdTextField.delegate = self
+        
+        self.navigationItem.hidesBackButton = true
+        
+        let button = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: nil)
+        button.tintColor = .black
+        self.navigationItem.leftBarButtonItems = [button]
     }
     
 //MARK: - private function
@@ -45,8 +67,15 @@ class SecondLoginViewController: UIViewController {
         //다음 버튼 누를 시 다음 textField로 responder 설정
         nextButton.addTarget(self, action: #selector(tapNextButton), for: .touchUpInside)
         
+        self.completeButton.layer.cornerRadius = 5
+        
         // UITextViewDelegate 사용
-        self.secondTextField.delegate = self
+        //self.secondTextField.delegate = self
+    }
+    
+    private func setGesture() {
+        let carrierGesture = UITapGestureRecognizer(target: self, action: #selector(tapCarrier))
+        self.secondTextFieldView.addGestureRecognizer(carrierGesture)
     }
    
     
@@ -57,18 +86,25 @@ class SecondLoginViewController: UIViewController {
     }
     
     @objc func tapNextButton() {
-        self.secondTextField.becomeFirstResponder()
+        //self.secondTextField.becomeFirstResponder()
+    }
+    
+    @objc func tapCompleteButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func tapCarrier() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CarrierViewController") as! CarrierViewController
+        vc.delegate = self
+        self.presentPanModal(vc)
     }
     
     
 //MARK: - Action
     @IBAction func signInButton(_ sender: UIButton) {
-        guard let loginId = self.firstTextField.text else {return}
-        guard let password = self.secondTextField.text else {return}
-        guard let storeName = self.thirdTextField.text else {return}
-        
-        let input = SignInRequest(loginId: loginId, password: password, storeName: storeName)
-        signInDataManager.postData(parameters: input)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ServiceAgreeViewController") as! ServiceAgreeViewController
+        vc.delegate = self
+        self.presentPanModal(vc)
     }
     
 }
@@ -79,5 +115,20 @@ extension SecondLoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+}
+
+extension SecondLoginViewController: CarrierViewDelegate {
+    func sendCarrier(_ carrier: Carrier) {
+        self.carrierLabel.text = carrier.rawValue
+        self.carrierLabel.textColor = .black
+        self.carrierLabel.font = .systemFont(ofSize: 16, weight: .bold)
+    }
+}
+
+extension SecondLoginViewController: TermsAgreeDelegate {
+    func sendTermsAgree(_ Agree: Bool) {
+        self.isTermsAgree = Agree
+        print(self.isTermsAgree)
     }
 }

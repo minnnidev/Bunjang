@@ -136,7 +136,6 @@ class SearchResultViewController: UIViewController {
         vc.getOrder = self.orderValue
         self.presentPanModal(vc)
     }
-    
 }
 
 

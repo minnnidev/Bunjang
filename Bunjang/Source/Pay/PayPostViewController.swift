@@ -34,6 +34,7 @@ class PayPostViewController: UIViewController {
     @IBOutlet weak var payPriceLabel: UILabel!
     @IBOutlet weak var shippingFeeLabel: UILabel!
     @IBOutlet weak var finalPayLabel: UILabel!
+    @IBOutlet weak var payOptionLabel: UILabel!
     
     
     
@@ -41,6 +42,7 @@ class PayPostViewController: UIViewController {
     var itemIdx: String?
     var itemDataManager = EachItemDataManager()
     var messageEnum: Message = .inputDirectly
+
      
     
 //MARK: - Lifecycle
@@ -92,6 +94,9 @@ class PayPostViewController: UIViewController {
     private func setGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapMessagInput))
         self.messageInputView.addGestureRecognizer(gesture)
+        
+        let payGestrue = UITapGestureRecognizer(target: self, action: #selector(tapRegisterButton))
+        self.registerView.addGestureRecognizer(payGestrue)
     }
     
     
@@ -135,6 +140,12 @@ class PayPostViewController: UIViewController {
         self.presentPanModal(vc)
     }
     
+    @objc func tapRegisterButton() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PayOptionViewController") as! PayOptionViewController
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 //MARK: - Action
     @IBAction func tapBackButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -144,15 +155,26 @@ class PayPostViewController: UIViewController {
     @IBAction func tapAgreeButton(_ sender: UIButton) {
         if isAgree {
             isAgree = false
-            self.BGZTbutton.tintColor = .mainRedColor
+            self.BGZTbutton.tintColor = .lightGray
         } else {
             isAgree = true
-            self.BGZTbutton.tintColor = .lightGray
+            self.BGZTbutton.tintColor = .mainRedColor
         }
     }
     
     @IBAction func tapPayButton(_ sender: UIButton) {
-        self.navigationController?.popToRootViewController(animated: true)
+        //self.presentAlert(title: "구매 완료되었습니다")
+        
+        if isAgree {
+            let alert = UIAlertController(title: "구매 성공", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+                self.navigationController?.popToRootViewController(animated: true)
+            }))
+            self.present(alert, animated: true, completion: {})
+            
+        } else {
+            self.presentAlert(title: "약관 동의가 필요합니다")
+        }
     }
 }
 
@@ -160,5 +182,13 @@ extension PayPostViewController: MessageViewDelegate {
     func sendMessage(_ messageEnum: Message) {
         self.messageLabel.text = messageEnum.rawValue
         self.messageEnum = messageEnum
+    }
+}
+
+extension PayPostViewController: PayOptionDelegate {
+    func sendPayOption(_ payOption: PayOption) {
+        self.payOptionLabel.text = payOption.rawValue
+        self.payOptionLabel.font = .systemFont(ofSize: 18)
+        self.payOptionLabel.textColor = .black
     }
 }

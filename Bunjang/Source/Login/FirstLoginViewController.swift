@@ -9,14 +9,11 @@ import UIKit
 import ImageSlideshow
 import PanModal
 
-import KakaoSDKCommon
-import KakaoSDKAuth
-import KakaoSDKUser
-
 
 class FirstLoginViewController: UIViewController {
     @IBOutlet weak var loginBannerSlideShow: ImageSlideshow!
     @IBOutlet weak var kakaoLoginImage: UIImageView!
+    @IBOutlet weak var appleLoginImage: UIImageView!
     
     
     let kakaoLoginDataManager = KakaoLoginDataManager()
@@ -32,6 +29,7 @@ class FirstLoginViewController: UIViewController {
         super.viewDidAppear(animated)
         if isTapLogin {
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "SecondLoginViewController") as! SecondLoginViewController
+            self.isTapLogin = false
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -64,30 +62,19 @@ class FirstLoginViewController: UIViewController {
     private func setGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tapKakaoLogin))
         self.kakaoLoginImage.addGestureRecognizer(gesture)
+        
+        let appleGesture = UITapGestureRecognizer(target: self, action: #selector(tapAppleLogin))
+        self.appleLoginImage.addGestureRecognizer(appleGesture)
     }
     
 //MARK: objc funtion
     @objc func tapKakaoLogin() {
-
-        
-        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                else {
-                    print("loginWithKakaoAccount() success.")
-                    
-                    //do something
-                    _ = oauthToken
-                    print(oauthToken)
-               }
-            }
-        
-
-         
-         
+        self.presentAlert(title: "카카오 로그인 준비 중입니다")
     }
     
+    @objc func tapAppleLogin() {
+        self.presentAlert(title: "애플 로그인 준비 중입니다")
+    }
     
 //MARK: - Action
     @IBAction func tapAnotherLogin(_ sender: UIButton) {
