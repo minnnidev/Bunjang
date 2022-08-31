@@ -12,7 +12,7 @@ class InquiryAddDataManager {
     func postInquiry(userIdx: String, storeIdx: String, parameters: InquiryAddRequest, onCompletion: @escaping (Bool) -> Void) {
         let url = Constant.Base_URL + "/users/\(userIdx)/inquiries/\(storeIdx)"
         
-        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+        AF.request(url, method: .post, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["X-ACCESS-TOKEN": Secret.jwt])
             .validate().responseDecodable(of: InquiryAddResponse.self) { response in
                 switch response.result {
                 case .success(let data):

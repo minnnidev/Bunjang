@@ -12,7 +12,7 @@ class ModifyInfoDataManager {
     func patchInfoString(userIdx: Int, parameters: [String: String], onCompletion: @escaping (Bool)->Void) {
         let url = Constant.Base_URL+"/users/\(userIdx)"
         
-        AF.request(url, method: .patch, parameters: parameters, encoder: JSONParameterEncoder(), headers: nil)
+        AF.request(url, method: .patch, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["X-ACCESS-TOKEN": Secret.jwt])
             .validate().responseDecodable(of: ModifyInfoResponse.self) { response in
                 switch response.result {
                     case .success(let data):

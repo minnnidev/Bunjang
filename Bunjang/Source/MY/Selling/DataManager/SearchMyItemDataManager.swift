@@ -14,7 +14,7 @@ class SearchMyItemDataManager {
         
         let safeURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
-        AF.request(safeURL, method: .get).responseDecodable(of: ViewSaleListResponse.self) { response in
+        AF.request(safeURL, method: .get, headers: ["X-ACCESS-TOKEN": Secret.jwt]).responseDecodable(of: ViewSaleListResponse.self) { response in
             switch response.result {
                 case .success(let data):
                     onCompletion(data)

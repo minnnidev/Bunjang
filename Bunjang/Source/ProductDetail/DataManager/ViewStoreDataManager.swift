@@ -11,7 +11,7 @@ import Alamofire
 class ViewStoreDataManager {
     func getData(userIdx: String, onCompletion: @escaping (ViewStoreResponse)->Void) {
         let url = Constant.Base_URL+"/users/stores/\(userIdx)"
-        AF.request(url, method: .get)
+        AF.request(url, method: .get, headers: ["X-ACCESS-TOKEN": Secret.jwt])
             .validate().responseDecodable(of: ViewStoreResponse.self) { response in
                 switch response.result {
                     case .success(let data):

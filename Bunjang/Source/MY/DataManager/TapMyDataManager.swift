@@ -10,7 +10,7 @@ import Alamofire
 
 class TapMyDataManager {
     func sendData(userIdx: Int, onCompletion: @escaping (TapMyResponse) -> Void) {
-        AF.request("https://makaroni.shop/users/\(userIdx)", method: .get).validate().responseDecodable(of: TapMyResponse.self) { response in
+        AF.request("https://makaroni.shop/users", method: .get, headers: ["X-ACCESS-TOKEN": Secret.jwt]).validate().responseDecodable(of: TapMyResponse.self) { response in
             switch response.result {
             case .success(let data):
                 onCompletion(data)

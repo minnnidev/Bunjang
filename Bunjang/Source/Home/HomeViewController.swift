@@ -36,6 +36,7 @@ class HomeViewController: UIViewController {
         
         self.setCollectionView()
         self.configureView()
+    
     }
     
     

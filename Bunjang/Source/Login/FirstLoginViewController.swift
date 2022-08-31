@@ -8,6 +8,9 @@
 import UIKit
 import ImageSlideshow
 import PanModal
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 
 class FirstLoginViewController: UIViewController {
@@ -15,8 +18,7 @@ class FirstLoginViewController: UIViewController {
     @IBOutlet weak var kakaoLoginImage: UIImageView!
     @IBOutlet weak var appleLoginImage: UIImageView!
     
-    
-    let kakaoLoginDataManager = KakaoLoginDataManager()
+
     var isTapLogin = false
     var bannerImages = [ImageSource(image: UIImage(named: "LoginBanner1")!),
                         ImageSource(image: UIImage(named: "LoginBanner2")!),

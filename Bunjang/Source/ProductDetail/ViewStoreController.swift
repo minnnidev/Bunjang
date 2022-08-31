@@ -28,21 +28,21 @@ class ViewStoreController: UIViewController {
     @IBOutlet weak var contactEndLabel: UILabel!
     
     
+    //info
+    @IBOutlet weak var followerView: UIView!
     
     //scrollView
     @IBOutlet weak var itemCollectionView: UICollectionView!
     @IBOutlet weak var reviewTableView: UITableView!
     @IBOutlet weak var inquiryTableView: UITableView!
     
-    
-    
     //받아올 sellerIdx
     var seller: String?
+    var userIdx: String? //info 화면으로 보내줄 idx
     let viewStoreDataManager = ViewStoreDataManager()
     var itemResult: [ItemsResponse] = []
     var reviewResult: [ReviewsResponse] = []
     var inquiryResult: [InquiryResponse] = []
-    
     let inquiryAddDataManager = InquiryAddDataManager()
     
 //MARK: - Lifecycle
@@ -57,7 +57,7 @@ class ViewStoreController: UIViewController {
         self.fetchData()
         self.setCollectionView()
         self.setTableView()
-        
+        self.setGesture()
     }
     
     
@@ -74,6 +74,8 @@ class ViewStoreController: UIViewController {
         
         self.showIndicator()
         viewStoreDataManager.getData(userIdx: seller) { [weak self] response in
+            self?.userIdx = response.storeId
+            
             self?.itemResult = response.itemsResponses
             self?.reviewResult = response.reviewsResponses
             self?.inquiryResult = response.inquiryResponses
@@ -140,6 +142,17 @@ class ViewStoreController: UIViewController {
         self.inquiryTableView.register(UINib(nibName: "StoreInquiryTableViewCell", bundle: nil), forCellReuseIdentifier: "StoreInquiryTableViewCell")
     }
     
+    private func setGesture() {
+        let followerGesturue = UITapGestureRecognizer(target: self, action: #selector(tapFollower))
+        self.followerView.addGestureRecognizer(followerGesturue)
+    }
+    
+//MARK: - objc function
+    @objc func tapFollower() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FollowerViewController") as! FollowerViewController
+        vc.userIdx = self.userIdx 
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 //MARK: - Action
     
     @IBAction func tapBackButton(_ sender: UIButton) {

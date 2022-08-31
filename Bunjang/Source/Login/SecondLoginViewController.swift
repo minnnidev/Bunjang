@@ -9,18 +9,18 @@ import UIKit
 import PanModal
 
 class SecondLoginViewController: UIViewController {
-    @IBOutlet weak var firstTextField: UITextField!
     @IBOutlet weak var firstTextFieldView: UIView!
-    
     @IBOutlet weak var secondTextFieldView: UIView!
     
-    @IBOutlet weak var thirdTextField: UITextField!
     @IBOutlet weak var carrierLabel: UILabel!
-    
     @IBOutlet weak var completeButton: UIButton!
     
     
-    let signInDataManager = SignInDataManager()
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var birthTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    
+
     let nextButton = UIButton()
     var isTermsAgree = false
 
@@ -32,6 +32,14 @@ class SecondLoginViewController: UIViewController {
         if isTermsAgree {
             isTermsAgree = false
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "MessageCertificationViewController") as! MessageCertificationViewController
+            
+            guard let name = self.nameTextField.text else {return}
+            guard let birthNumber = self.birthTextField.text else {return}
+            guard let phoneNumber = self.phoneTextField.text else {return}
+            
+            let signIn = SignInRequest(name: name, birthNumber: birthNumber, phoneNumber: phoneNumber, isChecked: false)
+            vc.signIn = signIn
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -40,10 +48,11 @@ class SecondLoginViewController: UIViewController {
         super.viewDidLoad()
         self.configureView()
         self.setGesture()
-        
-        //self.secondTextField.delegate = self
-        self.thirdTextField.delegate = self
-        
+        self.configureNavigationBar()
+    }
+    
+//MARK: - private function
+    private func configureNavigationBar() {
         self.navigationItem.hidesBackButton = true
         
         let button = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: nil)
@@ -51,26 +60,21 @@ class SecondLoginViewController: UIViewController {
         self.navigationItem.leftBarButtonItems = [button]
     }
     
-//MARK: - private function
     private func configureView() {
         
+        /*
         //키보드 위의 button 만들기
         nextButton.isEnabled = false
         nextButton.backgroundColor = UIColor(red: 255/255, green: 225/255, blue: 223/255, alpha: 1.0)
         nextButton.setTitle("다음", for: .normal)
         nextButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         self.firstTextField.inputAccessoryView = nextButton
-    
-        //firstTextField 내용 작성 시 키보드 위 다음 버튼 활성화
-        firstTextField.addTarget(self, action: #selector(validateTest), for: .editingChanged)
-        
-        //다음 버튼 누를 시 다음 textField로 responder 설정
-        nextButton.addTarget(self, action: #selector(tapNextButton), for: .touchUpInside)
+         */
+
         
         self.completeButton.layer.cornerRadius = 5
         
-        // UITextViewDelegate 사용
-        //self.secondTextField.delegate = self
+    
     }
     
     private func setGesture() {

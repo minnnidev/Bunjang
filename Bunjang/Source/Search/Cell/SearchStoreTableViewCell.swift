@@ -11,7 +11,7 @@ class SearchStoreTableViewCell: UITableViewCell {
     @IBOutlet weak var storeImageView: UIImageView!
     @IBOutlet weak var storeNameLabel: UILabel!
     @IBOutlet weak var followerLabel: UILabel!
-    @IBOutlet weak var followingLabel: UILabel!
+    @IBOutlet weak var itemCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -289,7 +289,6 @@ class AddViewController: UIViewController {
         addManager.postAddItem(parameters: parameters) { response in
             print(response)
             self.dismissIndicator()
-            
         }
     
         self.dismiss(animated: true, completion: nil)
