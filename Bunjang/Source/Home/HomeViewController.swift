@@ -37,6 +37,7 @@ class HomeViewController: UIViewController {
         self.setCollectionView()
         self.configureView()
     
+        self.showToast(message: "로그인되었습니다!", font: .systemFont(ofSize: 14))
     }
     
     

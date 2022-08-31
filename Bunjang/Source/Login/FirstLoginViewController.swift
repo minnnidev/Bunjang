@@ -25,6 +25,7 @@ class FirstLoginViewController: UIViewController {
                         ImageSource(image: UIImage(named: "LoginBanner3")!),
                         ImageSource(image: UIImage(named: "LoginBanner4")!)]
     
+    let kakaoLoginManager = kakaoLoginDataManager()
     
 //MARK: - Lifecycle
     override func viewDidAppear(_ animated: Bool) {
@@ -71,7 +72,34 @@ class FirstLoginViewController: UIViewController {
     
 //MARK: objc funtion
     @objc func tapKakaoLogin() {
-        self.presentAlert(title: "카카오 로그인 준비 중입니다")
+        //self.presentAlert(title: "카카오 로그인 준비 중입니다")
+        
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoAccount() success.")
+                    
+                    //do something
+                    _ = oauthToken
+                    self.dismiss(animated: true, completion: nil)
+                    
+                    guard let token = oauthToken?.accessToken else {return}
+                    
+                    self.kakaoLoginManager.getData(token: token) { [weak self] response in
+                        print(response)
+                        
+                        //UserDefaults.standard.set(response.jwt, forKey: "jwt")
+                        
+                        //화면 전환
+                        let vc = self?.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+                        vc.modalTransitionStyle = .crossDissolve
+                        vc.modalPresentationStyle = .fullScreen
+                        self?.present(vc, animated: true, completion: nil)
+                    }
+                }
+            }
     }
     
     @objc func tapAppleLogin() {

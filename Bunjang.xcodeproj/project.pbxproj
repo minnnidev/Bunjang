@@ -143,6 +143,7 @@
 		ABB0338F28B1F66500813620 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */; };
 		ABB041D528BA092700E38CA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABB041D428BA092700E38CA3 /* GoogleService-Info.plist */; };
 		ABB041D728BA783100E38CA3 /* ViewStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB041D628BA783100E38CA3 /* ViewStoreController.swift */; };
+		ABB4D16028BFCFE900AB8A79 /* KakaoLoginDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB4D15F28BFCFE900AB8A79 /* KakaoLoginDataManager.swift */; };
 		ABBA72A428B5DFDD00C92991 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A328B5DFDD00C92991 /* SearchResultViewController.swift */; };
 		ABBA72A728B608B100C92991 /* SearchItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A628B608B100C92991 /* SearchItemResponse.swift */; };
 		ABBA72AA28B60A0500C92991 /* SearchItemDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBA72A928B60A0500C92991 /* SearchItemDataManager.swift */; };
@@ -317,6 +318,7 @@
 		ABB0338E28B1F66500813620 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		ABB041D428BA092700E38CA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABB041D628BA783100E38CA3 /* ViewStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStoreController.swift; sourceTree = "<group>"; };
+		ABB4D15F28BFCFE900AB8A79 /* KakaoLoginDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginDataManager.swift; sourceTree = "<group>"; };
 		ABBA72A328B5DFDD00C92991 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		ABBA72A628B608B100C92991 /* SearchItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemResponse.swift; sourceTree = "<group>"; };
 		ABBA72A928B60A0500C92991 /* SearchItemDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemDataManager.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				AB19BC5128BF5B2F00C9816F /* SMSPostDataManager.swift */,
 				AB19BC5D28BFA49700C9816F /* SMSCheckDataManager.swift */,
 				ABD250D428BFBB2500E24953 /* LoginDataManager.swift */,
+				ABB4D15F28BFCFE900AB8A79 /* KakaoLoginDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -1269,6 +1272,7 @@
 				AB72B7FC28B7E85200C23DE3 /* RecentItemResponse.swift in Sources */,
 				AB47772528B9CAC700B18B96 /* SecondCategoryViewController.swift in Sources */,
 				ABBA72B228B6441B00C92991 /* BrandListViewController.swift in Sources */,
+				ABB4D16028BFCFE900AB8A79 /* KakaoLoginDataManager.swift in Sources */,
 				AB425CB128B4CCA500A37FEF /* StateChangeViewController.swift in Sources */,
 				AB8FA5F828B8A22A00675ADB /* BrandListResponse.swift in Sources */,
 				AB425CBE28B5230700A37FEF /* FirstLoginViewController.swift in Sources */,
