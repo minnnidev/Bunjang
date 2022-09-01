@@ -29,7 +29,7 @@ class ReservedViewController: UIViewController {
 //MARK: - Private function
         private func fetchData() {
             //로그인 시 userIdx 받아옴 - 지금은 예시!
-            dataManager.getData(userIdx: 1, condition: "R") { response in
+            dataManager.getData(condition: "R") { response in
                 self.result = response
                 
                 DispatchQueue.main.async {
@@ -52,7 +52,7 @@ class ReservedViewController: UIViewController {
     @IBAction func tapSearchButton(_ sender: UIButton) {
         guard let text = self.searchTextField.text else {return}
         
-        searchMyItemDataManager.getSearchMyItem(userIdx: 1, condition: "R", itemName: text) { [weak self ] response in
+        searchMyItemDataManager.getSearchMyItem(condition: "R", itemName: text) { [weak self ] response in
             
             self?.result = response
             

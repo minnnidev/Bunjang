@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nc6-2E-krD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eVe-mQ-uCK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -1885,8 +1885,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="XSY-F7-ewJ"/>
                     <connections>
-                        <outlet property="followerLabel" destination="ab3-WP-FpB" id="QQY-dZ-3E9"/>
+                        <outlet property="followerLabel" destination="ab3-WP-FpB" id="0gZ-Kr-rIX"/>
+                        <outlet property="followerView" destination="ZXm-dq-5Tf" id="hrb-rL-16z"/>
                         <outlet property="followingLabel" destination="ecN-5N-3N4" id="fv4-Kk-2Yu"/>
+                        <outlet property="followingView" destination="2sw-Je-Hgu" id="dsA-zi-xyI"/>
                         <outlet property="profileView" destination="XFv-Vi-WZ9" id="7aS-5O-O2X"/>
                         <outlet property="reviewLabel" destination="TL6-fb-0IJ" id="gmd-hW-HuL"/>
                         <outlet property="storeImageView" destination="vPI-f1-mUr" id="WMe-L5-NFg"/>
@@ -4839,6 +4841,9 @@
                                                         <state key="normal" title="팔로우">
                                                             <color key="titleColor" red="0.84705882349999995" green="0.047058823530000002" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tapFollowButton:" destination="e8y-29-b5c" eventType="touchUpInside" id="Ckv-fz-Dbb"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5189,6 +5194,7 @@
                             <constraint firstItem="47V-bs-Z1h" firstAttribute="centerY" secondItem="Xuw-2x-uDK" secondAttribute="centerY" id="pRD-ak-tfG"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bannerView" destination="gpN-uW-okk" id="GxI-7o-fD8"/>
                         <outlet property="bungaeTalkButton" destination="zCp-b4-YDs" id="aMT-ll-FD3"/>
@@ -6375,6 +6381,7 @@
                         <outlet property="followerLabel" destination="RH7-M7-Kl2" id="EUj-1i-ICM"/>
                         <outlet property="followerView" destination="OkN-6L-8uP" id="Ifz-72-kab"/>
                         <outlet property="followingLabel" destination="ULi-KR-wEC" id="rwS-dd-rS6"/>
+                        <outlet property="followingView" destination="adl-kl-87P" id="Rpa-hQ-iDH"/>
                         <outlet property="hitLabel" destination="tUg-15-XST" id="4L9-eZ-gdM"/>
                         <outlet property="inquiryTableView" destination="E4Y-vy-aYc" id="2Q7-UC-Hrd"/>
                         <outlet property="inquiryTextField" destination="xsj-WD-v6Q" id="YRg-qr-hCn"/>
@@ -6416,6 +6423,9 @@
                                         <buttonConfiguration key="configuration" style="plain">
                                             <imageReference key="image" image="arrow.left" catalog="system" symbolScale="large"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapBackButton:" destination="V5w-tW-5Pf" eventType="touchUpInside" id="Oq3-DC-FEP"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팔로워" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySj-lO-o9L">
                                         <rect key="frame" x="55" y="11.5" width="44.5" height="21"/>
@@ -6450,13 +6460,14 @@
                             <constraint firstItem="Bdy-nn-JBX" firstAttribute="leading" secondItem="q6A-Jx-cOx" secondAttribute="leading" id="v3y-aI-iO3"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="followerTableView" destination="zaG-UZ-OTp" id="Pbx-Wf-j6c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34Q-kh-TMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2406" y="-1931"/>
+            <point key="canvasLocation" x="3164" y="-1931"/>
         </scene>
         <!--Following View Controller-->
         <scene sceneID="PTH-Bj-ygo">
@@ -6500,7 +6511,7 @@
                                     <constraint firstItem="KaJ-w8-FMF" firstAttribute="centerY" secondItem="p8J-aA-Hu9" secondAttribute="centerY" id="qbP-iB-vh9"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6K3-3c-tQz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6K3-3c-tQz">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -6517,13 +6528,14 @@
                             <constraint firstItem="3Nw-6X-hyw" firstAttribute="bottom" secondItem="6K3-3c-tQz" secondAttribute="bottom" id="dua-l6-8lm"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="followingTableView" destination="6K3-3c-tQz" id="ate-A7-8is"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNa-Kl-JT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3122" y="-1931"/>
+            <point key="canvasLocation" x="2458" y="-1931"/>
         </scene>
         <!--Store Review View Controller-->
         <scene sceneID="wbL-UX-SeB">

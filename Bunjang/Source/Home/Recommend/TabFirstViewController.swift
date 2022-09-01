@@ -18,15 +18,14 @@ class TabFirstViewController: UIViewController {
         self.setCollectionView()
         
         self.fetchData()
-    
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       // self.fetchData() -> 찜 기능 하려면 얘가 없어야 해?
+       self.fetchData() //-> 찜 기능 하려면 얘가 없어야 해?
     }
     
     private func fetchData() {
-        self.showIndicator()
+        //self.showIndicator()
         viewItemDataManager.sendData { response in
             self.result = response
             

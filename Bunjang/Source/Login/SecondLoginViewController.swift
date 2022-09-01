@@ -20,8 +20,6 @@ class SecondLoginViewController: UIViewController {
     @IBOutlet weak var birthTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     
-
-    let nextButton = UIButton()
     var isTermsAgree = false
 
 
@@ -62,19 +60,8 @@ class SecondLoginViewController: UIViewController {
     
     private func configureView() {
         
-        /*
-        //키보드 위의 button 만들기
-        nextButton.isEnabled = false
-        nextButton.backgroundColor = UIColor(red: 255/255, green: 225/255, blue: 223/255, alpha: 1.0)
-        nextButton.setTitle("다음", for: .normal)
-        nextButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
-        self.firstTextField.inputAccessoryView = nextButton
-         */
-
-        
+        self.phoneTextField.becomeFirstResponder()
         self.completeButton.layer.cornerRadius = 5
-        
-    
     }
     
     private func setGesture() {
@@ -84,15 +71,7 @@ class SecondLoginViewController: UIViewController {
    
     
 //MARK: - selector function
-    @objc func validateTest() {
-        nextButton.isEnabled = true
-        nextButton.backgroundColor = .red
-    }
-    
-    @objc func tapNextButton() {
-        //self.secondTextField.becomeFirstResponder()
-    }
-    
+
     @objc func tapCompleteButton() {
         self.navigationController?.popViewController(animated: true)
     }

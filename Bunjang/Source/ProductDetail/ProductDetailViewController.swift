@@ -60,6 +60,7 @@ class ProductDetailViewController: UIViewController {
     
     let eachItemDataManager = EachItemDataManager()
     let viewStoreDataManager = ViewStoreDataManager()
+    let followDataManager = FollowDataManager()
     var storeResult: ViewStoreResponse?
     var itemsResult: [ItemsResponse] = []
     var reviewResult: [ReviewsResponse] = []
@@ -69,12 +70,22 @@ class ProductDetailViewController: UIViewController {
     var seller: String?
     var delivery: DeliveryOption = .post
     var isDeliverySelected = false
-
+    var isFollowed = false
 
 //MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        
+        self.isFollowed = UserDefaults.standard.bool(forKey: "isFollowed")
+        
+        print(self.isFollowed)
+        
+        if self.isFollowed {
+            self.followButton.followed()
+        } else {
+            self.followButton.notFollow()
+        }
     }
     
     override func viewDidLoad() {
@@ -206,6 +217,8 @@ class ProductDetailViewController: UIViewController {
         self.bannerView.layer.cornerRadius = 5
         
         self.followButton.layer.cornerRadius = 5
+        self.followButton.layer.borderColor = UIColor(red: 255/255, green: 237/255, blue: 240/255, alpha: 1).cgColor
+        self.followButton.layer.borderWidth = 1
         
         self.bungaeTalkButton.layer.cornerRadius = 8
         self.safePayButton.layer.cornerRadius = 8
@@ -268,7 +281,6 @@ class ProductDetailViewController: UIViewController {
     }
     
 //MARK: - Action
-    
     @IBAction func tapViewAllReviewButton(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "StoreReviewViewController") as! StoreReviewViewController
         vc.seller = self.seller
@@ -285,6 +297,31 @@ class ProductDetailViewController: UIViewController {
         self.presentPanModal(vc)
     }
     
+    
+    @IBAction func tapFollowButton(_ sender: UIButton) {
+        guard let userIdx = self.userIdx else {return}
+        
+        if isFollowed {
+            self.followButton.notFollow()
+            
+            //follow 해제
+            followDataManager.patchFollow(storeIdx: userIdx) { response in
+                print(response)
+            }
+            
+            isFollowed = false
+        } else {
+            self.followButton.followed()
+            
+            //follow
+            followDataManager.postFollow(storeIdx: userIdx) { response in
+                print(response)
+            }
+            isFollowed = true
+        }
+        
+        UserDefaults.standard.set(isFollowed, forKey: "isFollowed")
+    }
 }
 
 

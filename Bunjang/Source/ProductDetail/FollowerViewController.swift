@@ -16,6 +16,12 @@ class FollowerViewController: UIViewController {
     var followersList: [ViewFollowersResponse] = []
     
 //MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setTableView()
@@ -41,6 +47,11 @@ class FollowerViewController: UIViewController {
                 self.dismissIndicator()
             }
         }
+    }
+    
+//MARK: - Action
+    @IBAction func tapBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 class SearchMyItemDataManager {
-    func getSearchMyItem(userIdx: Int, condition: String, itemName: String, onCompletion: @escaping (ViewSaleListResponse) -> Void) {
-        let url = Constant.Base_URL + "/users/\(userIdx)/items/search?condition=\(condition)&itemName=\(itemName)&start=0&offset=10&sortCond=ASC"
+    func getSearchMyItem(condition: String, itemName: String, onCompletion: @escaping (ViewSaleListResponse) -> Void) {
+        let url = Constant.Base_URL + "/users/items/search?condition=\(condition)&itemName=\(itemName)&start=0&offset=10&sortCond=ASC"
         
         let safeURL = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         

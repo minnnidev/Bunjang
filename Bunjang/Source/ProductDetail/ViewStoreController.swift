@@ -30,6 +30,8 @@ class ViewStoreController: UIViewController {
     
     //info
     @IBOutlet weak var followerView: UIView!
+    @IBOutlet weak var followingView: UIView!
+    
     
     //scrollView
     @IBOutlet weak var itemCollectionView: UICollectionView!
@@ -143,14 +145,24 @@ class ViewStoreController: UIViewController {
     }
     
     private func setGesture() {
-        let followerGesturue = UITapGestureRecognizer(target: self, action: #selector(tapFollower))
-        self.followerView.addGestureRecognizer(followerGesturue)
+        let followerGesture = UITapGestureRecognizer(target: self, action: #selector(tapFollower))
+        self.followerView.addGestureRecognizer(followerGesture)
+        
+        let followingGesture = UITapGestureRecognizer(target: self, action: #selector(tapFollowing))
+        self.followingView.addGestureRecognizer(followingGesture)
+    
     }
     
 //MARK: - objc function
     @objc func tapFollower() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "FollowerViewController") as! FollowerViewController
         vc.userIdx = self.userIdx 
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func tapFollowing() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "FollowingViewController") as! FollowingViewController
+        vc.userIdx = self.userIdx
         self.navigationController?.pushViewController(vc, animated: true)
     }
 //MARK: - Action

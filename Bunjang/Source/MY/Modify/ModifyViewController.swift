@@ -23,11 +23,10 @@ class ModifyViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     
-    var userIdx: Int?
     let viewStoreDataManager = ViewStoreDataManager()
     var viewStoreResponse: ViewStoreResponse?
     let modifyInfoDataManager = ModifyInfoDataManager()
-    
+    var userIdx: String?
     
 //MARK: - Lifecycle
     
@@ -35,10 +34,10 @@ class ModifyViewController: UIViewController {
         super.viewDidLoad()
         self.setGesture()
         self.configureView()
-        
+
         guard let userIdx = self.userIdx else {return}
         
-        viewStoreDataManager.getData(userIdx: String(userIdx)) { response in
+        viewStoreDataManager.getData(userIdx: userIdx) { response in
             let url = URL(string: response.storeImage)
             self.storeImageView.kf.setImage(with: url)
             
@@ -100,7 +99,6 @@ class ModifyViewController: UIViewController {
         self.showIndicator()
         
         //저장 - Patch - String들
-        guard let userIdx = self.userIdx else {return}
         guard let storeName = self.storeNameTextField.text else {return}
         guard let description = self.descriptionLabel.text else {return}
         guard let policy = self.policyLabel.text else {return}
@@ -113,7 +111,7 @@ class ModifyViewController: UIViewController {
             "precaution": precaution
         ]
         
-        modifyInfoDataManager.patchInfoString(userIdx: 1, parameters: parameters) { response in
+        modifyInfoDataManager.patchInfoString(parameters: parameters) { response in
             print("수정한 부분 patch")
             self.dismiss(animated: true, completion: nil)
             self.dismissIndicator()

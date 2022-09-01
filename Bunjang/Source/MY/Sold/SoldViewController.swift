@@ -27,7 +27,7 @@ class SoldViewController: UIViewController {
 //MARK: - Private function
     private func fetchData() {
         //로그인 시 userIdx 받아옴 - 지금은 예시!
-        dataManager.getData(userIdx: 1, condition: "S") { response in
+        dataManager.getData(condition: "S") { response in
             self.result = response
             
             DispatchQueue.main.async {
@@ -49,7 +49,7 @@ class SoldViewController: UIViewController {
     @IBAction func tapSearchButton(_ sender: UIButton) {
         guard let text = self.searchTextField.text else {return}
         
-        searchMyItemDataManager.getSearchMyItem(userIdx: 1, condition: "S", itemName: text) { [weak self ] response in
+        searchMyItemDataManager.getSearchMyItem(condition: "S", itemName: text) { [weak self ] response in
             
             self?.result = response
             

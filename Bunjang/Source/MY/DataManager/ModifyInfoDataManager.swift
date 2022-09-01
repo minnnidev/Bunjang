@@ -9,8 +9,8 @@ import Foundation
 import Alamofire
 
 class ModifyInfoDataManager {
-    func patchInfoString(userIdx: Int, parameters: [String: String], onCompletion: @escaping (Bool)->Void) {
-        let url = Constant.Base_URL+"/users/\(userIdx)"
+    func patchInfoString(parameters: [String: String], onCompletion: @escaping (Bool)->Void) {
+        let url = Constant.Base_URL+"/users"
         
         AF.request(url, method: .patch, parameters: parameters, encoder: JSONParameterEncoder(), headers: ["X-ACCESS-TOKEN": Secret.jwt])
             .validate().responseDecodable(of: ModifyInfoResponse.self) { response in
