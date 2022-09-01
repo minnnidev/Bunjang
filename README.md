@@ -224,15 +224,42 @@ https://user-images.githubusercontent.com/108191001/187262797-4de86abb-49df-4051
 
 https://user-images.githubusercontent.com/108191001/187262888-18b4ef94-a28f-46bc-93e1-c03fabf15bcf.mov
 
-
-
-
       ☑️ 완료
-         - 상저 문의 등록 api 엮기
+         - 상점 문의 등록 api 엮기
          - 판매자 목록에서 검색 api 엮기 
          - 찜 기능 api
          - 상품 등록 디테일 수정
          - 등록 화면 tag collection view 구현
       
 </details>
+
+<details>
+   <summary> 🍎 8.30 화 </summary>
+
+      ☑️ 완료
+         - 구매하기 UI 구현 -> api는 따로 없어서 더미데이터 이용
+         - 네트워크 통신할 때마다 loading indicator 넣어주기
+      
+</details>
        
+<details>
+   <summary> 🍎 8.31 수 </summary>
+
+      ☑️ 완료
+         - 회원가입 + 본인인증 부분 UI구현
+         - alert message 필요한 곳
+         - 본인인증 로그인 api 엮기
+      
+</details>
+       
+       
+<details>
+   <summary> 🍎 9.1 목 </summary>
+
+      ☑️ 완료
+         - 회원가입 부부 디테일
+         - 팔로우 api들 구현
+         - 카카오 로그인 구현
+         - 내 상점 미리보기 구현
+         - 영상 찍기 ❗️
+</details>
