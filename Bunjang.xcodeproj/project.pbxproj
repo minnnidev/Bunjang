@@ -495,15 +495,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		AB30F91E28BBCEB700410C6D /* Review */ = {
+		AB30F91E28BBCEB700410C6D /* Review+Inquiry */ = {
 			isa = PBXGroup;
 			children = (
+				AB30F91F28BBCED500410C6D /* StoreReviewViewController.swift */,
 				AB30F93128BBD7B100410C6D /* DataManager */,
 				AB30F93028BBD7AC00410C6D /* Entity */,
 				AB30F92328BBD4C800410C6D /* Cell */,
-				AB30F91F28BBCED500410C6D /* StoreReviewViewController.swift */,
 			);
-			path = Review;
+			path = "Review+Inquiry";
 			sourceTree = "<group>";
 		};
 		AB30F92328BBD4C800410C6D /* Cell */ = {
@@ -706,7 +706,7 @@
 				AB0039C428B22AB8009932D8 /* Add */,
 				AB70BA0428B3BECF00DF09B0 /* MY */,
 				AB478E8328B66210002BE1CA /* Pay */,
-				AB30F91E28BBCEB700410C6D /* Review */,
+				AB30F91E28BBCEB700410C6D /* Review+Inquiry */,
 				ABEC751928BCEDA700D779E1 /* Talk */,
 				AB11BEEB28C0A54C00ABF228 /* Following */,
 			);

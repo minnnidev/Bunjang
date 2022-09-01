@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        self.navigationItem.hidesBackButton = true
     }
 
     override func viewDidLoad() {
@@ -38,6 +39,8 @@ class HomeViewController: UIViewController {
         self.configureView()
     
         self.showToast(message: "로그인되었습니다!", font: .systemFont(ofSize: 14))
+        
+        print(Secret.jwt)
     }
     
     

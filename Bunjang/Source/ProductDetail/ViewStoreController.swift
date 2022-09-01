@@ -26,6 +26,8 @@ class ViewStoreController: UIViewController {
     @IBOutlet weak var inquiryTextField: UITextField!
     @IBOutlet weak var contactStartLabel: UILabel!
     @IBOutlet weak var contactEndLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     
     
     //info
@@ -41,16 +43,20 @@ class ViewStoreController: UIViewController {
     //받아올 sellerIdx
     var seller: String?
     var userIdx: String? //info 화면으로 보내줄 idx
+    
     let viewStoreDataManager = ViewStoreDataManager()
+    let myProfileDataManager = TapMyDataManager()
     var itemResult: [ItemsResponse] = []
     var reviewResult: [ReviewsResponse] = []
     var inquiryResult: [InquiryResponse] = []
     let inquiryAddDataManager = InquiryAddDataManager()
+    var isPreview = false
     
 //MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {
@@ -60,6 +66,10 @@ class ViewStoreController: UIViewController {
         self.setCollectionView()
         self.setTableView()
         self.setGesture()
+        
+        if isPreview {
+            self.titleLabel.text = "상점 미리보기"
+        }
     }
     
     
@@ -171,7 +181,7 @@ class ViewStoreController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
+     
     @IBAction func tapInquiryRegisterButton(_ sender: UIButton) {
         guard let text = self.inquiryTextField.text else {return}
         guard let seller = self.seller else {return}

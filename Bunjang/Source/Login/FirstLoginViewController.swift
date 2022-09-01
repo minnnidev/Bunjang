@@ -90,7 +90,7 @@ class FirstLoginViewController: UIViewController {
                     self.kakaoLoginManager.getData(token: token) { [weak self] response in
                         print(response)
                         
-                        //UserDefaults.standard.set(response.jwt, forKey: "jwt")
+                        UserDefaults.standard.set(response.jwt, forKey: "jwt")
                         
                         //화면 전환
                         let vc = self?.storyboard?.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController

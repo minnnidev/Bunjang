@@ -12,6 +12,11 @@ class TabFirstViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     let viewItemDataManager = ViewItemDataManager()
     var result: [Result] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.hidesBackButton = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +26,7 @@ class TabFirstViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       self.fetchData() //-> 찜 기능 하려면 얘가 없어야 해?
+        self.fetchData() 
     }
     
     private func fetchData() {

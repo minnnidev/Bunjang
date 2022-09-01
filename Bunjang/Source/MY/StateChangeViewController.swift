@@ -8,25 +8,35 @@
 import UIKit
 import PanModal
 
+enum ProfileState {
+    case modify
+    case preview
+    case none
+}
+
 protocol StateChangeViewDelegate: AnyObject {
-    func sendComplete(_ modifyOption: Bool)
+    func sendComplete(_ profileState: ProfileState)
 }
 
 class StateChangeViewController: UIViewController {
     weak var delegate: StateChangeViewDelegate?
+    var profileState : ProfileState  = .none
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func tapModifyButton(_ sender: UIButton) {
-        self.delegate?.sendComplete(true)
+        self.profileState = .modify
+        self.delegate?.sendComplete(self.profileState)
         self.dismiss(animated: true, completion: nil)
-        
-        /*
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ModifyViewController") as! ModifyViewController
-        self.present(vc, animated: true, completion: nil)
-         */
+    }
+    
+    
+    @IBAction func tapPreviewButton(_ sender: UIButton) {
+        self.profileState = .preview
+        self.delegate?.sendComplete(self.profileState)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

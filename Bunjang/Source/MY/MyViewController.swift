@@ -19,7 +19,6 @@ class MyViewController: UIViewController {
     @IBOutlet weak var followerLabel: UILabel!
     
     
-    
     //info
     @IBOutlet weak var followingView: UIStackView!
     @IBOutlet weak var followerView: UIStackView!
@@ -27,15 +26,14 @@ class MyViewController: UIViewController {
     
     let tapMyDataManager = TapMyDataManager()
     var tapMyResponse: TapMyResponse?
-    var modifyOption = false
+    //var modifyOption = false
     var userIdx: String?
+    var profileState: ProfileState = .none
     
 //MARK: - Lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.navigationController?.navigationBar.isHidden = false
-        
+        self.navigationController?.navigationBar.isHidden = true
         self.dataFetch()
     }
     
@@ -49,6 +47,7 @@ class MyViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        /*
         if modifyOption {
             guard let userIdx = self.userIdx else {return}
             
@@ -57,6 +56,25 @@ class MyViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             vc.userIdx = userIdx
             self.present(vc, animated: true, completion: nil)
+        }
+         */
+        
+        switch profileState {
+            case .modify:
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ModifyViewController") as! ModifyViewController
+                vc.modalPresentationStyle = .fullScreen
+                vc.userIdx = userIdx
+                self.profileState = .none
+                self.present(vc, animated: true, completion: nil)
+            case .preview:
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewStoreController") as! ViewStoreController
+                vc.modalPresentationStyle = .fullScreen
+                vc.isPreview = true
+                vc.seller = self.userIdx
+                self.profileState = .none
+                self.navigationController?.pushViewController(vc, animated: true)
+            case .none:
+                print("아무 동작도 일어나지 않음")
         }
     }
     
@@ -136,7 +154,7 @@ class MyViewController: UIViewController {
 }
 
 extension MyViewController: StateChangeViewDelegate {
-    func sendComplete(_ modifyOption: Bool) {
-        self.modifyOption = modifyOption
+    func sendComplete(_ profileState: ProfileState) {
+        self.profileState = profileState
     }
 }

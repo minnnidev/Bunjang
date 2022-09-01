@@ -43,6 +43,8 @@ class MessageCertificationViewController: UIViewController {
         self.phoneNumberLabel.text = phoneNumber
         
         self.completeButton.layer.cornerRadius = 5
+        
+        self.numberTextField.becomeFirstResponder()
     }
     
     private func smsPost() {
@@ -69,6 +71,7 @@ class MessageCertificationViewController: UIViewController {
                 
                 self?.loginDataManager.postLogin(parameters: loginRequest) { [weak self] response in
                     
+                    print(response.jwt)
                     UserDefaults.standard.set(response.jwt, forKey: "jwt")
                     print("발급", UserDefaults.standard.string(forKey: "jwt"))
                     

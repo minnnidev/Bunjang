@@ -28,7 +28,8 @@ class AddViewController: UIViewController {
     @IBOutlet weak var goToAlbumButton: UIView!
     @IBOutlet weak var getImageView: UIImageView!
     @IBOutlet weak var tagLabel: UILabel!
-   
+    @IBOutlet weak var imageCountLabel: UILabel!
+    
     @IBOutlet weak var backgroundScrollView: UIScrollView!
     
     @IBOutlet weak var priceField: UITextField!
@@ -61,6 +62,7 @@ class AddViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {
@@ -191,6 +193,7 @@ class AddViewController: UIViewController {
                 self.arrayOfImages.append(urlString)
                 print("array에 넣기 완료")
                 print("array: ", self.arrayOfImages)
+                self.imageCountLabel.text = "1"
                 self.dismissIndicator()
             }
         }
@@ -281,7 +284,7 @@ class AddViewController: UIViewController {
         UserDefaults.standard.set(self.imageCount, forKey: "imageCount")
         
          
-        let parameters = AddRequest(images: self.arrayOfImages, name: name, category: categoryCode, tags: self.tags, price: price, delivery: self.delivery, stock: stock, isNew: isNew, exchange: exchange, content: content, safePay: self.safePay, location: "서울시 중구", isAd: 0, inspection: 1)
+        let parameters = AddRequest(images: self.arrayOfImages, name: name, category: categoryCode, tags: self.tags, price: price, delivery: self.delivery, stock: stock, isNew: isNew, exchange: exchange, content: content, safePay: self.safePay, location: "서울시 중구", isAd: 0, inspection: 1, x:126.9996417, y:37.56100278)
         
         
         print(parameters)

@@ -69,6 +69,8 @@ class ServiceAgreeViewController: UIViewController {
                 self.terms[i].check = false
             }
             
+            self.nextButton.backgroundColor = UIColor(red: 215/255, green: 169/255, blue: 171/255, alpha: 1.0)
+            
         } else {
             isCheck = true
             self.checkButton.tintColor = .mainRedColor
@@ -76,6 +78,8 @@ class ServiceAgreeViewController: UIViewController {
             for i in 0 ..< self.terms.count {
                 self.terms[i].check = true
             }
+            
+            self.nextButton.backgroundColor = .mainRedColor
         }
         self.tableView.reloadData()
     }

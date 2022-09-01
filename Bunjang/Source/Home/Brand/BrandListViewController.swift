@@ -46,6 +46,7 @@ class BrandListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
+        self.navigationItem.hidesBackButton = true
     }
     
     override func viewDidLoad() {

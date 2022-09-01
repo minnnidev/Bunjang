@@ -24,6 +24,11 @@ class PayPostViewController: UIViewController {
     @IBOutlet weak var seeDetailButton: UIButton!
     @IBOutlet weak var BGZTbutton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageTextField: UITextField!
+    @IBOutlet weak var payButton: UIButton!
+    @IBOutlet weak var bannerView: UIImageView!
+    @IBOutlet weak var eventBannerView: UIImageView!
+    
     
     //item
     @IBOutlet weak var itemImageView: UIImageView!
@@ -130,6 +135,11 @@ class PayPostViewController: UIViewController {
         
         self.seeAllButton.setUnderline()
         self.seeDetailButton.setUnderline()
+        
+        self.payButton.layer.cornerRadius = 5
+        self.bannerView.layer.cornerRadius = 5
+        self.eventBannerView.layer.cornerRadius = 5
+    
     }
     
 //MARK: - objc function
@@ -192,3 +202,5 @@ extension PayPostViewController: PayOptionDelegate {
         self.payOptionLabel.textColor = .black
     }
 }
+
+

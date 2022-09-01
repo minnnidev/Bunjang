@@ -47,6 +47,8 @@ class SecondLoginViewController: UIViewController {
         self.configureView()
         self.setGesture()
         self.configureNavigationBar()
+        
+        self.completeButton.isEnabled = false
     }
     
 //MARK: - private function
@@ -59,6 +61,10 @@ class SecondLoginViewController: UIViewController {
     }
     
     private func configureView() {
+        
+        self.phoneTextField.delegate = self
+        self.birthTextField.delegate = self
+        self.nameTextField.delegate = self
         
         self.phoneTextField.becomeFirstResponder()
         self.completeButton.layer.cornerRadius = 5
@@ -98,6 +104,13 @@ extension SecondLoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == nameTextField {
+            self.completeButton.backgroundColor = .mainRedColor
+            self.completeButton.isEnabled = true
+        }
     }
 }
 

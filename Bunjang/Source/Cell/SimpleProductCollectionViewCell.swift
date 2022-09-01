@@ -35,6 +35,8 @@ class SimpleProductCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         self.stateView.isHidden = true
+        self.ADImageView.isHidden = true
+        self.bungaePayImage.isHidden = true
     }
 
 }

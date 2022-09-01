@@ -215,7 +215,7 @@ extension SearchResultViewController: UISearchBarDelegate {
         guard let searchWord = self.searchWord else {return}
         
         self.showIndicator()
-        searchItemDataManager.getData(name: searchWord, sort: self.orderValue.rawValue, count: 5) { response in
+        searchItemDataManager.getData(name: searchWord, sort: self.orderValue.rawValue, count: 1) { response in
             self.resultList = response
             
             DispatchQueue.main.async {

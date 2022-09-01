@@ -23,4 +23,6 @@ struct AddRequest: Encodable {
     var location: String
     var isAd: Int
     var inspection: Int
+    var x: Double
+    var y: Double
 }

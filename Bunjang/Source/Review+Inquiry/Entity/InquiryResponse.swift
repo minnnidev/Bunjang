@@ -8,6 +8,6 @@
 import Foundation
 
 struct InquiryAddResponse: Decodable {
-    var code: String
+    var result: String
     var message: String
 }

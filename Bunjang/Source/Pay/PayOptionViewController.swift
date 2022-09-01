@@ -31,6 +31,7 @@ class PayOptionViewController: UIViewController {
     @IBOutlet weak var creditCheckButton: UIButton!
     @IBOutlet weak var kakaoCheckButton: UIButton!
     @IBOutlet weak var naverCheckButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     
     var isCredit = false
@@ -135,6 +136,8 @@ class PayOptionViewController: UIViewController {
         self.chaiPayView.layer.borderWidth = 1
         self.chaiPayView.layer.borderColor = UIColor.borderGrayColor.cgColor
         self.chaiPayView.layer.cornerRadius = 5
+        
+        self.nextButton.layer.cornerRadius = 5
     }
     
     
