@@ -257,7 +257,7 @@ https://user-images.githubusercontent.com/108191001/187262888-18b4ef94-a28f-46bc
    <summary> 🍎 9.1 목 </summary>
 
       ☑️ 완료
-         - 회원가입 부부 디테일
+         - 회원가입 부분 디테일
          - 팔로우 api들 구현
          - 카카오 로그인 구현
          - 내 상점 미리보기 구현
