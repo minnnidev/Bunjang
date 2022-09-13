@@ -16,6 +16,9 @@
 📎 https://docs.google.com/spreadsheets/d/1MB0Sbl8Hq7Tr7LwspUTx0OcmT3Zyw-8sed1CSANKfbw/edit#gid=0
 
 
+### 기능
+📎 https://www.notion.so/ee6a52cece2d4c718e1c38116867d9cd
+
 </br>
 </br>
 
