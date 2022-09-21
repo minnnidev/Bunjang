@@ -4,17 +4,13 @@
 💻 사용 언어: Swift</br>
 📆 기간: 8월 20일(토) ~ 9월 2일(금)</br>
 🍎 나(다나): iOS 프론트엔드</br>
-🙍🏻‍♀️ 팀원: 서버 - 라이징캠프 에단 님, 워니 님 도움을 받았습니다.</br>
+🙍🏻‍♀️ 팀원: 서버 - 에단 님, 워니 님</br>
 📝 목표: 번개장터 앱 처음부터 끝까지 클론코딩해 보기</br>
-
-본 템플릿의 저작권은 (주)소프트스퀘어드에 있습니다. 상업적 용도의 사용을 금합니다.
 
 </br>
 
-
 ### 사용한 api
 📎 https://docs.google.com/spreadsheets/d/1MB0Sbl8Hq7Tr7LwspUTx0OcmT3Zyw-8sed1CSANKfbw/edit#gid=0
-
 
 ### 기능
 📎 https://www.notion.so/ee6a52cece2d4c718e1c38116867d9cd
@@ -288,4 +284,6 @@ https://user-images.githubusercontent.com/108191001/187262888-18b4ef94-a28f-46bc
          - 내 상점 미리보기 구현
          - 영상 찍기 ❗️
 </details>
+
+본 템플릿의 저작권은 (주)소프트스퀘어드에 있습니다. 상업적 용도의 사용을 금합니다.
 
