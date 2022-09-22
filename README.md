@@ -1,18 +1,21 @@
 ## 번개장터 클론 코딩 프로젝트
 
-🖥 프로젝트명: 번개장터 클론코딩</br>
-💻 사용 언어: Swift</br>
-📆 기간: 8월 20일(토) ~ 9월 2일(금)</br>
-🍎 나(다나): iOS 프론트엔드</br>
-🙍🏻‍♀️ 팀원: 서버 - 에단 님, 워니 님</br>
-📝 목표: 번개장터 앱 처음부터 끝까지 클론코딩해 보기</br>
+**프로젝트명**: 번개장터 클론코딩</br>
+**사용 언어**: Swift</br>
+**기간**: 8월 20일(토) ~ 9월 2일(금)</br>
+**목표**: 번개장터 앱 처음부터 끝까지 클론코딩해 보기</br>
+
+|파트|닉네임|
+|------|----|
+|서버|에단 님, 워니 님|
+|iOS| 다나(it's Me)! 😆|
 
 </br>
 
 ### 사용한 api
 📎 https://docs.google.com/spreadsheets/d/1MB0Sbl8Hq7Tr7LwspUTx0OcmT3Zyw-8sed1CSANKfbw/edit#gid=0
 
-### 기능
+### 기능 정리
 📎 https://www.notion.so/ee6a52cece2d4c718e1c38116867d9cd
 
 </br>
@@ -41,10 +44,8 @@ https://user-images.githubusercontent.com/108191001/185752099-8c16169c-60e7-4b61
         - sticky header
     
     🤔 느낀점
-        - 시간 분배를 잘해야 할 듯하다. 구현해야 할 UI가 겁나 많다.
-        - 뭔가 부담감에 자꾸 고민하는 시간이 길어지는 것 같다.
-        - 오늘도 목표한 것의 50퍼센트를 겨우 한 것 같다.
-        - 어려운 부분은 일단 기록해 두고 할 수 있는 것부터 해치우자.
+        - 시간 분배를 잘해야 할 듯하다. 구현해야 할 UI가 겁나 많다!
+        - 어려운 부분은 일단 기록해 두고 할 수 있는 것부터 해치우자
   
 </details>
 
@@ -84,21 +85,6 @@ https://user-images.githubusercontent.com/108191001/185931317-7506625c-7a28-4382
       - collectionView 밑 horizontal indicator 부분 구현
       - 검색 화면은 push 되어 나오는 것처럼, 등록 화면은 modal 처럼 나옴 -> 구현 방법?
       - 옵션 선택 화면 디테일
-   
-</details>
-
-<details>
-   <summary> 🍏 피드백 질문 </summary>
-
-https://user-images.githubusercontent.com/108191001/185930775-6359950e-c531-4d45-a70d-c270443a37ca.MP4
-
-   1. tab bar의 검색 탭할 시 push 뷰컨으로 보임
-   2. tab bar의 등록 버튼 탭할 시 modal present 형식으로 보임 -> 해결 ⭕️
-   3. collectionView 밑의 indicator 구현 방식 -> 후순위❗️
-   4. tab man 이용할 때, conainer view 사용 시 각 탭의 크기는 항상 같은가용?? (홈 화면의 추천상품 - 브랜드)
-   5. tableView나 collectionView 크기에 따라 scrollView가 변하게 하고 싶다면...? (My 화면 판매중 - 예약중 - 판매 완료 부분) - 4번 관련
-   6. navigation bar uiview로 커스텀 storyboard -> ❌
-   7. 등록 화면 - 옵션 선택 화면 segmented control -> 버튼으로 -> 해결 ⭕️
    
 </details>
 
@@ -222,21 +208,7 @@ https://user-images.githubusercontent.com/108191001/187262138-f066b4f2-4ce9-4be5
          - 최근 검색어 구현
       
 </details>
-       
-<details>
-   <summary> 🍏 피드백 질문 </summary>
-   
-      -  카카오 로그인 
-      https://docs.google.com/spreadsheets/d/1MB0Sbl8Hq7Tr7LwspUTx0OcmT3Zyw-8sed1CSANKfbw/edit#gid=482859957
-      (이해가 안 됨. . . . . . . ...... ㅜ)
-   
-      - 판매그 등록 시에 이미지를 firebase에 업로드하고 가져오는 방식을 했는데 상관없는지
-   
-      - collectionView 최근 검색어 순서
-   https://user-images.githubusercontent.com/108191001/187187928-b3062254-e2b8-4a16-8a14-00bd57f46cf1.mov
 
-   
-</details>
 
 <details>
    <summary> 🍎 8.29 월 </summary>
@@ -285,5 +257,5 @@ https://user-images.githubusercontent.com/108191001/187262888-18b4ef94-a28f-46bc
          - 영상 찍기 ❗️
 </details>
 
-본 템플릿의 저작권은 (주)소프트스퀘어드에 있습니다. 상업적 용도의 사용을 금합니다.
+*본 템플릿의 저작권은 (주)소프트스퀘어드에 있습니다. 상업적 용도의 사용을 금합니다.*
 
